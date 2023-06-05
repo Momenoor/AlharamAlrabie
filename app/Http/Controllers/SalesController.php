@@ -71,14 +71,16 @@ class SalesController extends Controller
         return view('sales.import-form');
     }
 
-    public function import(Request $request): \Maatwebsite\Excel\Excel
+    public function import(Request $request): \Maatwebsite\Excel\Excel|bool
     {
         $request->validate([
             'file' => 'required|mimes:xlsx|max:2048'
         ]);
 
-        if ($request->file) {
-            return Excel::import(new SalesImport, $request->file);
+        if (!$request->file) {
+            return false;
         }
+        return Excel::import(new SalesImport, $request->file);
+
     }
 }
