@@ -20,8 +20,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/sales/import', [App\Http\Controllers\SalesController::class, 'importForm'])->name('sales.import.form');
-Route::post('/sales/import', [App\Http\Controllers\SalesController::class, 'import'])->name('sales.import');
-Route::resource('sales', App\Http\Controllers\SalesController::class);
+Route::middleware('auth')->group(function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+    Route::get('/sales/import', [App\Http\Controllers\IncomeController::class, 'importForm'])->name('sales.import.form');
+    Route::post('/sales/import', [App\Http\Controllers\IncomeController::class, 'import'])->name('sales.import');
+    Route::resource('sales', App\Http\Controllers\IncomeController::class);
+
+    Route::get('/product/import', [App\Http\Controllers\ProductController::class, 'importForm'])->name('product.import.form');
+    Route::post('/product/import', [App\Http\Controllers\ProductController::class, 'import'])->name('product.import');
+    Route::resource('product', App\Http\Controllers\ProductController::class);
+
+    Route::get('/chart/import', [App\Http\Controllers\ChartController::class, 'importForm'])->name('chart.import.form');
+    Route::post('/chart/import', [App\Http\Controllers\ChartController::class, 'import'])->name('chart.import');
+    Route::resource('chart', App\Http\Controllers\ChartController::class);
+});

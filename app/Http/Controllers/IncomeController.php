@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Imports\SalesImport;
-use App\Models\Sales;
+use App\Models\Income;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
-class SalesController extends Controller
+class IncomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,7 +36,7 @@ class SalesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Sales $transaction)
+    public function show(Income $transaction)
     {
         //
     }
@@ -44,7 +44,7 @@ class SalesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Sales $transaction)
+    public function edit(Income $transaction)
     {
         //
     }
@@ -52,7 +52,7 @@ class SalesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Sales $transaction)
+    public function update(Request $request, Income $transaction)
     {
         //
     }
@@ -60,7 +60,7 @@ class SalesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Sales $transaction)
+    public function destroy(Income $transaction)
     {
         //
     }
@@ -71,16 +71,17 @@ class SalesController extends Controller
         return view('sales.import-form');
     }
 
-    public function import(Request $request): \Maatwebsite\Excel\Excel|bool
+    public function import(Request $request)
     {
         $request->validate([
             'file' => 'required|mimes:xlsx|max:2048'
         ]);
 
         if (!$request->file) {
-            return false;
+            return redirect()->back()->With('message', 'Selected Files is not compatitable.')->with('type', 'danger');
         }
-        return Excel::import(new SalesImport, $request->file);
 
+        Excel::import(new SalesImport, $request->file);
+        return redirect()->back()->With('message', 'Data imported successfully.')->with('type', 'success');
     }
 }
