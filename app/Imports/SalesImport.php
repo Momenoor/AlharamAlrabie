@@ -6,6 +6,7 @@ use App\Models\Chart;
 use App\Models\Product;
 use App\Models\Income;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Concerns\ToModel;
@@ -18,9 +19,9 @@ class SalesImport implements ToModel, WithHeadingRow, WithChunkReading, WithBatc
     /**
      * @param array $row
      *
-     * @return \Illuminate\Database\Eloquent\Model|null
+     * @return Model|Income|null
      */
-    public function model(array $row)
+    public function model(array $row): Model|Income|null
     {
 
         $product = Product::where(['name' => $row['product'], 'category' => $row['sub_category']])->first();

@@ -23,15 +23,24 @@ Auth::routes();
 Route::middleware('auth')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-    Route::get('/sales/import', [App\Http\Controllers\IncomeController::class, 'importForm'])->name('sales.import.form');
-    Route::post('/sales/import', [App\Http\Controllers\IncomeController::class, 'import'])->name('sales.import');
-    Route::resource('sales', App\Http\Controllers\IncomeController::class);
+    Route::prefix('income')->name('income.')->group(function () {
 
-    Route::get('/product/import', [App\Http\Controllers\ProductController::class, 'importForm'])->name('product.import.form');
-    Route::post('/product/import', [App\Http\Controllers\ProductController::class, 'import'])->name('product.import');
+        Route::get('/sales/import', [App\Http\Controllers\IncomeController::class, 'importForm'])->name('sales.import.form');
+        Route::post('/sales/import', [App\Http\Controllers\IncomeController::class, 'import'])->name('sales.import');
+    });
+    Route::resource('income', App\Http\Controllers\IncomeController::class);
+    
+    Route::prefix('product')->name('product.')->group(function () {
+
+        Route::get('/import', [App\Http\Controllers\ProductController::class, 'importForm'])->name('import.form');
+        Route::post('/import', [App\Http\Controllers\ProductController::class, 'import'])->name('import');
+    });
     Route::resource('product', App\Http\Controllers\ProductController::class);
 
-    Route::get('/chart/import', [App\Http\Controllers\ChartController::class, 'importForm'])->name('chart.import.form');
-    Route::post('/chart/import', [App\Http\Controllers\ChartController::class, 'import'])->name('chart.import');
+    Route::prefix('chart')->name('chart.')->group(function () {
+
+        Route::get('/import', [App\Http\Controllers\ChartController::class, 'importForm'])->name('import.form');
+        Route::post('/import', [App\Http\Controllers\ChartController::class, 'import'])->name('import');
+    });
     Route::resource('chart', App\Http\Controllers\ChartController::class);
 });

@@ -35,7 +35,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('sales.import.form') }}">Sales import</a>
+                            <a class="nav-link" href="{{ route('income.sales.import.form') }}">Sales import</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('product.import.form') }}">Products List import</a>

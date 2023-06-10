@@ -74,7 +74,7 @@ class IncomeController extends Controller
     public function import(Request $request)
     {
         $request->validate([
-            'file' => 'required|mimes:xlsx|max:2048'
+            'file' => 'required|mimes:xlsx,csv|max:2048'
         ]);
 
         if (!$request->file) {

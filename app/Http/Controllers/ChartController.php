@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Imports\ChartImport;
 use App\Models\Chart;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Foundation\Application as ApplicationContract;
 use Maatwebsite\Excel\Facades\Excel;
 
 class ChartController extends Controller
@@ -12,9 +16,10 @@ class ChartController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View|Application|Factory|ApplicationContract
     {
-        //
+        $accounts = Chart::all();
+        return view('chart.index', compact('accounts'));
     }
 
     /**
@@ -22,7 +27,7 @@ class ChartController extends Controller
      */
     public function create()
     {
-        //
+        return view('chart.create');
     }
 
     /**
@@ -65,7 +70,7 @@ class ChartController extends Controller
         //
     }
 
-    public function importForm(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
+    public function importForm(): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
     {
         return view('chart.import-form');
     }
