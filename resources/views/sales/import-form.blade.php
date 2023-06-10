@@ -9,7 +9,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-12">
-                    <form action="{{route('sales.import')}}"  accept-charset="utf-8" enctype="multipart/form-data" method="POST">
+                    <form action="{{route('income.sales.import')}}"  accept-charset="utf-8" enctype="multipart/form-data" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="file">File</label>
