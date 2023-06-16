@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('daily_cash_reports', function (Blueprint $table) {
             $table->id();
+<<<<<<< HEAD
             $table->foreignId('chart_id')->references('id')->on('charts');
+=======
+            $table->foreignId('chart_id')->references('id')->on('carts');
+>>>>>>> origin/master
             $table->date('date');
             $table->string('description')->nullable();
             $table->decimal('amount', 10, 2)->nullable();
