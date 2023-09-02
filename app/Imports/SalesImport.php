@@ -31,21 +31,21 @@ class SalesImport implements ToModel, WithHeadingRow, WithChunkReading, WithBatc
         }
 
         return new Income([
-            'transaction_number'    => $row['transaction_no'],
-            'user_id'               => Auth::user()->id,
-            'chart_id'              => $chart->id,
-            'product_id'            => $product->id,
-            'system_user'           => $row['user'],
-            'type'                  => Income::SALES,
-            'amount'                => $row['total'],
-            'quantity'              => $row['quantity'],
-            'unit_price'            => $row['faceamount'],
-            'discount'              => $row['discount'],
-            'description'           => 'Comments: ' . ($row['comments']) . ' - Notes: ' . ($row['notes']),
-            'payment_method'        => $row['payment_modes'],
-            'payment_number'        => $row['visa_transactionid'],
-            'mobile_number'         => (Str::of($row['mobile_no'])->is('971')) ? null : $row['mobile_no'],
-            'created_at'            => $row['transaction_date'],
+            'transaction_number' => $row['transaction_no'],
+            'user_id' => optional(Auth::user())->id ?? null,
+            'chart_id' => $chart->id,
+            'product_id' => $product->id,
+            'system_user' => $row['user'],
+            'type' => Income::SALES,
+            'amount' => $row['total'],
+            'quantity' => $row['quantity'],
+            'unit_price' => $row['faceamount'],
+            'discount' => $row['discount'],
+            'description' => 'Comments: ' . ($row['comments']) . ' - Notes: ' . ($row['notes']),
+            'payment_method' => $row['payment_modes'],
+            'payment_number' => $row['visa_transactionid'],
+            'mobile_number' => (Str::of($row['mobile_no'])->is('971')) ? null : $row['mobile_no'],
+            'created_at' => $row['transaction_date'],
         ]);
     }
 

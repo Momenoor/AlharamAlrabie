@@ -11,16 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('daily_cash_reports', function (Blueprint $table) {
+        Schema::create('accounts', function (Blueprint $table) {
             $table->id();
-
-            $table->foreignId('chart_id')->references('id')->on('charts');
-
-            $table->foreignId('chart_id')->references('id')->on('carts');
-
-            $table->date('date');
-            $table->string('description')->nullable();
-            $table->decimal('amount', 10, 2)->nullable();
+            $table->string('name');
+            $table->decimal('balance', 10, 2);
+            $table->foreignIdFor(\App\Models\Category::class);
             $table->timestamps();
         });
     }
@@ -30,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('daily_cash_reports');
+        Schema::dropIfExists('accounts');
     }
 };

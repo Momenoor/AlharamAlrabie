@@ -26,9 +26,5 @@ class ChartSeeder extends Seeder
     public function run(): void
     {
         Chart::insert($this->item);
-<<<<<<< HEAD
-        Chart::query()->update(['created_at' => now()]);
-=======
->>>>>>> origin/master
     }
 }

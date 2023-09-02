@@ -29,7 +29,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/sales/import', [App\Http\Controllers\IncomeController::class, 'import'])->name('sales.import');
     });
     Route::resource('income', App\Http\Controllers\IncomeController::class);
-    
+
     Route::prefix('product')->name('product.')->group(function () {
 
         Route::get('/import', [App\Http\Controllers\ProductController::class, 'importForm'])->name('import.form');
@@ -43,4 +43,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/import', [App\Http\Controllers\ChartController::class, 'import'])->name('import');
     });
     Route::resource('chart', App\Http\Controllers\ChartController::class);
+    Route::resource('chartofaccounts', App\Http\Controllers\ChartOfAccountsController::class);
+
+    Route::resource('account', App\Http\Controllers\AccountController::class);
 });

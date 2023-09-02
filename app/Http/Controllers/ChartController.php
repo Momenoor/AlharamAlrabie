@@ -70,7 +70,7 @@ class ChartController extends Controller
         //
     }
 
-    public function importForm(): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
+    public function importForm()
     {
         return view('chart.import-form');
     }
@@ -81,11 +81,11 @@ class ChartController extends Controller
             'file' => 'required|mimes:xlsx|max:2048'
         ]);
 
-        if (!$request->file) {
-            return redirect()->back()->With('message', 'Selected Files is not compatitable.')->with('type', 'danger');
+        if (!$request->has('file')) {
+            return redirect()->back()->With('message', 'Selected Files is not compatible.')->with('type', 'danger');
         }
 
-        Excel::import(new ChartImport, $request->file);
+        Excel::import(new ChartImport, $request->get('file'));
         return redirect()->back()->With('message', 'Data imported successfully.')->with('type', 'success');
     }
 }

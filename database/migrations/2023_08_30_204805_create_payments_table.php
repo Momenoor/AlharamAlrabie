@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,16 +12,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('daily_cash_reports', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
-
-            $table->foreignId('chart_id')->references('id')->on('charts');
-
-            $table->foreignId('chart_id')->references('id')->on('carts');
-
-            $table->date('date');
-            $table->string('description')->nullable();
-            $table->decimal('amount', 10, 2)->nullable();
+            $table->dateTime('paid_at');
+            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(\App\Models\Transaction::class);
+            $table->decimal('amount',10,2);
+            $table->string('method');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('daily_cash_reports');
+        Schema::dropIfExists('payments');
     }
 };
