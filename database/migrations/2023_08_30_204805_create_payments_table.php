@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\Transaction::class);
             $table->decimal('amount',10,2);
             $table->string('method');
+            $table->string('reference');
             $table->string('status');
             $table->timestamps();
         });

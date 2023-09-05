@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
+use App\Models\Item;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 
@@ -20,7 +22,20 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        //
+
+        $mode = request()->get('mode') ?? '';
+        $view = $mode . '.';
+        if ($mode == 'sales') {
+            $items = Item::where('type', 'product')->get();
+        } else if ($mode == 'expense') {
+            $items = Item::where('type', 'expense')->get();
+        } else {
+            $items = Item::all();
+        }
+
+        $accounts = Account::all();
+
+        return view('transactions.' . $view . 'create', compact('items', 'accounts'));
     }
 
     /**

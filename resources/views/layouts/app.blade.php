@@ -35,14 +35,20 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('income.sales.import.form') }}">Sales import</a>
+                            <a class="nav-link" href="">Sales import</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('product.import.form') }}">Products List import</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Operation
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{route('transaction.create')}}?mode=expense">Add Expense</a></li>
+                                <li><a class="dropdown-item" href="{{route('transaction.create')}}?mode=sales">Add Sales</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{{route('transaction.create')}}?mode=general">General Transaction</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('chart.import.form') }}">Chart of Accounts import</a>
-                        </li>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -94,6 +100,8 @@
             @yield('content')
         </main>
     </div>
+@yield('scripts')
+@stack('scripts')
 </body>
 
 </html>

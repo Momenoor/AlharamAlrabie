@@ -13,13 +13,16 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
+            $table->string('reference');
             $table->foreignIdFor(\App\Models\Account::class);
             $table->dateTime('date');
             $table->decimal('amount',10,2);
+            $table->decimal('discount',10,2);
             $table->string('description');
             $table->foreignIdFor(\App\Models\Category::class);
             $table->foreignIdFor(\App\Models\User::class);
             $table->string('status');
+            $table->string('service_type')->nullable();
             $table->timestamps();
         });
     }

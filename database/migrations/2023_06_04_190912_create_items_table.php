@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('description')->nullable();
-            $table->string('price')->nullable();
+            $table->string('price')->default(0);
+            $table->foreignIdFor(\App\Models\Account::class)->nullable()->constrained();
             $table->string('image')->nullable();
             $table->string('slug')->nullable();
             $table->string('category')->nullable();
+            $table->string('type')->nullable();
             $table->timestamps();
         });
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Journal;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,16 +12,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('daily_cash_reports', function (Blueprint $table) {
+        Schema::create('journal_entries', function (Blueprint $table) {
             $table->id();
-
-            $table->foreignId('chart_id')->references('id')->on('charts');
-
-            $table->foreignId('chart_id')->references('id')->on('carts');
-
-            $table->date('date');
-            $table->string('description')->nullable();
-            $table->decimal('amount', 10, 2)->nullable();
+            $table->foreignIdFor(Journal::class)->constrained();
+            $table->foreignIdFor(\App\Models\Account::class);
+            $table->decimal('debit', 10, 2)->default(0);
+            $table->decimal('credit', 10, 2)->default(0);
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('daily_cash_reports');
+        Schema::dropIfExists('journal_entries');
     }
 };

@@ -15,10 +15,7 @@ return new class extends Migration
             $table->id();
             $table->dateTime('date');
             $table->foreignIdFor(\App\Models\User::class);
-            $table->foreignIdFor(\App\Models\Account::class);
-            $table->foreignIdFor(\App\Models\Transaction::class);
-            $table->decimal('amount', 10, 2);
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

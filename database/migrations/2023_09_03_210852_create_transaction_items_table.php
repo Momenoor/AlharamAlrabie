@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('chart_of_accounts', function (Blueprint $table) {
+        Schema::create('transaction_items', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('code');
-            $table->string('category');
-            $table->nestedSet();
+            $table->foreignIdFor(\App\Models\Transaction::class);
+            $table->foreignIdFor(\App\Models\Item::class);
+            $table->integer('quantity')->default(1);
+            $table->decimal('price', 10, 2);
+            $table->decimal('discount', 10, 2);
             $table->timestamps();
         });
     }
@@ -26,9 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('chart_of_accounts', function (Blueprint $table) {
-            $table->dropNestedSet();
-        });
-        Schema::dropIfExists('chart_of_accounts');
+        Schema::dropIfExists('transaction_items');
     }
 };
