@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/menu',[App\Http\Controllers\HomeController::class, 'menu'])->name('menu');
+
 Auth::routes();
 
 Route::middleware('auth')->group(function () {
