@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except('menu');
+        $this->middleware('auth')->except(['menu','index']);
     }
 
     /**
@@ -23,8 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $api_key = config('services.google.maps.key');
+        $place_id = config('services.google.maps.place_id');
+        $url = sprintf('https://maps.googleapis.com/maps/api/place/details/json?placeid=%s&key=%s',$place_id,$api_key);
+        $result = json_decode(Http::get($url)->body())->result;
+        $reviews = $result->reviews;
 
-        return view('home');
+        return view('home',compact('reviews'));
     }
 
     public function menu(){

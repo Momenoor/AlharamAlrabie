@@ -11,16 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/menu',[App\Http\Controllers\HomeController::class, 'menu'])->name('menu');
 
 Auth::routes();
 
 Route::middleware('auth')->group(function () {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('account', App\Http\Controllers\AccountController::class);
     Route::resource('transaction', App\Http\Controllers\TransactionController::class);
 });

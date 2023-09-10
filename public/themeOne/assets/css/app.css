@@ -1,0 +1,95 @@
+.logo-container {
+
+    position: relative;
+    max-width: 14vw;
+    width: 100%;
+    display: inline-block;
+    z-index: 2;
+}
+
+.triangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    clip-path: polygon(10% 40%, 90% 10%, 40% 90%);
+    z-index: 1;
+}
+
+.logo {
+    width: 10vw;
+    display: block;
+    position: relative; /* Make it positioned relative to its parent */
+    z-index: 2; /* Make sure the logo is on top of the triangle */
+    margin: 0 auto; /* Center the logo vertically and horizontally */
+}
+
+.launcher .sidebar {
+    background-color: rgba(0, 0,0, 0.3);
+}
+
+.sandwich-icon-1 {
+    background-image: url('../media/misc/layout/sandwich-icon-1.png');
+    width: 210px;
+    height: 210px;
+}
+
+.sandwich-icon-2 {
+    background-image: url('../media/misc/layout/sandwich-icon-2.png');
+    width: 300px;
+    height: 150px;
+}
+
+.sandwich-icon-3 {
+    background-image: url('../media/misc/layout/sandwich-icon-3.png');
+    width: 245px;
+    height: 140px;
+}
+
+.sandwich-icon-4 {
+    background-image: url('../media/misc/layout/sandwich-icon-4.png');
+    width: 250px;
+    height: 145px;
+}
+
+.chill-icon-1 {
+    background-image: url('../media/misc/layout/chill-icon-1.png');
+    width: 90px;
+    height: 85px;
+}
+
+.chill-icon-2 {
+    background-image: url('../media/misc/layout/chill-icon-2.png');
+    width: 390px;
+    height: 235px;
+}
+
+.chill-icon-3 {
+    background-image: url('../media/misc/layout/chill-icon-3.png');
+    width: 150px;
+    height: 160px;
+}
+
+.chill-icon-4 {
+    background-image: url('../media/misc/layout/chill-icon-4.png');
+    width: 625px;
+    height: 180px;
+}
+
+.chill-icon-5 {
+    background-image: url('../media/misc/layout/chill-icon-5.png');
+    width: 150px;
+    height: 135px;
+}
+
+.bg-icons {
+    position: absolute;
+    display: block;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: -1;
+    background-size: contain;
+}
+
