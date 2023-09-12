@@ -22,5 +22,5 @@
         <!--end::Logo-->
     </div>
     <!--end::Brand-->
-    @include('themeOne::layouts.body._base')
+    @include('themeOne::layouts.home.body._base')
 </div>

@@ -3,13 +3,13 @@
      data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"
      data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_sidebar_toggle">
     <!--begin::Header-->
-    @include('themeOne::layouts.sidebar._header')
+    @include('themeOne::layouts.home.sidebar._header')
     <!--end::Header-->
     <!--begin::Body-->
-    @include('themeOne::layouts.sidebar._body')
+    @include('themeOne::layouts.home.sidebar._body')
     <!--end::Body-->
     <!--begin::Footer-->
-    @include('themeOne::layouts.sidebar._footer')
+    @include('themeOne::layouts.home.sidebar._footer')
     <!--end::Footer-->
 </div>
 <!--end::Sidebar-->
