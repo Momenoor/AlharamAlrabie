@@ -38,7 +38,7 @@
                                 </div>
                                 <!--end::Info-->
                                 <!--begin::User-->
-                                <a class="btn btn-link btn-active-color-dark" href="{{$review->author_url}}">{{$review->author_name}}</a>
+                                <a class="btn btn-link text-white" href="{{$review->author_url}}">{{$review->author_name}}</a>
                                 <!--end::User-->
                             </div>
                             <!--end::Description-->

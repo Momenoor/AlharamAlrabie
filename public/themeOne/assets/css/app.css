@@ -1,8 +1,8 @@
 .logo-container {
 
     position: relative;
-    max-width: 14vw;
-    width: 100%;
+    max-width: 180px;
+    width: 180px;
     display: inline-block;
     z-index: 2;
 }
@@ -19,7 +19,7 @@
 }
 
 .logo {
-    width: 10vw;
+    width: 150px;
     display: block;
     position: relative; /* Make it positioned relative to its parent */
     z-index: 2; /* Make sure the logo is on top of the triangle */
@@ -93,3 +93,17 @@
     background-size: contain;
 }
 
+@keyframes fall {
+    to {
+        transform: translateY(calc(100vh - 100%));
+    }
+}
+
+.falling-image {
+    position: absolute;
+    top: -235px;
+    left: 0;
+    opacity: 0.5; /* adjust as needed */
+    will-change: transform; /* optimizes animations */
+    z-index: -1;
+}

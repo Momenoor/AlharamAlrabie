@@ -14,11 +14,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind('view.finder', function ($app) {
+        /*$this->app->bind('view.finder', function ($app) {
             $paths = [base_path('resources/views/themeOne')]; // Your subfolder path
 
             return new FileViewFinder($app['files'], $paths);
-        });
+        });*/
 
         require_once app_path('helper.php');
     }

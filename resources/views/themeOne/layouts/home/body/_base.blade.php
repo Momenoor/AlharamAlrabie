@@ -3,7 +3,7 @@
     <!--begin::Col-->
     <div class="col-xxl-5">
         <!--begin::Card-->
-        <div class="card border-0 shadow-none h-lg-100 opacity-75" style="background-color: #d28922">
+        <div class="card border-0 shadow-none h-lg-100" style="background-color: #d28922">
             <!--begin::Card body-->
             <div class="card-header ribbon ribbon-start ribbon-clip">
                 <div class="ribbon-label">
@@ -13,10 +13,10 @@
                     <span class="ribbon-inner bg-info"></span>
                 </div>
             </div>
-            <div class="card-body d-flex flex-column flex-center pb-0 pt-15">
+            <div class="card-body d-flex flex-column flex-center pb-0 pt-0">
                 <!--begin::Wrapper-->
 
-                <div class="px-10 mb-10">
+                <div class="px-5 mb-5">
                     <!--begin::Heading-->
                     <h3 class="text-white mb-2 fw-bolder text-center text-uppercase mb-6">Discover Our Menu</h3>
                     <!--end::Heading-->
@@ -51,7 +51,7 @@
             <div class="col-sm-6">
                 <!--begin::Card-->
                 <a href="https://www.facebook.com/alharam.alrabie.cafeteria"
-                   class="card border-0 shadow-none bg-primary min-h-200px mb-7  opacity-75">
+                   class="card border-0 shadow-none bg-primary min-h-200px mb-7">
                     <!--begin::Card body-->
                     <div class="card-body  d-flex flex-column flex-center text-center">
                         <!--begin::Illustrations-->
@@ -72,7 +72,7 @@
             <div class="col-sm-6">
                 <!--begin::Card-->
                 <a href="https://www.instagram.com/alharam.alrabie.cafeteria/" data-bs-toggle="modal"
-                   class="card border-0 shadow-none min-h-200px mb-7  opacity-75" style="background-color: #5A1A34">
+                   class="card border-0 shadow-none min-h-200px mb-7" style="background-color: #5A1A34">
                     <!--begin::Card body-->
                     <div class="card-body d-flex flex-column flex-center text-center">
                         <!--begin::Illustrations-->
@@ -92,7 +92,7 @@
         </div>
         <!--end::Row-->
         <!--begin::Card-->
-        <div class="card border-0 shadow-none min-h-200px  opacity-75" style="background-color: #D5D83D">
+        <div class="card border-0 shadow-none min-h-200px" style="background-color: #D5D83D">
             <!--begin::Card body-->
 
             <!--begin::Illustrations-->

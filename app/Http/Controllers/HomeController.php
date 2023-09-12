@@ -30,10 +30,10 @@ class HomeController extends Controller
         $result = json_decode(Http::get($url)->body())->result;
         $reviews = $result->reviews;
 
-        return view('home',compact('reviews'));
+        return view('themeOne::home',compact('reviews'));
     }
 
     public function menu(){
-        return view('menu');
+        return view('themeOne::menu');
     }
 }
