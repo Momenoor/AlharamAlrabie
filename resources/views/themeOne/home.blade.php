@@ -1,4 +1,4 @@
-@extends('themeOne::layouts.app')
+@extends('themeOne::layouts.home.app')
 
 @section('content')
     <div class="page launcher sidebar-enabled d-flex flex-row flex-column-fluid me-lg-5" id="kt_page">
