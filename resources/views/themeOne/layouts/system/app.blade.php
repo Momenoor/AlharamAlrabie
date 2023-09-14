@@ -33,21 +33,26 @@
 <!--end::Head-->
 <!--begin::Body-->
 <body id="kt_body" data-kt-app-page-loading-enabled="true" data-kt-app-page-loading="on"
-      style="background: radial-gradient(circle at center, #c96163, #af0808);"
-      class="page-bg">
+      {{--style="background: radial-gradient(circle at center, #c96163, #af0808);"--}}
+      class="">
 @include('themeOne::partials.theme-mode._init')
 @include('themeOne::partials._loader')
 <!--begin::Main-->
 <!--begin::Root-->
 <div class="d-flex flex-column flex-root">
     <!--begin::Page-->
-    <!--begin::Wrapper-->
-    @yield('content')
-    <!--end::Wrapper-->
+    <div class="page d-flex flex-row flex-column-fluid">
+        {{--@include('themeOne::layouts.system.aside._base')--}}
+        <!--begin::Wrapper-->
+        <div class="{{--wrapper--}} d-flex flex-column flex-row-fluid" id="kt_wrapper">
+            @include('themeOne::layouts.system.header._base')
+            @include('themeOne::layouts.system.body._base')
+            @include('themeOne::layouts.system.footer._base')
+        </div>
+        <!--end::Wrapper-->
+    </div>
+    <!--end::Page-->
 </div>
-
-<!--end::Page-->
-
 <!--end::Root-->
 @include('themeOne::partials._scroll-top')
 <!--begin::Javascript-->
@@ -75,7 +80,7 @@
 <!--begin::Custom Javascript(used for this page only)-->
 <script src="{{asset('themeOne/assets/js/widgets.bundle.js')}}"></script>
 <script src="{{asset('themeOne/assets/js/custom/widgets.js')}}"></script>
-<script src="{{asset('themeOne/assets/js/app.js')}}"></script>
+<script src="{{asset('themeOne/assets/js/system.js')}}"></script>
 <!--end::Custom Javascript-->
 <!--end::Javascript-->
 </body>
