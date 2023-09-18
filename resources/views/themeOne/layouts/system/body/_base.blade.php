@@ -7,7 +7,9 @@
         <!--begin::Container-->
         <div id="kt_content_container" class="container-xxl">
             <!--begin::Row-->
-            @yield('content')
+            <div class="d-flex">
+                @yield('content')
+            </div>
             <!--end::Modals-->
         </div>
         <!--end::Container-->
