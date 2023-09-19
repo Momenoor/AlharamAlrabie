@@ -21,7 +21,7 @@
                         <img src="{{asset('themeOne/assets/media/svg/food-icons/coffee.svg')}}" alt="">
                     </div>
                     <div class="flex-grow-1">
-                        desctription
+                        description
                     </div>
                     <div>
                         12 / 15 AED
@@ -30,7 +30,6 @@
             </div>
             <div class="col"></div>
         </div>
-    </div>
     </div>
 
 @endsection
