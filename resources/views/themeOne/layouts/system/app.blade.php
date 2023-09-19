@@ -41,10 +41,10 @@
 <!--begin::Root-->
 <div class="d-flex flex-column flex-root">
     <!--begin::Page-->
-    <div class="page d-flex flex-row flex-column-fluid">
+    <div class="page d-flex flex-row flex-column-fluid pt-3">
         {{--@include('themeOne::layouts.system.aside._base')--}}
         <!--begin::Wrapper-->
-        <div class="{{--wrapper--}} d-flex flex-column flex-row-fluid" id="kt_wrapper">
+        <div class="{{--wrapper--}} d-flex flex-column flex-row-fluid pt-20" id="kt_wrapper">
             @include('themeOne::layouts.system.header._base')
             @include('themeOne::layouts.system.body._base')
             @include('themeOne::layouts.system.footer._base')
