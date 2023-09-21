@@ -27,7 +27,7 @@
 }
 
 .launcher .sidebar {
-    background-color: rgba(0, 0,0, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .sandwich-icon-1 {
@@ -106,4 +106,12 @@
     opacity: 0.5; /* adjust as needed */
     will-change: transform; /* optimizes animations */
     z-index: -1;
+}
+
+.text-justify {
+    text-align: justify !important;
+}
+
+.v-line {
+    height: 2px; /* Set this to your desired height */
 }
