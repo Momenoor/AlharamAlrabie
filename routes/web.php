@@ -15,9 +15,12 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Route::get('/menu',[App\Http\Controllers\HomeController::class, 'menu'])->name('menu');
 
+
+
 Auth::routes();
 
 Route::middleware('auth')->group(function () {
+    route::resource('item', App\Http\Controllers\ItemController::class);
     Route::resource('account', App\Http\Controllers\AccountController::class);
     Route::resource('transaction', App\Http\Controllers\TransactionController::class);
 });
