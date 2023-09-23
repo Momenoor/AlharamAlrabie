@@ -7,7 +7,7 @@
             <div class="card-title">
                 <!--begin::Search-->
                 <div class="d-flex align-items-center position-relative my-1">
-                    {{ getSvgIcon('icons/duotune/general/gen021.svg','svg-icon-1 position-absolute ms-4')}}
+                    {!!  getSvgIcon('icons/duotune/general/gen021.svg','svg-icon-1 position-absolute ms-4')!!}
                     <label>
                         <input type="text" data-product-filter="search"
                                class="form-control form-control-solid w-250px ps-14" placeholder="Search Product"/>
@@ -34,7 +34,7 @@
                 </div>
                 <!--begin::Add product-->
                 <a href="{{route('item.create')}}" class="btn btn-primary">Add
-                    Product</a>
+                    Item</a>
                 <!--end::Add product-->
             </div>
             <!--end::Card toolbar-->
@@ -57,12 +57,13 @@
                         </div>
                     </th>
                     <th class="min-w-200px">Product</th>
-                    <th class="text-end min-w-100px">SKU</th>
-                    <th class="text-end min-w-70px">Qty</th>
-                    <th class="text-end min-w-100px">Price</th>
-                    <th class="text-end min-w-100px">Rating</th>
-                    <th class="text-end min-w-100px">Status</th>
-                    <th class="text-end min-w-70px">Actions</th>
+                    <th class="min-w-100px">Description</th>
+                    <th class="min-w-70px">Type</th>
+                    <th class="min-w-100px">Price</th>
+                    <th class="min-w-100px">Category</th>
+                    <th class="min-w-100px">Account</th>
+                    <th class="min-w-100px">Status</th>
+                    <th class="min-w-100px">Actions</th>
                 </tr>
                 <!--end::Table row-->
                 </thead>
@@ -76,107 +77,50 @@
                         <td>
                             <div class="d-flex align-items-center">
                                 <!--begin::Thumbnail-->
-                                <a href="../../demo22/dist/apps/ecommerce/catalog/edit-product.html"
+                                <a href="{{route('item.edit',$item)}}"
                                    class="symbol symbol-50px">
                                 <span class="symbol-label"
-                                      style="background-image:url(assets/media//stock/ecommerce/1.gif);"></span>
+                                      style="background-image:url({{$item->image}});"></span>
                                 </a>
                                 <!--end::Thumbnail-->
-                                <div class="ms-5">
-                                    <!--begin::Title-->
-                                    <a href="../../demo22/dist/apps/ecommerce/catalog/edit-product.html"
-                                       class="text-gray-800 text-hover-primary fs-5 fw-bold"
-                                       data-kt-ecommerce-product-filter="product_name">Product 1</a>
-                                    <!--end::Title-->
-                                </div>
+
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <!--begin::Title-->
+                                <a href="{{route('item.edit',$item)}}"
+                                   class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                                   data-kt-ecommerce-product-filter="product_name">{{$item->name}}</a>
+                                <!--end::Title-->
                             </div>
                         </td>
                         <!--end::Category=-->
                         <!--begin::SKU=-->
-                        <td class="text-end pe-0">
-                            <span class="fw-bold">04918008</span>
+                        <td class="pe-0">
+                            <span class="fw-bold">{{$item->description}}</span>
                         </td>
                         <!--end::SKU=-->
                         <!--begin::Qty=-->
-                        <td class="text-end pe-0" data-order="0">
-                            <span class="badge badge-light-danger">Sold out</span>
-                            <span class="fw-bold text-danger ms-3">0</span>
+                        <td class="text-end pe-0">
+                            <span class="badge badge-light-danger">{{$item->type}}</span>
                         </td>
                         <!--end::Qty=-->
                         <!--begin::Price=-->
-                        <td class="text-end pe-0">244</td>
+                        <td class="text-end pe-0">{{$item->price}}</td>
                         <!--end::Price=-->
                         <!--begin::Rating-->
-                        <td class="text-end pe-0" data-order="rating-5">
-                            <div class="rating justify-content-end">
-                                <div class="rating-label checked">
-                                    <!--begin::Svg Icon | path: icons/duotune/general/gen029.svg-->
-                                    <span class="svg-icon svg-icon-2">
-																		<svg width="24" height="24" viewBox="0 0 24 24"
-                                                                             fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-																			<path
-                                                                                d="M11.1359 4.48359C11.5216 3.82132 12.4784 3.82132 12.8641 4.48359L15.011 8.16962C15.1523 8.41222 15.3891 8.58425 15.6635 8.64367L19.8326 9.54646C20.5816 9.70867 20.8773 10.6186 20.3666 11.1901L17.5244 14.371C17.3374 14.5803 17.2469 14.8587 17.2752 15.138L17.7049 19.382C17.7821 20.1445 17.0081 20.7069 16.3067 20.3978L12.4032 18.6777C12.1463 18.5645 11.8537 18.5645 11.5968 18.6777L7.69326 20.3978C6.99192 20.7069 6.21789 20.1445 6.2951 19.382L6.7248 15.138C6.75308 14.8587 6.66264 14.5803 6.47558 14.371L3.63339 11.1901C3.12273 10.6186 3.41838 9.70867 4.16744 9.54646L8.3365 8.64367C8.61089 8.58425 8.84767 8.41222 8.98897 8.16962L11.1359 4.48359Z"
-                                                                                fill="currentColor"/>
-																		</svg>
-																	</span>
-                                    <!--end::Svg Icon-->
-                                </div>
-                                <div class="rating-label checked">
-                                    <!--begin::Svg Icon | path: icons/duotune/general/gen029.svg-->
-                                    <span class="svg-icon svg-icon-2">
-																		<svg width="24" height="24" viewBox="0 0 24 24"
-                                                                             fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-																			<path
-                                                                                d="M11.1359 4.48359C11.5216 3.82132 12.4784 3.82132 12.8641 4.48359L15.011 8.16962C15.1523 8.41222 15.3891 8.58425 15.6635 8.64367L19.8326 9.54646C20.5816 9.70867 20.8773 10.6186 20.3666 11.1901L17.5244 14.371C17.3374 14.5803 17.2469 14.8587 17.2752 15.138L17.7049 19.382C17.7821 20.1445 17.0081 20.7069 16.3067 20.3978L12.4032 18.6777C12.1463 18.5645 11.8537 18.5645 11.5968 18.6777L7.69326 20.3978C6.99192 20.7069 6.21789 20.1445 6.2951 19.382L6.7248 15.138C6.75308 14.8587 6.66264 14.5803 6.47558 14.371L3.63339 11.1901C3.12273 10.6186 3.41838 9.70867 4.16744 9.54646L8.3365 8.64367C8.61089 8.58425 8.84767 8.41222 8.98897 8.16962L11.1359 4.48359Z"
-                                                                                fill="currentColor"/>
-																		</svg>
-																	</span>
-                                    <!--end::Svg Icon-->
-                                </div>
-                                <div class="rating-label checked">
-                                    <!--begin::Svg Icon | path: icons/duotune/general/gen029.svg-->
-                                    <span class="svg-icon svg-icon-2">
-																		<svg width="24" height="24" viewBox="0 0 24 24"
-                                                                             fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-																			<path
-                                                                                d="M11.1359 4.48359C11.5216 3.82132 12.4784 3.82132 12.8641 4.48359L15.011 8.16962C15.1523 8.41222 15.3891 8.58425 15.6635 8.64367L19.8326 9.54646C20.5816 9.70867 20.8773 10.6186 20.3666 11.1901L17.5244 14.371C17.3374 14.5803 17.2469 14.8587 17.2752 15.138L17.7049 19.382C17.7821 20.1445 17.0081 20.7069 16.3067 20.3978L12.4032 18.6777C12.1463 18.5645 11.8537 18.5645 11.5968 18.6777L7.69326 20.3978C6.99192 20.7069 6.21789 20.1445 6.2951 19.382L6.7248 15.138C6.75308 14.8587 6.66264 14.5803 6.47558 14.371L3.63339 11.1901C3.12273 10.6186 3.41838 9.70867 4.16744 9.54646L8.3365 8.64367C8.61089 8.58425 8.84767 8.41222 8.98897 8.16962L11.1359 4.48359Z"
-                                                                                fill="currentColor"/>
-																		</svg>
-																	</span>
-                                    <!--end::Svg Icon-->
-                                </div>
-                                <div class="rating-label checked">
-                                    <!--begin::Svg Icon | path: icons/duotune/general/gen029.svg-->
-                                    <span class="svg-icon svg-icon-2">
-																		<svg width="24" height="24" viewBox="0 0 24 24"
-                                                                             fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-																			<path
-                                                                                d="M11.1359 4.48359C11.5216 3.82132 12.4784 3.82132 12.8641 4.48359L15.011 8.16962C15.1523 8.41222 15.3891 8.58425 15.6635 8.64367L19.8326 9.54646C20.5816 9.70867 20.8773 10.6186 20.3666 11.1901L17.5244 14.371C17.3374 14.5803 17.2469 14.8587 17.2752 15.138L17.7049 19.382C17.7821 20.1445 17.0081 20.7069 16.3067 20.3978L12.4032 18.6777C12.1463 18.5645 11.8537 18.5645 11.5968 18.6777L7.69326 20.3978C6.99192 20.7069 6.21789 20.1445 6.2951 19.382L6.7248 15.138C6.75308 14.8587 6.66264 14.5803 6.47558 14.371L3.63339 11.1901C3.12273 10.6186 3.41838 9.70867 4.16744 9.54646L8.3365 8.64367C8.61089 8.58425 8.84767 8.41222 8.98897 8.16962L11.1359 4.48359Z"
-                                                                                fill="currentColor"/>
-																		</svg>
-																	</span>
-                                    <!--end::Svg Icon-->
-                                </div>
-                                <div class="rating-label checked">
-                                    <!--begin::Svg Icon | path: icons/duotune/general/gen029.svg-->
-                                    <span class="svg-icon svg-icon-2">
-																		<svg width="24" height="24" viewBox="0 0 24 24"
-                                                                             fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-																			<path
-                                                                                d="M11.1359 4.48359C11.5216 3.82132 12.4784 3.82132 12.8641 4.48359L15.011 8.16962C15.1523 8.41222 15.3891 8.58425 15.6635 8.64367L19.8326 9.54646C20.5816 9.70867 20.8773 10.6186 20.3666 11.1901L17.5244 14.371C17.3374 14.5803 17.2469 14.8587 17.2752 15.138L17.7049 19.382C17.7821 20.1445 17.0081 20.7069 16.3067 20.3978L12.4032 18.6777C12.1463 18.5645 11.8537 18.5645 11.5968 18.6777L7.69326 20.3978C6.99192 20.7069 6.21789 20.1445 6.2951 19.382L6.7248 15.138C6.75308 14.8587 6.66264 14.5803 6.47558 14.371L3.63339 11.1901C3.12273 10.6186 3.41838 9.70867 4.16744 9.54646L8.3365 8.64367C8.61089 8.58425 8.84767 8.41222 8.98897 8.16962L11.1359 4.48359Z"
-                                                                                fill="currentColor"/>
-																		</svg>
-																	</span>
-                                    <!--end::Svg Icon-->
-                                </div>
-                            </div>
+                        <td class="text-end pe-0">
+                            {{$item->category}}
                         </td>
                         <!--end::Rating-->
+                        <!--begin::Status=-->
+                        <td class="text-end pe-0">
+                            <!--begin::Badges-->
+                            {{optional($item->account)->name}}
+                            <!--end::Badges-->
+                        </td>
+                        <!--end::Status=-->
                         <!--begin::Status=-->
                         <td class="text-end pe-0" data-order="Inactive">
                             <!--begin::Badges-->

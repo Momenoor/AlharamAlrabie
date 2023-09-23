@@ -13,10 +13,10 @@ if (!function_exists('getSvgIcon')) {
     function getSvgIcon($path, $class = ""): string
     {
 
-        $full_path = asset('themeOne/assets/media/' . $path);
+        $full_path = ('./themeOne/assets/media/' . $path);
 
         if (!file_exists($full_path)) {
-            return "<!--SVG file not found: $path-->\n";
+            return "<!--SVG file not found: $full_path-->\n";
         }
 
         $cls = array("svg-icon");
