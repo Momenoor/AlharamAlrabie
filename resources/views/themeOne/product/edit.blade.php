@@ -26,7 +26,7 @@
                              data-kt-image-input="true">
                             <!--begin::Preview existing avatar-->
                             <div class="image-input-wrapper w-150px h-150px"
-                                 style="background-image: url('{{$product->image}}')"></div>
+                                 style="background-image: url('{{old('image',$product->image)}}')"></div>
                             <!--end::Preview existing avatar-->
                             <!--begin::Label-->
                             <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
@@ -36,7 +36,8 @@
                                     <span class="path2"></span>
                                 </i>
                                 <!--begin::Inputs-->
-                                <input type="file" name="image" value="{{$product->image}}" accept=".png, .jpg, .jpeg"/>
+                                <input type="file" name="image" value="{{old('image',$product->image)}}"
+                                       accept=".png, .jpg, .jpeg"/>
                                 <input type="hidden" name="image_remove"/>
                                 <!--end::Inputs-->
                             </label>
@@ -237,7 +238,7 @@
                                         <!--begin::Label-->
                                         <label for="name" class="required form-label">Product Name</label>
                                         <input type="text" id="name" name="name" class="form-control mb-2"
-                                               placeholder="Product name" value="{{$product->name}}"/>
+                                               placeholder="Product name" value="{{old('name',$product->name)}}"/>
                                         <!--end::Input-->
                                         <!--begin::Description-->
                                         <div class="text-muted fs-7">A product name is required and recommended to be
@@ -253,7 +254,9 @@
                                         <!--end::Label-->
                                         <!--begin::Editor-->
                                         <div id="kt_ecommerce_edit_product_description"
-                                             name="description" class="min-h-200px mb-2">{{$product->description}}</div>
+                                             class="min-h-200px mb-2">{{old('description',$product->description)}}</div>
+                                        <input type="hidden" name="description"
+                                               value="{{old('description',$product->description)}}"/>
                                         <!--end::Editor-->
                                         <!--begin::Description-->
                                         <div class="text-muted fs-7">Set a description to the product for better
@@ -531,6 +534,10 @@
             placeholder: 'Type your text here...',
             theme: 'snow' // or 'bubble'
         });
+        quill.on('text-change', function () {
+            $('[name="description"]').val(quill.root.innerHTML);
+        });
+
         $('#kt_ecommerce_edit_product_categories').on('change', function (e) {
             const initialCategories = {!! $product->categories->toJson() !!};
             const oldCategoryPrices = @json(old('category_price', []));
@@ -551,7 +558,7 @@
                         inputValue = initialCategory.pivot.price;
                     }
                 }
-                priceContainer.append(`<div class="form-group">
+                priceContainer.append(`<div class="form-group mb-5">
                 <label class="form-label">Price for ${name}</label>
                 <input type="text" class="form-control" name="category_price[${id}]" value="${inputValue}">
             </div>`);
@@ -566,7 +573,7 @@
             } else {
                 $('#kt_ecommerce_edit_product_status').removeClass('bg-success').addClass('bg-danger');
             }
-        })
+        }).trigger('change');
 
     </script>
 @endpush
