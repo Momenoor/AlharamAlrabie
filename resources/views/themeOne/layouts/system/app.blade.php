@@ -81,6 +81,8 @@
 <script src="{{asset('themeOne/assets/js/widgets.bundle.js')}}"></script>
 <script src="{{asset('themeOne/assets/js/custom/widgets.js')}}"></script>
 <script src="{{asset('themeOne/assets/js/system.js')}}"></script>
+@yield('scripts')
+@stack('scripts')
 <!--end::Custom Javascript-->
 <!--end::Javascript-->
 </body>

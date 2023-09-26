@@ -11,7 +11,7 @@ class Account extends Model
 
     public function transactions(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(Transaction::class);
+        return $this->hasMany(Sales::class);
     }
 
     public function parent(): \Illuminate\Database\Eloquent\Relations\BelongsTo

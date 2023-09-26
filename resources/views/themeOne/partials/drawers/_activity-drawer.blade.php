@@ -32,7 +32,7 @@
                  data-kt-scroll-wrappers="#kt_activities_body"
                  data-kt-scroll-dependencies="#kt_activities_header, #kt_activities_footer"
                  data-kt-scroll-offset="5px">
-                <!--begin::Timeline items-->
+                <!--begin::Timeline product-->
                 <div class="timeline timeline-border-dashed">
                     <!--begin::Timeline item-->
                     <div class="timeline-item">
@@ -237,7 +237,7 @@
                             <div class="overflow-auto pb-5">
                                 <div
                                     class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-700px p-5">
-                                    <!--begin::Item-->
+                                    <!--begin::Product-->
                                     <div class="d-flex flex-aligns-center pe-10 pe-lg-20">
                                         <!--begin::Icon-->
                                         <img alt="" class="w-30px me-3" src="assets/media/svg/files/pdf.svg"/>
@@ -254,8 +254,8 @@
                                         </div>
                                         <!--begin::Info-->
                                     </div>
-                                    <!--end::Item-->
-                                    <!--begin::Item-->
+                                    <!--end::Product-->
+                                    <!--begin::Product-->
                                     <div class="d-flex flex-aligns-center pe-10 pe-lg-20">
                                         <!--begin::Icon-->
                                         <img alt="?page=apps/projects/project" class="w-30px me-3"
@@ -273,8 +273,8 @@
                                         </div>
                                         <!--end::Info-->
                                     </div>
-                                    <!--end::Item-->
-                                    <!--begin::Item-->
+                                    <!--end::Product-->
+                                    <!--begin::Product-->
                                     <div class="d-flex flex-aligns-center">
                                         <!--begin::Icon-->
                                         <img alt="?page=apps/projects/project" class="w-30px me-3"
@@ -291,7 +291,7 @@
                                         </div>
                                         <!--end::Icon-->
                                     </div>
-                                    <!--end::Item-->
+                                    <!--end::Product-->
                                 </div>
                             </div>
                             <!--end::Timeline details-->
@@ -375,7 +375,7 @@
                             <div class="overflow-auto pb-5">
                                 <div
                                     class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-700px p-7">
-                                    <!--begin::Item-->
+                                    <!--begin::Product-->
                                     <div class="overlay me-10">
                                         <!--begin::Image-->
                                         <div class="overlay-wrapper">
@@ -389,8 +389,8 @@
                                         </div>
                                         <!--end::Link-->
                                     </div>
-                                    <!--end::Item-->
-                                    <!--begin::Item-->
+                                    <!--end::Product-->
+                                    <!--begin::Product-->
                                     <div class="overlay me-10">
                                         <!--begin::Image-->
                                         <div class="overlay-wrapper">
@@ -404,8 +404,8 @@
                                         </div>
                                         <!--end::Link-->
                                     </div>
-                                    <!--end::Item-->
-                                    <!--begin::Item-->
+                                    <!--end::Product-->
+                                    <!--begin::Product-->
                                     <div class="overlay">
                                         <!--begin::Image-->
                                         <div class="overlay-wrapper">
@@ -419,7 +419,7 @@
                                         </div>
                                         <!--end::Link-->
                                     </div>
-                                    <!--end::Item-->
+                                    <!--end::Product-->
                                 </div>
                             </div>
                             <!--end::Timeline details-->
@@ -545,7 +545,7 @@
                     </div>
                     <!--end::Timeline item-->
                 </div>
-                <!--end::Timeline items-->
+                <!--end::Timeline product-->
             </div>
             <!--end::Content-->
         </div>

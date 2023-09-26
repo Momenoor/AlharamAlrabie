@@ -5,7 +5,7 @@
         @include('themeOne::partials._breadcrumb')
         <!--end::Page title-->
         <!--begin::Actions-->
-        {{--<div class="d-flex align-items-center py-2">
+        {{--<div class="d-flex align-product-center py-2">
             <!--begin::Wrapper-->
             <div class="me-4">
                 <!--begin::Menu-->

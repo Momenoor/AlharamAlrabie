@@ -29,7 +29,7 @@
         <!--end::Card header-->
         <!--begin::Card body-->
         <div class="card-body hover-scroll-overlay-y h-400px pt-5">
-                <!--begin::Item-->
+                <!--begin::Product-->
                 <div class="d-flex flex-stack">
                     <!--begin::Wrapper-->
                     <div class="d-flex flex-column me-3">
@@ -58,11 +58,11 @@
                     </div>
                     <!--end::Pic-->
                 </div>
-                <!--end::Item-->
+                <!--end::Product-->
                                     <!--begin::Separator-->
                     <div class="separator separator-dashed my-6"></div>
                     <!--end::Separator-->
-                <!--begin::Item-->
+                <!--begin::Product-->
                 <div class="d-flex flex-stack">
                     <!--begin::Wrapper-->
                     <div class="d-flex flex-column me-3">
@@ -91,11 +91,11 @@
                     </div>
                     <!--end::Pic-->
                 </div>
-                <!--end::Item-->
+                <!--end::Product-->
                                     <!--begin::Separator-->
                     <div class="separator separator-dashed my-6"></div>
                     <!--end::Separator-->
-                <!--begin::Item-->
+                <!--begin::Product-->
                 <div class="d-flex flex-stack">
                     <!--begin::Wrapper-->
                     <div class="d-flex flex-column me-3">
@@ -124,11 +124,11 @@
                     </div>
                     <!--end::Pic-->
                 </div>
-                <!--end::Item-->
+                <!--end::Product-->
                                     <!--begin::Separator-->
                     <div class="separator separator-dashed my-6"></div>
                     <!--end::Separator-->
-                <!--begin::Item-->
+                <!--begin::Product-->
                 <div class="d-flex flex-stack">
                     <!--begin::Wrapper-->
                     <div class="d-flex flex-column me-3">
@@ -157,11 +157,11 @@
                     </div>
                     <!--end::Pic-->
                 </div>
-                <!--end::Item-->
+                <!--end::Product-->
                                     <!--begin::Separator-->
                     <div class="separator separator-dashed my-6"></div>
                     <!--end::Separator-->
-                <!--begin::Item-->
+                <!--begin::Product-->
                 <div class="d-flex flex-stack">
                     <!--begin::Wrapper-->
                     <div class="d-flex flex-column me-3">
@@ -190,11 +190,11 @@
                     </div>
                     <!--end::Pic-->
                 </div>
-                <!--end::Item-->
+                <!--end::Product-->
                                     <!--begin::Separator-->
                     <div class="separator separator-dashed my-6"></div>
                     <!--end::Separator-->
-                <!--begin::Item-->
+                <!--begin::Product-->
                 <div class="d-flex flex-stack">
                     <!--begin::Wrapper-->
                     <div class="d-flex flex-column me-3">
@@ -223,11 +223,11 @@
                     </div>
                     <!--end::Pic-->
                 </div>
-                <!--end::Item-->
+                <!--end::Product-->
                                     <!--begin::Separator-->
                     <div class="separator separator-dashed my-6"></div>
                     <!--end::Separator-->
-                <!--begin::Item-->
+                <!--begin::Product-->
                 <div class="d-flex flex-stack">
                     <!--begin::Wrapper-->
                     <div class="d-flex flex-column me-3">
@@ -256,23 +256,23 @@
                     </div>
                     <!--end::Pic-->
                 </div>
-                <!--end::Item-->
+                <!--end::Product-->
         </div>
         <!--end::Card body-->
         <!--begin::Card footer-->
         <div class="card-footer">
-            <!--begin::Item-->
+            <!--begin::Product-->
             <div class="d-flex flex-stack">
                 <span class="fw-bold text-gray-600">Total</span>
                 <span class="text-gray-800 fw-bolder fs-5">$ 1840.00</span>
             </div>
-            <!--end::Item-->
-            <!--begin::Item-->
+            <!--end::Product-->
+            <!--begin::Product-->
             <div class="d-flex flex-stack">
                 <span class="fw-bold text-gray-600">Sub total</span>
                 <span class="text-primary fw-bolder fs-5">$ 246.35</span>
             </div>
-            <!--end::Item-->
+            <!--end::Product-->
             <!--end::Action-->
             <div class="d-flex justify-content-end mt-9">
                 <a href="#" class="btn btn-primary d-flex justify-content-end">Pleace Order</a>

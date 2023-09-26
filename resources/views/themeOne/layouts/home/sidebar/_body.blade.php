@@ -3,7 +3,7 @@
     <div class="hover-scroll-y me-n6 pe-6" id="kt_sidebar_body" data-kt-scroll="true" data-kt-scroll-height="auto"
          data-kt-scroll-dependencies="#kt_sidebar_header, #kt_sidebar_footer"
          data-kt-scroll-wrappers="#kt_page, #kt_sidebar, #kt_sidebar_body" data-kt-scroll-offset="0">
-        <!--begin::Timeline items-->
+        <!--begin::Timeline product-->
         <div class="timeline">
             @foreach($reviews as $review)
                 <!--begin::Timeline item-->
@@ -68,7 +68,7 @@
             @endforeach
             <!--end::Timeline item-->
         </div>
-        <!--end::Timeline items-->
+        <!--end::Timeline product-->
     </div>
     <!--end::Scroll-->
 </div>

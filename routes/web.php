@@ -20,7 +20,7 @@ Route::get('/menu',[App\Http\Controllers\HomeController::class, 'menu'])->name('
 Auth::routes();
 
 Route::middleware('auth')->group(function () {
-    route::resource('item', App\Http\Controllers\ItemController::class);
+    route::resource('product', App\Http\Controllers\ProductController::class);
     Route::resource('account', App\Http\Controllers\AccountController::class);
     Route::resource('transaction', App\Http\Controllers\TransactionController::class);
 });

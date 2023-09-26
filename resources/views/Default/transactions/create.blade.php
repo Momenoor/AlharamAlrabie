@@ -103,7 +103,7 @@
         let salesData = [];
 
         function addToSale() {
-            const itemsDropdown = document.getElementById('items');
+            const itemsDropdown = document.getElementById('product');
             const selectedOption = itemsDropdown.options[itemsDropdown.selectedIndex];
             const itemId = selectedOption.value;
             const itemName = selectedOption.text;

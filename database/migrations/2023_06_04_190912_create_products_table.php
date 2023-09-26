@@ -11,16 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('items', function (Blueprint $table) {
+        Schema::create('product', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('description')->nullable();
-            $table->string('price')->default(0);
             $table->foreignIdFor(\App\Models\Account::class)->nullable()->constrained();
-            $table->string('image')->nullable();
             $table->string('slug')->nullable();
-            $table->string('category')->nullable();
             $table->string('type')->nullable();
+            $table->string('image')->nullable();
+            $table->boolean('is_show_in_menu')->default(false);
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('product');
     }
 };

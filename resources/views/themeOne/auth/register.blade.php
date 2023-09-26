@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('themeOne::layouts.system.app')
 
 @section('content')
 <div class="container">

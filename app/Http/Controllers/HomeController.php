@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Item;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -42,13 +42,13 @@ class HomeController extends Controller
             'الحلو - Sweets',
             'المشروبات - Drinks',
         ];
-        $items = Item::where([
+        $items = Product::where([
             'type' => 'product',
             'is_menu_item' => '1',
         ])->get()->groupBy('category')->sortBy(function ($value) use ($order) {
             return array_search($value[0]->category, $order);
         });
 
-        return view('themeOne::menu', ['products' => $items]);
+        return view('themeOne::menu', ['product' => $items]);
     }
 }

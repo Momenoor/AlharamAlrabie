@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->dateTime('paid_at');
             $table->foreignIdFor(User::class);
-            $table->foreignIdFor(\App\Models\Transaction::class);
+            $table->foreignIdFor(\App\Models\Sales::class);
             $table->decimal('amount',10,2);
             $table->string('method');
             $table->string('reference');

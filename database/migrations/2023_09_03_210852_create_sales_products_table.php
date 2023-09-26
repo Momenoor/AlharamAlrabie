@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transaction_items', function (Blueprint $table) {
+        Schema::create('sales_products', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Transaction::class);
-            $table->foreignIdFor(\App\Models\Item::class);
+            $table->foreignIdFor(\App\Models\Sales::class);
+            $table->foreignIdFor(\App\Models\Product::class);
             $table->integer('quantity')->default(1);
             $table->decimal('price', 10, 2);
             $table->decimal('discount', 10, 2);
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transaction_items');
+        Schema::dropIfExists('sales_products');
     }
 };

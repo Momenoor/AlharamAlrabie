@@ -1,5 +1,5 @@
 <div class="topbar d-flex align-items-stretch">
-    <!--begin::Item-->
+    <!--begin::Product-->
     <div class="d-flex align-items-stretch me-2 me-lg-4">
         <!--begin::Search-->
         <div id="kt_header_search" class="header-search d-flex align-items-center header-search w-lg-250px" data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="menu" data-kt-search-responsive="lg" data-kt-menu-trigger="auto" data-kt-menu-permanent="true" data-kt-menu-placement="bottom-end">
@@ -53,7 +53,7 @@
                             <!--begin::Category title-->
                             <h3 class="fs-5 text-muted m-0 pb-5" data-kt-search-element="category-title">Users</h3>
                             <!--end::Category title-->
-                            <!--begin::Item-->
+                            <!--begin::Product-->
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -67,8 +67,8 @@
                                 </div>
                                 <!--end::Title-->
                             </a>
-                            <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--end::Product-->
+                            <!--begin::Product-->
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -82,8 +82,8 @@
                                 </div>
                                 <!--end::Title-->
                             </a>
-                            <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--end::Product-->
+                            <!--begin::Product-->
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -97,8 +97,8 @@
                                 </div>
                                 <!--end::Title-->
                             </a>
-                            <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--end::Product-->
+                            <!--begin::Product-->
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -112,8 +112,8 @@
                                 </div>
                                 <!--end::Title-->
                             </a>
-                            <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--end::Product-->
+                            <!--begin::Product-->
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -127,11 +127,11 @@
                                 </div>
                                 <!--end::Title-->
                             </a>
-                            <!--end::Item-->
+                            <!--end::Product-->
                             <!--begin::Category title-->
                             <h3 class="fs-5 text-muted m-0 pt-5 pb-5" data-kt-search-element="category-title">Customers</h3>
                             <!--end::Category title-->
-                            <!--begin::Item-->
+                            <!--begin::Product-->
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -147,8 +147,8 @@
                                 </div>
                                 <!--end::Title-->
                             </a>
-                            <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--end::Product-->
+                            <!--begin::Product-->
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -164,8 +164,8 @@
                                 </div>
                                 <!--end::Title-->
                             </a>
-                            <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--end::Product-->
+                            <!--begin::Product-->
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -181,8 +181,8 @@
                                 </div>
                                 <!--end::Title-->
                             </a>
-                            <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--end::Product-->
+                            <!--begin::Product-->
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -198,8 +198,8 @@
                                 </div>
                                 <!--end::Title-->
                             </a>
-                            <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--end::Product-->
+                            <!--begin::Product-->
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -215,11 +215,11 @@
                                 </div>
                                 <!--end::Title-->
                             </a>
-                            <!--end::Item-->
+                            <!--end::Product-->
                             <!--begin::Category title-->
                             <h3 class="fs-5 text-muted m-0 pt-5 pb-5" data-kt-search-element="category-title">Projects</h3>
                             <!--end::Category title-->
-                            <!--begin::Item-->
+                            <!--begin::Product-->
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -241,8 +241,8 @@
                                 </div>
                                 <!--end::Title-->
                             </a>
-                            <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--end::Product-->
+                            <!--begin::Product-->
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -263,8 +263,8 @@
                                 </div>
                                 <!--end::Title-->
                             </a>
-                            <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--end::Product-->
+                            <!--begin::Product-->
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -284,8 +284,8 @@
                                 </div>
                                 <!--end::Title-->
                             </a>
-                            <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--end::Product-->
+                            <!--begin::Product-->
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -305,7 +305,7 @@
                                 </div>
                                 <!--end::Title-->
                             </a>
-                            <!--end::Item-->
+                            <!--end::Product-->
                         </div>
                         <!--end::Items-->
                     </div>
@@ -338,7 +338,7 @@
                         <!--end::Heading-->
                         <!--begin::Items-->
                         <div class="scroll-y mh-200px mh-lg-325px">
-                            <!--begin::Item-->
+                            <!--begin::Product-->
                             <div class="d-flex align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -357,8 +357,8 @@
                                 </div>
                                 <!--end::Title-->
                             </div>
-                            <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--end::Product-->
+                            <!--begin::Product-->
                             <div class="d-flex align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -379,8 +379,8 @@
                                 </div>
                                 <!--end::Title-->
                             </div>
-                            <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--end::Product-->
+                            <!--begin::Product-->
                             <div class="d-flex align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -399,8 +399,8 @@
                                 </div>
                                 <!--end::Title-->
                             </div>
-                            <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--end::Product-->
+                            <!--begin::Product-->
                             <div class="d-flex align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -419,8 +419,8 @@
                                 </div>
                                 <!--end::Title-->
                             </div>
-                            <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--end::Product-->
+                            <!--begin::Product-->
                             <div class="d-flex align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -439,8 +439,8 @@
                                 </div>
                                 <!--end::Title-->
                             </div>
-                            <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--end::Product-->
+                            <!--begin::Product-->
                             <div class="d-flex align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -459,8 +459,8 @@
                                 </div>
                                 <!--end::Title-->
                             </div>
-                            <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--end::Product-->
+                            <!--begin::Product-->
                             <div class="d-flex align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
@@ -479,7 +479,7 @@
                                 </div>
                                 <!--end::Title-->
                             </div>
-                            <!--end::Item-->
+                            <!--end::Product-->
                         </div>
                         <!--end::Items-->
                     </div>
@@ -672,8 +672,8 @@
         </div>
         <!--end::Search-->
     </div>
-    <!--end::Item-->
-    <!--begin::Item-->
+    <!--end::Product-->
+    <!--begin::Product-->
     <div class="d-flex align-items-center me-2 me-lg-4">
         <a href="#" class="btn btn-icon btn-borderless btn-color-white btn-active-primary bg-white bg-opacity-10 position-relative" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
             <i class="ki-duotone ki-notification-bing fs-1 text-white">
@@ -712,7 +712,7 @@
                 <div class="tab-pane fade" id="kt_topbar_notifications_1" role="tabpanel">
                     <!--begin::Items-->
                     <div class="scroll-y mh-325px my-5 px-8">
-                        <!--begin::Item-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center">
@@ -738,8 +738,8 @@
                             <span class="badge badge-light fs-8">1 hr</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
+                        <!--end::Product-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center">
@@ -766,8 +766,8 @@
                             <span class="badge badge-light fs-8">2 hrs</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
+                        <!--end::Product-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center">
@@ -793,8 +793,8 @@
                             <span class="badge badge-light fs-8">5 hrs</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
+                        <!--end::Product-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center">
@@ -820,8 +820,8 @@
                             <span class="badge badge-light fs-8">2 days</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
+                        <!--end::Product-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center">
@@ -849,8 +849,8 @@
                             <span class="badge badge-light fs-8">21 Jan</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
+                        <!--end::Product-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center">
@@ -873,8 +873,8 @@
                             <span class="badge badge-light fs-8">21 Jan</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
+                        <!--end::Product-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center">
@@ -919,7 +919,7 @@
                             <span class="badge badge-light fs-8">20 March</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
+                        <!--end::Product-->
                     </div>
                     <!--end::Items-->
                     <!--begin::View more-->
@@ -965,7 +965,7 @@
                 <div class="tab-pane fade" id="kt_topbar_notifications_3" role="tabpanel">
                     <!--begin::Items-->
                     <div class="scroll-y mh-325px my-5 px-8">
-                        <!--begin::Item-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center me-2">
@@ -981,8 +981,8 @@
                             <span class="badge badge-light fs-8">Just now</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
+                        <!--end::Product-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center me-2">
@@ -998,8 +998,8 @@
                             <span class="badge badge-light fs-8">2 hrs</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
+                        <!--end::Product-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center me-2">
@@ -1015,8 +1015,8 @@
                             <span class="badge badge-light fs-8">5 hrs</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
+                        <!--end::Product-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center me-2">
@@ -1032,8 +1032,8 @@
                             <span class="badge badge-light fs-8">2 days</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
+                        <!--end::Product-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center me-2">
@@ -1049,8 +1049,8 @@
                             <span class="badge badge-light fs-8">1 week</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
+                        <!--end::Product-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center me-2">
@@ -1066,8 +1066,8 @@
                             <span class="badge badge-light fs-8">Mar 5</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
+                        <!--end::Product-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center me-2">
@@ -1083,8 +1083,8 @@
                             <span class="badge badge-light fs-8">May 15</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
+                        <!--end::Product-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center me-2">
@@ -1100,8 +1100,8 @@
                             <span class="badge badge-light fs-8">Apr 3</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
+                        <!--end::Product-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center me-2">
@@ -1117,8 +1117,8 @@
                             <span class="badge badge-light fs-8">Jun 30</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
+                        <!--end::Product-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center me-2">
@@ -1134,8 +1134,8 @@
                             <span class="badge badge-light fs-8">Jul 10</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
+                        <!--end::Product-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center me-2">
@@ -1151,8 +1151,8 @@
                             <span class="badge badge-light fs-8">Sep 10</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
+                        <!--end::Product-->
+                        <!--begin::Product-->
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center me-2">
@@ -1168,7 +1168,7 @@
                             <span class="badge badge-light fs-8">Dec 10</span>
                             <!--end::Label-->
                         </div>
-                        <!--end::Item-->
+                        <!--end::Product-->
                     </div>
                     <!--end::Items-->
                     <!--begin::View more-->
@@ -1187,8 +1187,8 @@
         </div>
         <!--end::Menu-->
     </div>
-    <!--end::Item-->
-    <!--begin::Item-->
+    <!--end::Product-->
+    <!--begin::Product-->
     <div class="d-flex align-items-center me-2 me-lg-4">
         <a href="#" class="btn btn-icon btn-borderless btn-color-white btn-active-primary bg-white bg-opacity-10" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
             <i class="ki-duotone ki-user fs-1 text-white">
@@ -1360,7 +1360,7 @@
         </div>
         <!--end::User account menu-->
     </div>
-    <!--end::Item-->
+    <!--end::Product-->
     <!--begin::Theme mode-->
     <div class="d-flex align-items-center me-2 me-lg-4">
         <!--begin::Menu toggle-->
@@ -1438,12 +1438,12 @@
         <!--end::Menu-->
     </div>
     <!--end::Theme mode-->
-    <!--begin::Item-->
+    <!--begin::Product-->
     <div class="d-flex align-items-center me-2 me-lg-4">
         <a href="#" class="btn btn-success border-0 px-3 px-lg-6" data-bs-toggle="modal" data-bs-target="#kt_modal_create_campaign">New Goal</a>
     </div>
-    <!--end::Item-->
-    <!--begin::Item-->
+    <!--end::Product-->
+    <!--begin::Product-->
     <div class="d-flex align-items-center">
         <a href="../../demo10/dist/index.html" class="btn btn-icon btn-color-white btn-active-color-primary border-0 me-n3" data-bs-toggle="tooltip" data-bs-placement="left" title="Return to launcher">
             <i class="ki-duotone ki-cross-square fs-2x text-white">
@@ -1452,5 +1452,5 @@
             </i>
         </a>
     </div>
-    <!--end::Item-->
+    <!--end::Product-->
 </div>

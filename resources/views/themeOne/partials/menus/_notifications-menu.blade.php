@@ -28,7 +28,7 @@
         <div class="tab-pane fade" id="kt_topbar_notifications_1" role="tabpanel">
             <!--begin::Items-->
             <div class="scroll-y mh-325px my-5 px-8">
-                                    <!--begin::Item-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center">
@@ -51,8 +51,8 @@
                         <span class="badge badge-light fs-8">1 hr</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
-                                    <!--begin::Item-->
+                    <!--end::Product-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center">
@@ -75,8 +75,8 @@
                         <span class="badge badge-light fs-8">2 hrs</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
-                                    <!--begin::Item-->
+                    <!--end::Product-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center">
@@ -99,8 +99,8 @@
                         <span class="badge badge-light fs-8">5 hrs</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
-                                    <!--begin::Item-->
+                    <!--end::Product-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center">
@@ -123,8 +123,8 @@
                         <span class="badge badge-light fs-8">2 days</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
-                                    <!--begin::Item-->
+                    <!--end::Product-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center">
@@ -147,8 +147,8 @@
                         <span class="badge badge-light fs-8">21 Jan</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
-                                    <!--begin::Item-->
+                    <!--end::Product-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center">
@@ -172,8 +172,8 @@
                         <span class="badge badge-light fs-8">21 Jan</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
-                                    <!--begin::Item-->
+                    <!--end::Product-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center">
@@ -196,7 +196,7 @@
                         <span class="badge badge-light fs-8">20 March</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
+                    <!--end::Product-->
             </div>
             <!--end::Items-->
             <!--begin::View more-->
@@ -244,7 +244,7 @@
         <div class="tab-pane fade" id="kt_topbar_notifications_3" role="tabpanel">
             <!--begin::Items-->
             <div class="scroll-y mh-325px my-5 px-8">
-                                    <!--begin::Item-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center me-2">
@@ -260,8 +260,8 @@
                         <span class="badge badge-light fs-8">Just now</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
-                                    <!--begin::Item-->
+                    <!--end::Product-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center me-2">
@@ -277,8 +277,8 @@
                         <span class="badge badge-light fs-8">2 hrs</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
-                                    <!--begin::Item-->
+                    <!--end::Product-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center me-2">
@@ -294,8 +294,8 @@
                         <span class="badge badge-light fs-8">5 hrs</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
-                                    <!--begin::Item-->
+                    <!--end::Product-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center me-2">
@@ -311,8 +311,8 @@
                         <span class="badge badge-light fs-8">2 days</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
-                                    <!--begin::Item-->
+                    <!--end::Product-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center me-2">
@@ -328,8 +328,8 @@
                         <span class="badge badge-light fs-8">1 week</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
-                                    <!--begin::Item-->
+                    <!--end::Product-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center me-2">
@@ -345,8 +345,8 @@
                         <span class="badge badge-light fs-8">Mar 5</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
-                                    <!--begin::Item-->
+                    <!--end::Product-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center me-2">
@@ -362,8 +362,8 @@
                         <span class="badge badge-light fs-8">May 15</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
-                                    <!--begin::Item-->
+                    <!--end::Product-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center me-2">
@@ -379,8 +379,8 @@
                         <span class="badge badge-light fs-8">Apr 3</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
-                                    <!--begin::Item-->
+                    <!--end::Product-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center me-2">
@@ -396,8 +396,8 @@
                         <span class="badge badge-light fs-8">Jun 30</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
-                                    <!--begin::Item-->
+                    <!--end::Product-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center me-2">
@@ -413,8 +413,8 @@
                         <span class="badge badge-light fs-8">Jul 10</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
-                                    <!--begin::Item-->
+                    <!--end::Product-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center me-2">
@@ -430,8 +430,8 @@
                         <span class="badge badge-light fs-8">Sep 10</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
-                                    <!--begin::Item-->
+                    <!--end::Product-->
+                                    <!--begin::Product-->
                     <div class="d-flex flex-stack py-4">
                         <!--begin::Section-->
                         <div class="d-flex align-items-center me-2">
@@ -447,7 +447,7 @@
                         <span class="badge badge-light fs-8">Dec 10</span>
                         <!--end::Label-->
                     </div>
-                    <!--end::Item-->
+                    <!--end::Product-->
             </div>
             <!--end::Items-->
             <!--begin::View more-->

@@ -68,7 +68,7 @@
                 </div>
             </div>
 
-            <!-- Item List Table -->
+            <!-- Product List Table -->
             <table class="table table-bordered table-hover mt-3" id="ItemTable">
                 <thead>
                 <tr>
@@ -139,7 +139,7 @@
         let ItemData = [];
 
         function addToSale() {
-            const itemsDropdown = document.getElementById('items');
+            const itemsDropdown = document.getElementById('product');
             const selectedOption = itemsDropdown.options[itemsDropdown.selectedIndex];
             const itemId = selectedOption.value;
             const itemName = selectedOption.text;
@@ -170,7 +170,7 @@
                 addToItemTable(itemName, itemPrice, quantity, itemPrice * quantity, itemId);
             }
 
-            document.getElementById('items').selectedIndex = 0;
+            document.getElementById('product').selectedIndex = 0;
             document.getElementById('itemPrice').value = '';
             document.getElementById('items_data').value = JSON.stringify(ItemData);
         }

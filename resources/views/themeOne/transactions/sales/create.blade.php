@@ -47,7 +47,7 @@
                               rows="5">{{ old('description') }}</textarea>
                 </div>
             </div>
-            <!-- Item Details -->
+            <!-- Product Details -->
             <div class="row">
                 <!-- Product Selection -->
                 <div class="col-md-4 mb-3">
@@ -144,7 +144,7 @@
         let totalAmount = 0;
 
         function addToSale() {
-            const productSelect = document.getElementById("items");
+            const productSelect = document.getElementById("product");
             const productOption = productSelect.options[productSelect.selectedIndex];
             const productName = productOption.text;
             const productId = productOption.value;
@@ -172,7 +172,7 @@
                 });
             }
 
-            document.getElementById('items').selectedIndex = 0;
+            document.getElementById('product').selectedIndex = 0;
             document.getElementById('quantity').value = 1;
 
             updateHiddenField();

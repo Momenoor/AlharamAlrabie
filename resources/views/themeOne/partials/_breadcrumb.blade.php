@@ -4,27 +4,27 @@
     <!--end::Title-->
     <!--begin::Breadcrumb-->
     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 pt-1">
-        <!--begin::Item-->
+        <!--begin::Product-->
         <li class="breadcrumb-item text-muted">
             <a href="../../demo10/dist/index.html" class="text-muted text-hover-primary">Home</a>
         </li>
-        <!--end::Item-->
-        <!--begin::Item-->
+        <!--end::Product-->
+        <!--begin::Product-->
         <li class="breadcrumb-item">
             <span class="bullet bg-gray-200 w-5px h-2px"></span>
         </li>
-        <!--end::Item-->
-        <!--begin::Item-->
+        <!--end::Product-->
+        <!--begin::Product-->
         <li class="breadcrumb-item text-muted">Dashboards</li>
-        <!--end::Item-->
-        <!--begin::Item-->
+        <!--end::Product-->
+        <!--begin::Product-->
         <li class="breadcrumb-item">
             <span class="bullet bg-gray-200 w-5px h-2px"></span>
         </li>
-        <!--end::Item-->
-        <!--begin::Item-->
+        <!--end::Product-->
+        <!--begin::Product-->
         <li class="breadcrumb-item text-dark">Default</li>
-        <!--end::Item-->
+        <!--end::Product-->
     </ul>
     <!--end::Breadcrumb-->
 </div>

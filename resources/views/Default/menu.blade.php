@@ -180,10 +180,10 @@
                     </div>
                     <div class="item-price">$15.00</div>
                 </div>
-                <!-- You can replicate the above menu items for Category 1 -->
+                <!-- You can replicate the above menu product for Category 1 -->
             </div>
         </div>
-        <!-- Add more columns for other categories and items as needed -->
+        <!-- Add more columns for other categories and product as needed -->
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

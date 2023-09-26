@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Account;
-use App\Models\Item;
-use App\Models\Transaction;
+use App\Models\Product;
+use App\Models\Sales;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
@@ -26,11 +26,11 @@ class TransactionController extends Controller
         $mode = request()->get('mode') ?? '';
         $view = $mode . '.';
         if ($mode == 'sales') {
-            $items = Item::where('type', 'product')->get();
+            $items = Product::where('type', 'product')->get();
         } else if ($mode == 'expense') {
-            $items = Item::where('type', 'expense')->get();
+            $items = Product::where('type', 'expense')->get();
         } else {
-            $items = Item::all();
+            $items = Product::all();
         }
 
         $accounts = Account::all();
@@ -49,7 +49,7 @@ class TransactionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Transaction $transaction)
+    public function show(Sales $transaction)
     {
         //
     }
@@ -57,7 +57,7 @@ class TransactionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Transaction $transaction)
+    public function edit(Sales $transaction)
     {
         //
     }
@@ -65,7 +65,7 @@ class TransactionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Transaction $transaction)
+    public function update(Request $request, Sales $transaction)
     {
         //
     }
@@ -73,7 +73,7 @@ class TransactionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Transaction $transaction)
+    public function destroy(Sales $transaction)
     {
         //
     }
