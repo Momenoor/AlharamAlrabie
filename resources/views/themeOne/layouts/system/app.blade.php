@@ -84,6 +84,7 @@
 @yield('scripts')
 @stack('scripts')
 <!--end::Custom Javascript-->
+@vite('resources/js/app.js')
 <!--end::Javascript-->
 </body>
 <!--end::Body-->

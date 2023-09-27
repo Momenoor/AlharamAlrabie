@@ -32,7 +32,6 @@ class ProductController extends Controller
 
     public function update(Request $request, Product $product)
     {
-   ;
         dd($request->all());
         $product->update($request->all());
         return redirect()->route('product.index');

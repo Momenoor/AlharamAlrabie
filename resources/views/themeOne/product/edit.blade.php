@@ -23,14 +23,15 @@
                     <div class="card-body text-center pt-0">
                         <!--begin::Image input-->
                         <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3"
-                             data-kt-image-input="true">
+                             data-mn-image-input="true">
                             <!--begin::Preview existing avatar-->
                             <div class="image-input-wrapper w-150px h-150px"
-                                 style="background-image: url('{{old('image',$product->image)}}')"></div>
+                                 style="background-image: url('{{old('image',$product->image)}}')">
+                            </div>
                             <!--end::Preview existing avatar-->
                             <!--begin::Label-->
                             <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
-                                   data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                   data-mn-image-input-action="change">
                                 <i class="ki-duotone ki-pencil fs-7">
                                     <span class="path1"></span>
                                     <span class="path2"></span>
@@ -44,7 +45,7 @@
                             <!--end::Label-->
                             <!--begin::Cancel-->
                             <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
-                                  data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                  data-mn-image-input-action="cancel">
 														<i class="ki-duotone ki-cross fs-2">
 															<span class="path1"></span>
 															<span class="path2"></span>
@@ -53,7 +54,7 @@
                             <!--end::Cancel-->
                             <!--begin::Remove-->
                             <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
-                                  data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                  data-mn-image-input-action="remove">
 														<i class="ki-duotone ki-cross fs-2">
 															<span class="path1"></span>
 															<span class="path2"></span>
@@ -513,16 +514,34 @@
         </form>
         <!--end::Form-->
     </div>
+    <div class="modal fade" id="cropModal" tabindex="-1" aria-labelledby="cropModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cropModalLabel">Crop Image</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="max-width: 460px">
+                    <img id="imageToCrop" src="" alt="Image to crop" style="max-width: 100%">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="cropButton">Crop</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 @push('scripts')
     <script type="text/javascript">
-        var submitBtn = document.querySelector('#kt_ecommerce_edit_product_submit');
+
+        const submitBtn = document.querySelector('#kt_ecommerce_edit_product_submit');
         submitBtn.addEventListener('click', function (e) {
             submitBtn.setAttribute("data-kt-indicator", "on");
 
         });
 
-        var quill = new Quill('#kt_ecommerce_edit_product_description', {
+        const quill = new Quill('#kt_ecommerce_edit_product_description', {
             modules: {
                 toolbar: [
                     [{
@@ -538,7 +557,7 @@
             $('[name="description"]').val(quill.root.innerHTML);
         });
 
-        $('#kt_ecommerce_edit_product_categories').on('change', function (e) {
+        $('#kt_ecommerce_edit_product_categories').select2().on('change', function (e) {
             const initialCategories = {!! $product->categories->toJson() !!};
             const oldCategoryPrices = @json(old('category_price', []));
             const selectedCategories = $(this).select2('data');
@@ -563,8 +582,7 @@
                 <input type="text" class="form-control" name="category_price[${id}]" value="${inputValue}">
             </div>`);
             });
-        });
-        $('#kt_ecommerce_edit_product_categories').select2().trigger('change');
+        }).trigger('change');
 
         $('#kt_ecommerce_edit_product_status_select').on('change', function (e) {
             const status = $(this).val();
@@ -574,6 +592,7 @@
                 $('#kt_ecommerce_edit_product_status').removeClass('bg-success').addClass('bg-danger');
             }
         }).trigger('change');
+
 
     </script>
 @endpush

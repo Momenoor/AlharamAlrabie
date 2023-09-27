@@ -1,4 +1,3 @@
-
 const KTAppEcommerceProducts = (() => {
     let tableElement, dataTableInstance;
 
