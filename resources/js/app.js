@@ -13,7 +13,7 @@ var MNImageInput = function (element, options) {
         var defaultOptions = {};
 
         // Initialization function
-        var initialize = function () {
+        function initialize () {
             self.options = KTUtil.deepExtend({}, defaultOptions, options);
             self.uid = KTUtil.getUniqueId('image-input');
             self.element = element;
