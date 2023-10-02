@@ -9,8 +9,8 @@
                 <div class="d-flex align-items-center position-relative my-1">
                     {!!  getSvgIcon('icons/duotune/general/gen021.svg','svg-icon-1 position-absolute ms-4')!!}
                     <label>
-                        <input type="text" data-product-filter="search"
-                               class="form-control form-control-solid w-250px ps-14" placeholder="Search Product"/>
+                        <input type="text" data-category-filter="search"
+                               class="form-control form-control-solid w-250px ps-14" placeholder="Search Castegory"/>
                     </label>
                 </div>
                 <!--end::Search-->
@@ -22,7 +22,7 @@
                     <!--begin::Select2-->
                     <label>
                         <select class="form-select form-select-solid" data-control="select2" data-hide-search="true"
-                                data-placeholder="Status" data-product-filter="status">
+                                data-placeholder="Status" data-category-filter="status">
                             <option></option>
                             <option value="all">All</option>
                             <option value="published">Published</option>
@@ -32,10 +32,10 @@
                     </label>
                     <!--end::Select2-->
                 </div>
-                <!--begin::Add product-->
-                <a href="{{route('product.create')}}" class="btn btn-primary">Add
-                    Item</a>
-                <!--end::Add product-->
+                <!--begin::Add category-->
+                <a href="{{route('category.create')}}" class="btn btn-primary">Add
+                    Category</a>
+                <!--end::Add category-->
             </div>
             <!--end::Card toolbar-->
         </div>
@@ -43,7 +43,7 @@
         <!--begin::Card body-->
         <div class="card-body pt-0">
             <!--begin::Table-->
-            <table class="table align-middle table-row-dashed fs-6 gy-5" id="products_table">
+            <table class="table align-middle table-row-dashed fs-6 gy-5" id="categories_table">
                 <!--begin::Table head-->
                 <thead>
                 <!--begin::Table row-->
@@ -52,16 +52,16 @@
                         <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                             <label>
                                 <input class="form-check-input" type="checkbox" data-kt-check="true"
-                                       data-kt-check-target="#kt_ecommerce_products_table .form-check-input" value="1"/>
+                                       data-kt-check-target="#kt_ecommerce_categories_table .form-check-input"
+                                       value="1"/>
                             </label>
                         </div>
                     </th>
-                    <th class="min-w-200px">Product</th>
+                    <th class="min-w-200px">Category</th>
                     <th class="min-w-100px">Description</th>
-                    <th class="min-w-70px">Type</th>
-                    <th class="min-w-100px">Price</th>
-                    <th class="min-w-100px">Category</th>
-                    <th class="min-w-100px">Account</th>
+                    <th class="min-w-70px">Slug</th>
+                    <th class="min-w-100px">Variants</th>
+                    <th class="min-w-100px">Predefined Variants</th>
                     <th class="min-w-100px">Status</th>
                     <th class="min-w-100px">Actions</th>
                 </tr>
@@ -71,16 +71,16 @@
                 <!--begin::Table body-->
                 <tbody class="fw-semibold text-gray-600">
                 <!--begin::Table row-->
-                @foreach ($products as $product)
+                @foreach ($categories as $category)
                     <tr>
                         <!--begin::Category=-->
                         <td>
                             <div class="d-flex align-items-center">
                                 <!--begin::Thumbnail-->
-                                <a href="{{route('product.edit',$product)}}"
+                                <a href="{{route('category.edit',$category)}}"
                                    class="symbol symbol-50px">
                                 <span class="symbol-label"
-                                      style="background-image:url('{{asset($product->image)}}');"></span>
+                                      style="background-image:url('{{asset($category->image)}}');"></span>
                                 </a>
                                 <!--end::Thumbnail-->
 
@@ -89,59 +89,45 @@
                         <td>
                             <div>
                                 <!--begin::Title-->
-                                <a href="{{route('product.edit',$product)}}"
+                                <a href="{{route('category.edit',$category)}}"
                                    class="text-gray-800 text-hover-primary fs-5 fw-bold"
-                                   data-kt-ecommerce-product-filter="product_name">{{$product->name}}</a>
+                                   data-kt-ecommerce-category-filter="category_name">{{$category->name}}</a>
                                 <!--end::Title-->
                             </div>
                         </td>
                         <!--end::Category=-->
                         <!--begin::SKU=-->
                         <td class="pe-0">
-                            <span class="fw-bold">{!! $product->description !!}</span>
+                            <span class="fw-bold">{!! $category->description !!}</span>
                         </td>
                         <!--end::SKU=-->
-                        <!--begin::Qty=-->
-                        <td class="text-end pe-0">
-                            <span class="badge badge-light-danger">{{$product->type}}</span>
+                        <!--begin::slug=-->
+                        <td class=" pe-0">
+                            {{$category->slug}}
                         </td>
-                        <!--end::Qty=-->
+                        <!--end::slug=-->
                         <!--begin::Price=-->
-                        <td class="text-end pe-0">{{$product->price}}</td>
+                        <td class=" pe-0">{!! $category->variants->pluck('name')->toJson(JSON_UNESCAPED_UNICODE)!!}</td>
                         <!--end::Price=-->
                         <!--begin::Rating-->
-                        <td class="text-end pe-0">
-                            {{$product->category->name}}
+                        <td class=" pe-0">
+                            {!! $category->predefinedVariants->pluck('name')->toJson(JSON_UNESCAPED_UNICODE)!!}
                         </td>
                         <!--end::Rating-->
                         <!--begin::Status=-->
-                        <td class="text-end pe-0">
+                        <td class=" pe-0" data-order="status">
                             <!--begin::Badges-->
-                            {{optional($product->account)->name}}
-                            <!--end::Badges-->
-                        </td>
-                        <!--end::Status=-->
-                        <!--begin::Status=-->
-                        <td class="text-end pe-0" data-order="Inactive">
-                            <!--begin::Badges-->
-                            <div class="badge badge-light-danger">Inactive</div>
+                            <div class="badge badge-light-success">{{$category->status}}</div>
                             <!--end::Badges-->
                         </td>
                         <!--end::Status=-->
                         <!--begin::Action=-->
-                        <td class="text-end">
+                        <td class="">
                             <a href="#" class="btn btn-sm btn-light btn-active-light-primary"
                                data-kt-menu-trigger="click"
                                data-kt-menu-placement="bottom-end">Actions
                                 <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
-                                <span class="svg-icon svg-icon-5 m-0">
-																<svg width="24" height="24" viewBox="0 0 24 24"
-                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
-																	<path
-                                                                        d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z"
-                                                                        fill="currentColor"/>
-																</svg>
-															</span>
+                                {!! getSvgIcon('icons/duotune/arrows/arr072.svg','svg-icon svg-icon-5 m-0') !!}
                                 <!--end::Svg Icon--></a>
                             <!--begin::Menu-->
                             <div
@@ -149,14 +135,15 @@
                                 data-kt-menu="true">
                                 <!--begin::Menu item-->
                                 <div class="menu-item px-3">
-                                    <a href="../../demo22/dist/apps/ecommerce/catalog/edit-product.html"
+                                    <a href="{{route('category.edit',$category)}}"
                                        class="menu-link px-3">Edit</a>
                                 </div>
                                 <!--end::Menu item-->
                                 <!--begin::Menu item-->
                                 <div class="menu-item px-3">
                                     <a href="#" class="menu-link px-3"
-                                       data-kt-ecommerce-product-filter="delete_row">Delete</a>
+                                       data-kt-ecommerce-category-filter="delete_row"
+                                       data-kt-ecommerce-category-id="{{$category->id}}">Delete</a>
                                 </div>
                                 <!--end::Menu item-->
                             </div>
@@ -173,5 +160,51 @@
         </div>
         <!--end::Card body-->
     </div>
-    <!--end::Products-->
+    <!--end::categories-->
 @endsection
+@push('scripts')
+    <script>
+        KTUtil.onDOMContentLoaded(function () {
+            document.querySelectorAll('[data-kt-ecommerce-category-filter="delete_row"]').forEach(function (element) {
+                element.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: "You won't be able to revert this!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Yes, delete it!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            var id = element.getAttribute('data-kt-ecommerce-category-id');
+                            axios.delete('/category/' + id).then(function (response) {
+                                if (response.data.success) {
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Deleted!',
+                                        text: 'Record has been deleted.',
+                                        toast: true, // This makes it a toast notification
+                                        position: 'top-end', // You can adjust the position
+                                        showConfirmButton: false, // Hide the confirmation button
+                                        timer: 3000 // Auto-close after 3 seconds
+                                    });
+                                    element.closest('tr').remove();
+                                } else {
+                                    Swal.fire(
+                                        'Error!',
+                                        response.data.message,
+                                        'error'
+                                    );
+                                }
+                            }).catch(function (error) {
+                                console.error(error);
+                            })
+                        }
+                    })
+                })
+            })
+        });
+    </script>
+@endpush

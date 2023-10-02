@@ -212,7 +212,7 @@
 
 <body>
 <div class="logo-container">
-    <img class="logo" src="{{asset('images/logo.png')}}" alt="Al Haram Al Rabie">
+    <img class="logo" src="{{asset('image/logo.png')}}" alt="Al Haram Al Rabie">
     <div class="triangle"></div>
 </div>
 

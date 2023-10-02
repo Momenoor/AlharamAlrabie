@@ -143,7 +143,7 @@
 </head>
 <body>
 <div class="header">
-    <img class="small-logo" src="{{asset('images/logo.png')}}" alt="Al Haram Al Rabie">
+    <img class="small-logo" src="{{asset('image/logo.png')}}" alt="Al Haram Al Rabie">
     <div class="call-us-modern">
         <a href="tel:+971542507357"><i class="fas fa-phone-alt"></i> Call Us</a>
     </div>

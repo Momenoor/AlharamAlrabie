@@ -2,10 +2,14 @@
     <!--begin::Product-->
     <div class="d-flex align-items-stretch me-2 me-lg-4">
         <!--begin::Search-->
-        <div id="kt_header_search" class="header-search d-flex align-items-center header-search w-lg-250px" data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="menu" data-kt-search-responsive="lg" data-kt-menu-trigger="auto" data-kt-menu-permanent="true" data-kt-menu-placement="bottom-end">
+        <div id="kt_header_search" class="header-search d-flex align-items-center header-search w-lg-250px"
+             data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter"
+             data-kt-search-layout="menu" data-kt-search-responsive="lg" data-kt-menu-trigger="auto"
+             data-kt-menu-permanent="true" data-kt-menu-placement="bottom-end">
             <!--begin::Tablet and mobile search toggle-->
             <div data-kt-search-element="toggle" class="search-toggle-mobile d-flex d-lg-none align-items-center">
-                <div class="d-flex btn btn-icon btn-borderless btn-color-white btn-active-primary bg-white bg-opacity-10">
+                <div
+                    class="d-flex btn btn-icon btn-borderless btn-color-white btn-active-primary bg-white bg-opacity-10">
                     <i class="ki-duotone ki-magnifier fs-1 text-white">
                         <span class="path1"></span>
                         <span class="path2"></span>
@@ -14,9 +18,10 @@
             </div>
             <!--end::Tablet and mobile search toggle-->
             <!--begin::Form(use d-none d-lg-block classes for responsive search)-->
-            <form data-kt-search-element="form" class="d-none d-lg-block w-100 position-relative mb-2 mb-lg-0" autocomplete="off">
+            <form data-kt-search-element="form" class="d-none d-lg-block w-100 position-relative mb-2 mb-lg-0"
+                  autocomplete="off">
                 <!--begin::Hidden input(Added to disable form autocomplete)-->
-                <input type="hidden" />
+                <input type="hidden"/>
                 <!--end::Hidden input-->
                 <!--begin::Icon-->
                 <i class="ki-duotone ki-magnifier fs-2 position-absolute top-50 translate-middle-y ms-0 ms-lg-4">
@@ -25,15 +30,22 @@
                 </i>
                 <!--end::Icon-->
                 <!--begin::Input-->
-                <input type="text" class="form-control form-control-flush ps-8 ps-lg-12" name="search" value="" placeholder="Search" data-kt-search-element="input" />
+                <label>
+                    <input type="text" class="form-control form-control-flush ps-8 ps-lg-12" name="search" value=""
+                           placeholder="Search" data-kt-search-element="input"/>
+                </label>
                 <!--end::Input-->
                 <!--begin::Spinner-->
-                <span class="position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-lg-5" data-kt-search-element="spinner">
-												<span class="spinner-border h-15px w-15px align-middle text-gray-400"></span>
+                <span class="position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-lg-5"
+                      data-kt-search-element="spinner">
+												<span
+                                                    class="spinner-border h-15px w-15px align-middle text-gray-400"></span>
 											</span>
                 <!--end::Spinner-->
                 <!--begin::Reset-->
-                <span class="btn btn-flush btn-active-color-primary position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-lg-4" data-kt-search-element="clear">
+                <span
+                    class="btn btn-flush btn-active-color-primary position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-lg-4"
+                    data-kt-search-element="clear">
 												<i class="ki-duotone ki-cross fs-2 fs-lg-1 me-0">
 													<span class="path1"></span>
 													<span class="path2"></span>
@@ -43,7 +55,8 @@
             </form>
             <!--end::Form-->
             <!--begin::Menu-->
-            <div data-kt-search-element="content" class="menu menu-sub menu-sub-dropdown py-7 px-7 overflow-hidden w-300px w-md-350px">
+            <div data-kt-search-element="content"
+                 class="menu menu-sub menu-sub-dropdown py-7 px-7 overflow-hidden w-300px w-md-350px">
                 <!--begin::Wrapper-->
                 <div data-kt-search-element="wrapper">
                     <!--begin::Recently viewed-->
@@ -57,7 +70,7 @@
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
-                                    <img src="assets/media/avatars/300-6.jpg" alt="" />
+                                    <img src="{{asset('themeOne/assets/media/avatars/300-6.jpg')}}" alt=""/>
                                 </div>
                                 <!--end::Symbol-->
                                 <!--begin::Title-->
@@ -72,7 +85,7 @@
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
-                                    <img src="assets/media/avatars/300-2.jpg" alt="" />
+                                    <img src="{{asset('themeOne/assets/media/avatars/300-2.jpg')}}" alt=""/>
                                 </div>
                                 <!--end::Symbol-->
                                 <!--begin::Title-->
@@ -87,7 +100,7 @@
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
-                                    <img src="assets/media/avatars/300-9.jpg" alt="" />
+                                    <img src="{{asset('themeOne/assets/media/avatars/300-9.jpg')}}" alt=""/>
                                 </div>
                                 <!--end::Symbol-->
                                 <!--begin::Title-->
@@ -102,7 +115,7 @@
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
-                                    <img src="assets/media/avatars/300-14.jpg" alt="" />
+                                    <img src="{{asset('themeOne/assets/media/avatars/300-14.jpg')}}" alt=""/>
                                 </div>
                                 <!--end::Symbol-->
                                 <!--begin::Title-->
@@ -117,7 +130,7 @@
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
-                                    <img src="assets/media/avatars/300-11.jpg" alt="" />
+                                    <img src="{{asset('themeOne/assets/media/avatars/300-11.jpg')}}" alt=""/>
                                 </div>
                                 <!--end::Symbol-->
                                 <!--begin::Title-->
@@ -129,14 +142,17 @@
                             </a>
                             <!--end::Product-->
                             <!--begin::Category title-->
-                            <h3 class="fs-5 text-muted m-0 pt-5 pb-5" data-kt-search-element="category-title">Customers</h3>
+                            <h3 class="fs-5 text-muted m-0 pt-5 pb-5" data-kt-search-element="category-title">
+                                Customers</h3>
                             <!--end::Category title-->
                             <!--begin::Product-->
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
 																<span class="symbol-label bg-light">
-																	<img class="w-20px h-20px" src="assets/media/svg/brand-logos/volicity-9.svg" alt="" />
+																	<img class="w-20px h-20px"
+                                                                         src="{{asset('themeOne/assets/media/svg/brand-logos/volicity-9.svg')}}"
+                                                                         alt=""/>
 																</span>
                                 </div>
                                 <!--end::Symbol-->
@@ -153,7 +169,9 @@
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
 																<span class="symbol-label bg-light">
-																	<img class="w-20px h-20px" src="assets/media/svg/brand-logos/tvit.svg" alt="" />
+																	<img class="w-20px h-20px"
+                                                                         src="{{asset('themeOne/assets/media/svg/brand-logos/tvit.svg')}}"
+                                                                         alt=""/>
 																</span>
                                 </div>
                                 <!--end::Symbol-->
@@ -170,7 +188,9 @@
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
 																<span class="symbol-label bg-light">
-																	<img class="w-20px h-20px" src="assets/media/svg/misc/infography.svg" alt="" />
+																	<img class="w-20px h-20px"
+                                                                         src="{{asset('themeOne/assets/media/svg/misc/infography.svg')}}"
+                                                                         alt=""/>
 																</span>
                                 </div>
                                 <!--end::Symbol-->
@@ -187,7 +207,9 @@
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
 																<span class="symbol-label bg-light">
-																	<img class="w-20px h-20px" src="assets/media/svg/brand-logos/leaf.svg" alt="" />
+																	<img class="w-20px h-20px"
+                                                                         src="{{asset('themeOne/assets/media/svg/brand-logos/leaf.svg')}}"
+                                                                         alt=""/>
 																</span>
                                 </div>
                                 <!--end::Symbol-->
@@ -204,7 +226,9 @@
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
 																<span class="symbol-label bg-light">
-																	<img class="w-20px h-20px" src="assets/media/svg/brand-logos/tower.svg" alt="" />
+																	<img class="w-20px h-20px"
+                                                                         src="{{asset('themeOne/assets/media/svg/brand-logos/tower.svg')}}"
+                                                                         alt=""/>
 																</span>
                                 </div>
                                 <!--end::Symbol-->
@@ -217,7 +241,8 @@
                             </a>
                             <!--end::Product-->
                             <!--begin::Category title-->
-                            <h3 class="fs-5 text-muted m-0 pt-5 pb-5" data-kt-search-element="category-title">Projects</h3>
+                            <h3 class="fs-5 text-muted m-0 pt-5 pb-5" data-kt-search-element="category-title">
+                                Projects</h3>
                             <!--end::Category title-->
                             <!--begin::Product-->
                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
@@ -320,7 +345,9 @@
                             <!--begin::Toolbar-->
                             <div class="d-flex" data-kt-search-element="toolbar">
                                 <!--begin::Preferences toggle-->
-                                <div data-kt-search-element="preferences-show" class="btn btn-icon w-20px btn-sm btn-active-color-primary me-2 data-bs-toggle=" title="Show search preferences">
+                                <div data-kt-search-element="preferences-show"
+                                     class="btn btn-icon w-20px btn-sm btn-active-color-primary me-2 data-bs-toggle="
+                                     title="Show search preferences">
                                     <i class="ki-duotone ki-setting-2 fs-2">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
@@ -328,7 +355,9 @@
                                 </div>
                                 <!--end::Preferences toggle-->
                                 <!--begin::Advanced search toggle-->
-                                <div data-kt-search-element="advanced-options-form-show" class="btn btn-icon w-20px btn-sm btn-active-color-primary me-n1" data-bs-toggle="tooltip" title="Show more search options">
+                                <div data-kt-search-element="advanced-options-form-show"
+                                     class="btn btn-icon w-20px btn-sm btn-active-color-primary me-n1"
+                                     data-bs-toggle="tooltip" title="Show more search options">
                                     <i class="ki-duotone ki-down fs-2"></i>
                                 </div>
                                 <!--end::Advanced search toggle-->
@@ -352,7 +381,8 @@
                                 <!--end::Symbol-->
                                 <!--begin::Title-->
                                 <div class="d-flex flex-column">
-                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-semibold">BoomApp by Keenthemes</a>
+                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-semibold">BoomApp by
+                                        Keenthemes</a>
                                     <span class="fs-7 text-muted fw-semibold">#45789</span>
                                 </div>
                                 <!--end::Title-->
@@ -374,7 +404,8 @@
                                 <!--end::Symbol-->
                                 <!--begin::Title-->
                                 <div class="d-flex flex-column">
-                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-semibold">"Kept API Project Meeting</a>
+                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-semibold">"Kept API
+                                        Project Meeting</a>
                                     <span class="fs-7 text-muted fw-semibold">#84050</span>
                                 </div>
                                 <!--end::Title-->
@@ -394,7 +425,8 @@
                                 <!--end::Symbol-->
                                 <!--begin::Title-->
                                 <div class="d-flex flex-column">
-                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-semibold">"KPI Monitoring App Launch</a>
+                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-semibold">"KPI
+                                        Monitoring App Launch</a>
                                     <span class="fs-7 text-muted fw-semibold">#84250</span>
                                 </div>
                                 <!--end::Title-->
@@ -414,7 +446,8 @@
                                 <!--end::Symbol-->
                                 <!--begin::Title-->
                                 <div class="d-flex flex-column">
-                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-semibold">Project Reference FAQ</a>
+                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-semibold">Project
+                                        Reference FAQ</a>
                                     <span class="fs-7 text-muted fw-semibold">#67945</span>
                                 </div>
                                 <!--end::Title-->
@@ -424,7 +457,7 @@
                             <div class="d-flex align-items-center mb-5">
                                 <!--begin::Symbol-->
                                 <div class="symbol symbol-40px me-4">
-																<span class="symbol-label bg-light">
+								    <span class="symbol-label bg-light">
 																	<i class="ki-duotone ki-sms fs-2 text-primary">
 																		<span class="path1"></span>
 																		<span class="path2"></span>
@@ -434,7 +467,8 @@
                                 <!--end::Symbol-->
                                 <!--begin::Title-->
                                 <div class="d-flex flex-column">
-                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-semibold">"FitPro App Development</a>
+                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-semibold">"FitPro App
+                                        Development</a>
                                     <span class="fs-7 text-muted fw-semibold">#84250</span>
                                 </div>
                                 <!--end::Title-->
@@ -454,7 +488,8 @@
                                 <!--end::Symbol-->
                                 <!--begin::Title-->
                                 <div class="d-flex flex-column">
-                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-semibold">Shopix Mobile App</a>
+                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-semibold">Shopix Mobile
+                                        App</a>
                                     <span class="fs-7 text-muted fw-semibold">#45690</span>
                                 </div>
                                 <!--end::Title-->
@@ -474,7 +509,8 @@
                                 <!--end::Symbol-->
                                 <!--begin::Title-->
                                 <div class="d-flex flex-column">
-                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-semibold">"Landing UI Design" Launch</a>
+                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-semibold">"Landing UI
+                                        Design" Launch</a>
                                     <span class="fs-7 text-muted fw-semibold">#24005</span>
                                 </div>
                                 <!--end::Title-->
@@ -512,7 +548,8 @@
                     <!--end::Heading-->
                     <!--begin::Input group-->
                     <div class="mb-5">
-                        <input type="text" class="form-control form-control-sm form-control-solid" placeholder="Contains the word" name="query" />
+                        <input type="text" class="form-control form-control-sm form-control-solid"
+                               placeholder="Contains the word" name="query"/>
                     </div>
                     <!--end::Input group-->
                     <!--begin::Input group-->
@@ -521,26 +558,28 @@
                         <div class="nav-group nav-group-fluid">
                             <!--begin::Option-->
                             <label>
-                                <input type="radio" class="btn-check" name="type" value="has" checked="checked" />
+                                <input type="radio" class="btn-check" name="type" value="has" checked="checked"/>
                                 <span class="btn btn-sm btn-color-muted btn-active btn-active-primary">All</span>
                             </label>
                             <!--end::Option-->
                             <!--begin::Option-->
                             <label>
-                                <input type="radio" class="btn-check" name="type" value="users" />
+                                <input type="radio" class="btn-check" name="type" value="users"/>
                                 <span class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Users</span>
                             </label>
                             <!--end::Option-->
                             <!--begin::Option-->
                             <label>
-                                <input type="radio" class="btn-check" name="type" value="orders" />
-                                <span class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Orders</span>
+                                <input type="radio" class="btn-check" name="type" value="orders"/>
+                                <span
+                                    class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Orders</span>
                             </label>
                             <!--end::Option-->
                             <!--begin::Option-->
                             <label>
-                                <input type="radio" class="btn-check" name="type" value="projects" />
-                                <span class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Projects</span>
+                                <input type="radio" class="btn-check" name="type" value="projects"/>
+                                <span
+                                    class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Projects</span>
                             </label>
                             <!--end::Option-->
                         </div>
@@ -549,12 +588,18 @@
                     <!--end::Input group-->
                     <!--begin::Input group-->
                     <div class="mb-5">
-                        <input type="text" name="assignedto" class="form-control form-control-sm form-control-solid" placeholder="Assigned to" value="" />
+                        <label>
+                            <input type="text" name="assignedto" class="form-control form-control-sm form-control-solid"
+                                   placeholder="Assigned to" value=""/>
+                        </label>
                     </div>
                     <!--end::Input group-->
                     <!--begin::Input group-->
                     <div class="mb-5">
-                        <input type="text" name="collaborators" class="form-control form-control-sm form-control-solid" placeholder="Collaborators" value="" />
+                        <label>
+                            <input type="text" name="collaborators" class="form-control form-control-sm form-control-solid"
+                                   placeholder="Collaborators" value=""/>
+                        </label>
                     </div>
                     <!--end::Input group-->
                     <!--begin::Input group-->
@@ -563,13 +608,14 @@
                         <div class="nav-group nav-group-fluid">
                             <!--begin::Option-->
                             <label>
-                                <input type="radio" class="btn-check" name="attachment" value="has" checked="checked" />
-                                <span class="btn btn-sm btn-color-muted btn-active btn-active-primary">Has attachment</span>
+                                <input type="radio" class="btn-check" name="attachment" value="has" checked="checked"/>
+                                <span
+                                    class="btn btn-sm btn-color-muted btn-active btn-active-primary">Has attachment</span>
                             </label>
                             <!--end::Option-->
                             <!--begin::Option-->
                             <label>
-                                <input type="radio" class="btn-check" name="attachment" value="any" />
+                                <input type="radio" class="btn-check" name="attachment" value="any"/>
                                 <span class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Any</span>
                             </label>
                             <!--end::Option-->
@@ -579,7 +625,9 @@
                     <!--end::Input group-->
                     <!--begin::Input group-->
                     <div class="mb-5">
-                        <select name="timezone" aria-label="Select a Timezone" data-control="select2" data-dropdown-parent="#kt_header_search" data-placeholder="date_period" class="form-select form-select-sm form-select-solid">
+                        <select name="timezone" aria-label="Select a Timezone" data-control="select2"
+                                data-dropdown-parent="#kt_header_search" data-placeholder="date_period"
+                                class="form-select form-select-sm form-select-solid">
                             <option value="next">Within the next</option>
                             <option value="last">Within the last</option>
                             <option value="between">Between</option>
@@ -591,12 +639,18 @@
                     <div class="row mb-8">
                         <!--begin::Col-->
                         <div class="col-6">
-                            <input type="number" name="date_number" class="form-control form-control-sm form-control-solid" placeholder="Lenght" value="" />
+                            <label>
+                                <input type="number" name="date_number"
+                                       class="form-control form-control-sm form-control-solid" placeholder="Lenght"
+                                       value=""/>
+                            </label>
                         </div>
                         <!--end::Col-->
                         <!--begin::Col-->
                         <div class="col-6">
-                            <select name="date_typer" aria-label="Select a Timezone" data-control="select2" data-dropdown-parent="#kt_header_search" data-placeholder="Period" class="form-select form-select-sm form-select-solid">
+                            <select name="date_typer" aria-label="Select a Timezone" data-control="select2"
+                                    data-dropdown-parent="#kt_header_search" data-placeholder="Period"
+                                    class="form-select form-select-sm form-select-solid">
                                 <option value="days">Days</option>
                                 <option value="weeks">Weeks</option>
                                 <option value="months">Months</option>
@@ -608,8 +662,11 @@
                     <!--end::Input group-->
                     <!--begin::Actions-->
                     <div class="d-flex justify-content-end">
-                        <button type="reset" class="btn btn-sm btn-light fw-bold btn-active-light-primary me-2" data-kt-search-element="advanced-options-form-cancel">Cancel</button>
-                        <a href="../../demo10/dist/pages/search/horizontal.html" class="btn btn-sm fw-bold btn-primary" data-kt-search-element="advanced-options-form-search">Search</a>
+                        <button type="reset" class="btn btn-sm btn-light fw-bold btn-active-light-primary me-2"
+                                data-kt-search-element="advanced-options-form-cancel">Cancel
+                        </button>
+                        <a href="../../demo10/dist/pages/search/horizontal.html" class="btn btn-sm fw-bold btn-primary"
+                           data-kt-search-element="advanced-options-form-search">Search</a>
                     </div>
                     <!--end::Actions-->
                 </form>
@@ -621,47 +678,55 @@
                     <!--end::Heading-->
                     <!--begin::Input group-->
                     <div class="pb-4 border-bottom">
-                        <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
+                        <label
+                            class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
                             <span class="form-check-label text-gray-700 fs-6 fw-semibold ms-0 me-2">Projects</span>
-                            <input class="form-check-input" type="checkbox" value="1" checked="checked" />
+                            <input class="form-check-input" type="checkbox" value="1" checked="checked"/>
                         </label>
                     </div>
                     <!--end::Input group-->
                     <!--begin::Input group-->
                     <div class="py-4 border-bottom">
-                        <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
+                        <label
+                            class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
                             <span class="form-check-label text-gray-700 fs-6 fw-semibold ms-0 me-2">Targets</span>
-                            <input class="form-check-input" type="checkbox" value="1" checked="checked" />
+                            <input class="form-check-input" type="checkbox" value="1" checked="checked"/>
                         </label>
                     </div>
                     <!--end::Input group-->
                     <!--begin::Input group-->
                     <div class="py-4 border-bottom">
-                        <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
-                            <span class="form-check-label text-gray-700 fs-6 fw-semibold ms-0 me-2">Affiliate Programs</span>
-                            <input class="form-check-input" type="checkbox" value="1" />
+                        <label
+                            class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
+                            <span
+                                class="form-check-label text-gray-700 fs-6 fw-semibold ms-0 me-2">Affiliate Programs</span>
+                            <input class="form-check-input" type="checkbox" value="1"/>
                         </label>
                     </div>
                     <!--end::Input group-->
                     <!--begin::Input group-->
                     <div class="py-4 border-bottom">
-                        <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
+                        <label
+                            class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
                             <span class="form-check-label text-gray-700 fs-6 fw-semibold ms-0 me-2">Referrals</span>
-                            <input class="form-check-input" type="checkbox" value="1" checked="checked" />
+                            <input class="form-check-input" type="checkbox" value="1" checked="checked"/>
                         </label>
                     </div>
                     <!--end::Input group-->
                     <!--begin::Input group-->
                     <div class="py-4 border-bottom">
-                        <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
+                        <label
+                            class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
                             <span class="form-check-label text-gray-700 fs-6 fw-semibold ms-0 me-2">Users</span>
-                            <input class="form-check-input" type="checkbox" value="1" />
+                            <input class="form-check-input" type="checkbox" value="1"/>
                         </label>
                     </div>
                     <!--end::Input group-->
                     <!--begin::Actions-->
                     <div class="d-flex justify-content-end pt-7">
-                        <button type="reset" class="btn btn-sm btn-light fw-bold btn-active-light-primary me-2" data-kt-search-element="preferences-dismiss">Cancel</button>
+                        <button type="reset" class="btn btn-sm btn-light fw-bold btn-active-light-primary me-2"
+                                data-kt-search-element="preferences-dismiss">Cancel
+                        </button>
                         <button type="submit" class="btn btn-sm fw-bold btn-primary">Save Changes</button>
                     </div>
                     <!--end::Actions-->
@@ -675,18 +740,23 @@
     <!--end::Product-->
     <!--begin::Product-->
     <div class="d-flex align-items-center me-2 me-lg-4">
-        <a href="#" class="btn btn-icon btn-borderless btn-color-white btn-active-primary bg-white bg-opacity-10 position-relative" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+        <a href="#"
+           class="btn btn-icon btn-borderless btn-color-white btn-active-primary bg-white bg-opacity-10 position-relative"
+           data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
             <i class="ki-duotone ki-notification-bing fs-1 text-white">
                 <span class="path1"></span>
                 <span class="path2"></span>
                 <span class="path3"></span>
             </i>
-            <span class="bullet bullet-dot bg-success h-6px w-6px position-absolute translate-middle top-0 start-50 animation-blink"></span>
+            <span
+                class="bullet bullet-dot bg-success h-6px w-6px position-absolute translate-middle top-0 start-50 animation-blink"></span>
         </a>
         <!--begin::Menu-->
-        <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px" data-kt-menu="true" id="kt_menu_notifications">
+        <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px" data-kt-menu="true"
+             id="kt_menu_notifications">
             <!--begin::Heading-->
-            <div class="d-flex flex-column bgi-no-repeat rounded-top" style="background-image:url('assets/media/misc/menu-header-bg.jpg')">
+            <div class="d-flex flex-column bgi-no-repeat rounded-top"
+                 style="background-image:url('{{asset('themeOne/assets/media/misc/menu-header-bg.jpg')}}')">
                 <!--begin::Title-->
                 <h3 class="text-white fw-semibold px-9 mt-10 mb-6">Notifications
                     <span class="fs-8 opacity-75 ps-3">24 reports</span></h3>
@@ -694,13 +764,16 @@
                 <!--begin::Tabs-->
                 <ul class="nav nav-line-tabs nav-line-tabs-2x nav-stretch fw-semibold px-9">
                     <li class="nav-item">
-                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4" data-bs-toggle="tab" href="#kt_topbar_notifications_1">Alerts</a>
+                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4" data-bs-toggle="tab"
+                           href="#kt_topbar_notifications_1">Alerts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4 active" data-bs-toggle="tab" href="#kt_topbar_notifications_2">Updates</a>
+                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4 active" data-bs-toggle="tab"
+                           href="#kt_topbar_notifications_2">Updates</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4" data-bs-toggle="tab" href="#kt_topbar_notifications_3">Logs</a>
+                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4" data-bs-toggle="tab"
+                           href="#kt_topbar_notifications_3">Logs</a>
                     </li>
                 </ul>
                 <!--end::Tabs-->
@@ -756,7 +829,8 @@
                                 <!--end::Symbol-->
                                 <!--begin::Title-->
                                 <div class="mb-0 me-2">
-                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bold">HR Confidential</a>
+                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bold">HR
+                                        Confidential</a>
                                     <div class="text-gray-400 fs-7">Confidential staff documents</div>
                                 </div>
                                 <!--end::Title-->
@@ -839,7 +913,8 @@
                                 <!--end::Symbol-->
                                 <!--begin::Title-->
                                 <div class="mb-0 me-2">
-                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bold">Project Breafing</a>
+                                    <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bold">Project
+                                        Breafing</a>
                                     <div class="text-gray-400 fs-7">Product launch status update</div>
                                 </div>
                                 <!--end::Title-->
@@ -924,7 +999,8 @@
                     <!--end::Items-->
                     <!--begin::View more-->
                     <div class="py-3 text-center border-top">
-                        <a href="../../demo10/dist/pages/user-profile/activity.html" class="btn btn-color-gray-600 btn-active-color-primary">View All
+                        <a href="../../demo10/dist/pages/user-profile/activity.html"
+                           class="btn btn-color-gray-600 btn-active-color-primary">View All
                             <i class="ki-duotone ki-arrow-right fs-5">
                                 <span class="path1"></span>
                                 <span class="path2"></span>
@@ -943,18 +1019,22 @@
                             <h3 class="text-dark text-center fw-bold">Get Pro Access</h3>
                             <!--end::Title-->
                             <!--begin::Text-->
-                            <div class="text-center text-gray-600 fw-semibold pt-1">Outlines keep you honest. They stoping you from amazing poorly about drive</div>
+                            <div class="text-center text-gray-600 fw-semibold pt-1">Outlines keep you honest. They
+                                stoping you from amazing poorly about drive
+                            </div>
                             <!--end::Text-->
                             <!--begin::Action-->
                             <div class="text-center mt-5 mb-9">
-                                <a href="#" class="btn btn-sm btn-primary px-6" data-bs-toggle="modal" data-bs-target="#kt_modal_upgrade_plan">Upgrade</a>
+                                <a href="#" class="btn btn-sm btn-primary px-6" data-bs-toggle="modal"
+                                   data-bs-target="#kt_modal_upgrade_plan">Upgrade</a>
                             </div>
                             <!--end::Action-->
                         </div>
                         <!--end::Section-->
                         <!--begin::Illustration-->
                         <div class="text-center px-4">
-                            <img class="mw-100 mh-200px" alt="image" src="assets/media/illustrations/sigma-1/1.png" />
+                            <img class="mw-100 mh-200px" alt="image"
+                                 src="{{asset('themeOne/assets/media/illustrations/sigma-1/1.png')}}"/>
                         </div>
                         <!--end::Illustration-->
                     </div>
@@ -1173,7 +1253,8 @@
                     <!--end::Items-->
                     <!--begin::View more-->
                     <div class="py-3 text-center border-top">
-                        <a href="../../demo10/dist/pages/user-profile/activity.html" class="btn btn-color-gray-600 btn-active-color-primary">View All
+                        <a href="../../demo10/dist/pages/user-profile/activity.html"
+                           class="btn btn-color-gray-600 btn-active-color-primary">View All
                             <i class="ki-duotone ki-arrow-right fs-5">
                                 <span class="path1"></span>
                                 <span class="path2"></span>
@@ -1190,20 +1271,23 @@
     <!--end::Product-->
     <!--begin::Product-->
     <div class="d-flex align-items-center me-2 me-lg-4">
-        <a href="#" class="btn btn-icon btn-borderless btn-color-white btn-active-primary bg-white bg-opacity-10" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+        <a href="#" class="btn btn-icon btn-borderless btn-color-white btn-active-primary bg-white bg-opacity-10"
+           data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
             <i class="ki-duotone ki-user fs-1 text-white">
                 <span class="path1"></span>
                 <span class="path2"></span>
             </i>
         </a>
         <!--begin::User account menu-->
-        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
+        <div
+            class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px"
+            data-kt-menu="true">
             <!--begin::Menu item-->
             <div class="menu-item px-3">
                 <div class="menu-content d-flex align-items-center px-3">
                     <!--begin::Avatar-->
                     <div class="symbol symbol-50px me-5">
-                        <img alt="Logo" src="assets/media/avatars/300-1.jpg" />
+                        <img alt="Logo" src="{{asset('themeOne/assets/media/avatars/300-1.jpg')}}"/>
                     </div>
                     <!--end::Avatar-->
                     <!--begin::Username-->
@@ -1229,13 +1313,15 @@
                 <a href="../../demo10/dist/apps/projects/list.html" class="menu-link px-5">
                     <span class="menu-text">My Projects</span>
                     <span class="menu-badge">
-													<span class="badge badge-light-danger badge-circle fw-bold fs-7">3</span>
+													<span
+                                                        class="badge badge-light-danger badge-circle fw-bold fs-7">3</span>
 												</span>
                 </a>
             </div>
             <!--end::Menu item-->
             <!--begin::Menu item-->
-            <div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start" data-kt-menu-offset="-15px, 0">
+            <div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+                 data-kt-menu-placement="right-start" data-kt-menu-offset="-15px, 0">
                 <a href="#" class="menu-link px-5">
                     <span class="menu-title">My Subscription</span>
                     <span class="menu-arrow"></span>
@@ -1276,7 +1362,8 @@
                     <div class="menu-item px-3">
                         <div class="menu-content px-3">
                             <label class="form-check form-switch form-check-custom form-check-solid">
-                                <input class="form-check-input w-30px h-20px" type="checkbox" value="1" checked="checked" name="notifications" />
+                                <input class="form-check-input w-30px h-20px" type="checkbox" value="1"
+                                       checked="checked" name="notifications"/>
                                 <span class="form-check-label text-muted fs-7">Notifications</span>
                             </label>
                         </div>
@@ -1295,11 +1382,15 @@
             <div class="separator my-2"></div>
             <!--end::Menu separator-->
             <!--begin::Menu item-->
-            <div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start" data-kt-menu-offset="-15px, 0">
+            <div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+                 data-kt-menu-placement="right-start" data-kt-menu-offset="-15px, 0">
                 <a href="#" class="menu-link px-5">
 												<span class="menu-title position-relative">Language
-												<span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English
-												<img class="w-15px h-15px rounded-1 ms-2" src="assets/media/flags/united-states.svg" alt="" /></span></span>
+												<span
+                                                    class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English
+												<img class="w-15px h-15px rounded-1 ms-2"
+                                                     src="{{asset('themeOne/assets/media/flags/united-states.svg')}}"
+                                                     alt=""/></span></span>
                 </a>
                 <!--begin::Menu sub-->
                 <div class="menu-sub menu-sub-dropdown w-175px py-4">
@@ -1307,7 +1398,9 @@
                     <div class="menu-item px-3">
                         <a href="../../demo10/dist/account/settings.html" class="menu-link d-flex px-5 active">
 													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1" src="assets/media/flags/united-states.svg" alt="" />
+														<img class="rounded-1"
+                                                             src="{{asset('themeOne/assets/media/flags/united-states.svg')}}"
+                                                              alt=""/>
 													</span>English</a>
                     </div>
                     <!--end::Menu item-->
@@ -1315,7 +1408,9 @@
                     <div class="menu-item px-3">
                         <a href="../../demo10/dist/account/settings.html" class="menu-link d-flex px-5">
 													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1" src="assets/media/flags/spain.svg" alt="" />
+														<img class="rounded-1"
+                                                             src="{{asset('themeOne/assets/media/flags/spain.svg')}}"
+                                                             alt=""/>
 													</span>Spanish</a>
                     </div>
                     <!--end::Menu item-->
@@ -1323,7 +1418,9 @@
                     <div class="menu-item px-3">
                         <a href="../../demo10/dist/account/settings.html" class="menu-link d-flex px-5">
 													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1" src="assets/media/flags/germany.svg" alt="" />
+														<img class="rounded-1"
+                                                             src="{{asset('themeOne/assets/media/flags/germany.svg')}}"
+                                                             alt=""/>
 													</span>German</a>
                     </div>
                     <!--end::Menu item-->
@@ -1331,7 +1428,9 @@
                     <div class="menu-item px-3">
                         <a href="../../demo10/dist/account/settings.html" class="menu-link d-flex px-5">
 													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1" src="assets/media/flags/japan.svg" alt="" />
+														<img class="rounded-1"
+                                                             src="{{asset('themeOne/assets/media/flags/japan.svg')}}"
+                                                             alt=""/>
 													</span>Japanese</a>
                     </div>
                     <!--end::Menu item-->
@@ -1339,7 +1438,9 @@
                     <div class="menu-item px-3">
                         <a href="../../demo10/dist/account/settings.html" class="menu-link d-flex px-5">
 													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1" src="assets/media/flags/france.svg" alt="" />
+														<img class="rounded-1"
+                                                             src="{{asset('themeOne/assets/media/flags/france.svg')}}"
+                                                             alt=""/>
 													</span>French</a>
                     </div>
                     <!--end::Menu item-->
@@ -1354,7 +1455,8 @@
             <!--end::Menu item-->
             <!--begin::Menu item-->
             <div class="menu-item px-5">
-                <a href="../../demo10/dist/authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Sign Out</a>
+                <a href="../../demo10/dist/authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Sign
+                    Out</a>
             </div>
             <!--end::Menu item-->
         </div>
@@ -1364,7 +1466,9 @@
     <!--begin::Theme mode-->
     <div class="d-flex align-items-center me-2 me-lg-4">
         <!--begin::Menu toggle-->
-        <a href="#" class="btn btn-icon btn-borderless btn-color-white btn-active-primary bg-white bg-opacity-10" data-kt-menu-trigger="{default:'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+        <a href="#" class="btn btn-icon btn-borderless btn-color-white btn-active-primary bg-white bg-opacity-10"
+           data-kt-menu-trigger="{default:'click', lg: 'hover'}" data-kt-menu-attach="parent"
+           data-kt-menu-placement="bottom-end">
             <i class="ki-duotone ki-night-day theme-light-show fs-2">
                 <span class="path1"></span>
                 <span class="path2"></span>
@@ -1384,7 +1488,9 @@
         </a>
         <!--begin::Menu toggle-->
         <!--begin::Menu-->
-        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-gray-500 menu-active-bg menu-state-color fw-semibold py-4 fs-base w-150px" data-kt-menu="true" data-kt-element="theme-mode-menu">
+        <div
+            class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-gray-500 menu-active-bg menu-state-color fw-semibold py-4 fs-base w-150px"
+            data-kt-menu="true" data-kt-element="theme-mode-menu">
             <!--begin::Menu item-->
             <div class="menu-item px-3 my-0">
                 <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="light">
@@ -1440,12 +1546,15 @@
     <!--end::Theme mode-->
     <!--begin::Product-->
     <div class="d-flex align-items-center me-2 me-lg-4">
-        <a href="#" class="btn btn-success border-0 px-3 px-lg-6" data-bs-toggle="modal" data-bs-target="#kt_modal_create_campaign">New Goal</a>
+        <a href="#" class="btn btn-success border-0 px-3 px-lg-6" data-bs-toggle="modal"
+           data-bs-target="#kt_modal_create_campaign">New Goal</a>
     </div>
     <!--end::Product-->
     <!--begin::Product-->
     <div class="d-flex align-items-center">
-        <a href="../../demo10/dist/index.html" class="btn btn-icon btn-color-white btn-active-color-primary border-0 me-n3" data-bs-toggle="tooltip" data-bs-placement="left" title="Return to launcher">
+        <a href="../../demo10/dist/index.html"
+           class="btn btn-icon btn-color-white btn-active-color-primary border-0 me-n3" data-bs-toggle="tooltip"
+           data-bs-placement="left" title="Return to launcher">
             <i class="ki-duotone ki-cross-square fs-2x text-white">
                 <span class="path1"></span>
                 <span class="path2"></span>

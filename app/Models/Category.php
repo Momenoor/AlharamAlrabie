@@ -7,18 +7,27 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    use HasFactory;
 
     protected $fillable = [
         'name',
+        'slug',
         'description',
         'image',
-        'slug',
         'status',
     ];
 
-    public function products(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function products(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->belongsToMany(Product::class)->using(CategoryProduct::class)->withPivot(['price', 'image'])->withTimestamps();
+        return $this->hasMany(Product::class);
+    }
+
+    public function variants(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(CategoryVariant::class);
+    }
+
+    public function predefinedVariants(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(PredefinedProductVariant::class);
     }
 }

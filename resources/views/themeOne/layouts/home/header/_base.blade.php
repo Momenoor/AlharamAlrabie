@@ -13,7 +13,7 @@
         <div class="d-flex flex-column mb-7 align-items-center">
             <div class="d-flex flex-column mb-0 align-items-center">
                 <div class="logo-container">
-                    <a href="{{route('home')}}"><img class="logo" src="{{asset('images/logo.png')}}"
+                    <a href="{{route('home')}}"><img class="logo" src="{{asset('image/logo.png')}}"
                                                      alt="Al Haram Al Rabie"></a>
                     <div class="triangle"></div>
                 </div>

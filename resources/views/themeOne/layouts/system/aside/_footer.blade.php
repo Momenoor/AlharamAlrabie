@@ -5,7 +5,7 @@
         <div class="d-flex align-items-center">
             <!--begin::Avatar-->
             <div class="symbol symbol-circle symbol-40px">
-                <img src="assets/media/avatars/300-1.jpg" alt="photo" />
+                <img src="{{asset('themeOne/assets/media/avatars/300-1.jpg')}}" alt="photo" />
             </div>
             <!--end::Avatar-->
             <!--begin::User info-->
@@ -35,7 +35,7 @@
                     <div class="menu-content d-flex align-items-center px-3">
                         <!--begin::Avatar-->
                         <div class="symbol symbol-50px me-5">
-                            <img alt="Logo" src="assets/media/avatars/300-1.jpg" />
+                            <img alt="Logo" src="{{asset('themeOne/assets/media/avatars/300-1.jpg')}}" />
                         </div>
                         <!--end::Avatar-->
                         <!--begin::Username-->

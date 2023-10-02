@@ -12,7 +12,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::with(['variants', 'predefinedVariants'])->get();
+        return view('themeOne::category.index', compact('categories'));
     }
 
     /**
@@ -44,7 +45,8 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        $category = $category->load(['variants', 'predefinedVariants']);
+        return view('themeOne::category.edit', compact('category'));
     }
 
     /**
@@ -52,7 +54,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        dd($request->all());
     }
 
     /**
@@ -60,6 +62,15 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        try {
+            $category->delete();
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => $e->getMessage()
+            ]);
+        }
+
     }
 }

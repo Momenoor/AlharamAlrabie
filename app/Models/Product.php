@@ -17,21 +17,27 @@ class Product extends Model
     protected $fillable = [
         'name',
         'description',
-        'image',
+        'account_id',
+        'category_id',
         'slug',
         'type',
-        'is-show_in_menu',
+        'image',
+        'price',
+        'is_show_in_menu',
     ];
 
-    public function categories(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function account()
     {
-        return $this->belongsToMany(Category::class)->using(CategoryProduct::class)->withPivot(['price', 'image'])->withTimestamps();
+        return $this->belongsTo(Account::class);
     }
 
-    protected function categoriesIds(): Attribute
+    public function category()
     {
-        return Attribute::make(
-            get: fn() => $this->categories->pluck('id')->toArray(),
-        );
+        return $this->belongsTo(Category::class);
+    }
+
+    public function productVariants()
+    {
+        return $this->hasMany(ProductVariant::class);
     }
 }

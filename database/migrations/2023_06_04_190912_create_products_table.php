@@ -15,10 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description')->nullable();
-            $table->foreignIdFor(\App\Models\Account::class)->nullable()->constrained();
+            $table->foreignIdFor(\App\Models\Account::class)->nullable()->constrained()->onUpdate('cascade')->onDelete('set null');
+            $table->foreignIdFor(\App\Models\Category::class)->nullable()->constrained()->onUpdate('cascade')->onDelete('set null');
             $table->string('slug')->nullable();
             $table->string('type')->nullable();
             $table->string('image')->nullable();
+            $table->decimal('price', 10, 2)->nullable();
             $table->boolean('is_show_in_menu')->default(false);
             $table->timestamps();
         });

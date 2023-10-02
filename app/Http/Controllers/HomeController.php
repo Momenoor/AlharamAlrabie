@@ -43,12 +43,9 @@ class HomeController extends Controller
             'المشروبات - Drinks',
         ];
         $items = Product::where([
-            'type' => 'product',
-            'is_menu_item' => '1',
-        ])->get()->groupBy('category')->sortBy(function ($value) use ($order) {
-            return array_search($value[0]->category, $order);
-        });
+            'is_show_in_menu' => true,
+        ])->get();
 
-        return view('themeOne::menu', ['product' => $items]);
+        return view('themeOne::menu', ['products' => $items]);
     }
 }

@@ -10,9 +10,9 @@
     </div>
     <!--end::Aside toggle-->
     <!--begin::Logo-->
-    <a href="../../demo10/dist/index.html">
-        <img alt="Logo" src="assets/media/logos/default-dark.svg" class="h-25px h-lg-30px d-none d-md-block" />
-        <img alt="Logo" src="assets/media/logos/default-small.svg" class="h-25px d-block d-md-none" />
+    <a href="{{route('home')}}">
+        <img alt="Logo" src="{{asset('image/logo.png')}}" class="h-25px h-lg-30px d-none d-md-block" />
+        <img alt="Logo" src="{{asset('image/logo.png')}}" class="h-25px d-block d-md-none" />
     </a>
     <!--end::Logo-->
 </div>
