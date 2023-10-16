@@ -1,3 +1,7 @@
+@php
+    $variants = old('variants',[]);
+    $predefinedVariants = old('predefinedVariants',[]);
+@endphp
 @extends('themeOne::layouts.system.app')
 @section('content')
     <div class="mt-lg-20">
@@ -12,606 +16,513 @@
         @endif
         <!--begin::Form-->
         <form id="kt_ecommerce_edit_category_form" class="form d-flex flex-column flex-lg-row"
-              action="{{route('category.update',$category)}}" method="post" enctype="multipart/form-data">
+              action="{{route('category.store')}}" method="post" enctype="multipart/form-data">
             @csrf
-            @method('PUT')
             <!--begin::Aside column-->
-            <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-                <!--begin::Toolbar-->
-                <div class="toolbar d-flex flex-stack mb-3 mb-lg-5" id="kt_toolbar">
-                    <!--begin::Container-->
-                    <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack flex-wrap">
-                        <!--begin::Page title-->
-                        <div class="page-title d-flex flex-column me-5 py-2">
-                            <!--begin::Title-->
-                            <h1 class="d-flex flex-column text-dark fw-bold fs-3 mb-0">Add Category</h1>
-                            <!--end::Title-->
-                            <!--begin::Breadcrumb-->
-                            <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 pt-1">
-                                <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">
-                                    <a href="../../demo10/dist/index.html" class="text-muted text-hover-primary">Home</a>
-                                </li>
-                                <!--end::Item-->
-                                <!--begin::Item-->
-                                <li class="breadcrumb-item">
-                                    <span class="bullet bg-gray-200 w-5px h-2px"></span>
-                                </li>
-                                <!--end::Item-->
-                                <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">eCommerce</li>
-                                <!--end::Item-->
-                                <!--begin::Item-->
-                                <li class="breadcrumb-item">
-                                    <span class="bullet bg-gray-200 w-5px h-2px"></span>
-                                </li>
-                                <!--end::Item-->
-                                <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Catalog</li>
-                                <!--end::Item-->
-                                <!--begin::Item-->
-                                <li class="breadcrumb-item">
-                                    <span class="bullet bg-gray-200 w-5px h-2px"></span>
-                                </li>
-                                <!--end::Item-->
-                                <!--begin::Item-->
-                                <li class="breadcrumb-item text-dark">Add Category</li>
-                                <!--end::Item-->
-                            </ul>
-                            <!--end::Breadcrumb-->
+            <div class="d-flex flex-column gap-7 gap-lg-10 w-100 w-lg-300px mb-7 me-lg-10 min-w-md-300px">
+                <!--begin::Thumbnail settings-->
+                <div class="card card-flush py-4">
+                    <!--begin::Card header-->
+                    <div class="card-header">
+                        <!--begin::Card title-->
+                        <div class="card-title">
+                            <h2>Icon</h2>
                         </div>
-                        <!--end::Page title-->
-                        <!--begin::Actions-->
-                        <div class="d-flex align-items-center py-2">
-                            <!--begin::Wrapper-->
-                            <div class="me-4">
-                                <!--begin::Menu-->
-                                <a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bold" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                    <i class="ki-duotone ki-filter fs-5 text-gray-500 me-1">
-                                        <span class="path1"></span>
-                                        <span class="path2"></span>
-                                    </i>Filter</a>
-                                <!--begin::Menu 1-->
-                                <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_64b7766eafb11">
-                                    <!--begin::Header-->
-                                    <div class="px-7 py-5">
-                                        <div class="fs-5 text-dark fw-bold">Filter Options</div>
-                                    </div>
-                                    <!--end::Header-->
-                                    <!--begin::Menu separator-->
-                                    <div class="separator border-gray-200"></div>
-                                    <!--end::Menu separator-->
-                                    <!--begin::Form-->
-                                    <div class="px-7 py-5">
-                                        <!--begin::Input group-->
-                                        <div class="mb-10">
-                                            <!--begin::Label-->
-                                            <label class="form-label fw-semibold">Status:</label>
-                                            <!--end::Label-->
-                                            <!--begin::Input-->
-                                            <div>
-                                                <select class="form-select form-select-solid" multiple="multiple" data-kt-select2="true" data-close-on-select="false" data-placeholder="Select option" data-dropdown-parent="#kt_menu_64b7766eafb11" data-allow-clear="true">
-                                                    <option></option>
-                                                    <option value="1">Approved</option>
-                                                    <option value="2">Pending</option>
-                                                    <option value="2">In Process</option>
-                                                    <option value="2">Rejected</option>
-                                                </select>
-                                            </div>
-                                            <!--end::Input-->
-                                        </div>
-                                        <!--end::Input group-->
-                                        <!--begin::Input group-->
-                                        <div class="mb-10">
-                                            <!--begin::Label-->
-                                            <label class="form-label fw-semibold">Member Type:</label>
-                                            <!--end::Label-->
-                                            <!--begin::Options-->
-                                            <div class="d-flex">
-                                                <!--begin::Options-->
-                                                <label class="form-check form-check-sm form-check-custom form-check-solid me-5">
-                                                    <input class="form-check-input" type="checkbox" value="1" />
-                                                    <span class="form-check-label">Author</span>
-                                                </label>
-                                                <!--end::Options-->
-                                                <!--begin::Options-->
-                                                <label class="form-check form-check-sm form-check-custom form-check-solid">
-                                                    <input class="form-check-input" type="checkbox" value="2" checked="checked" />
-                                                    <span class="form-check-label">Customer</span>
-                                                </label>
-                                                <!--end::Options-->
-                                            </div>
-                                            <!--end::Options-->
-                                        </div>
-                                        <!--end::Input group-->
-                                        <!--begin::Input group-->
-                                        <div class="mb-10">
-                                            <!--begin::Label-->
-                                            <label class="form-label fw-semibold">Notifications:</label>
-                                            <!--end::Label-->
-                                            <!--begin::Switch-->
-                                            <div class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" value="" name="notifications" checked="checked" />
-                                                <label class="form-check-label">Enabled</label>
-                                            </div>
-                                            <!--end::Switch-->
-                                        </div>
-                                        <!--end::Input group-->
-                                        <!--begin::Actions-->
-                                        <div class="d-flex justify-content-end">
-                                            <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true">Reset</button>
-                                            <button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Apply</button>
-                                        </div>
-                                        <!--end::Actions-->
-                                    </div>
-                                    <!--end::Form-->
-                                </div>
-                                <!--end::Menu 1-->
-                                <!--end::Menu-->
-                            </div>
-                            <!--end::Wrapper-->
-                            <!--begin::Button-->
-                            <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app" id="kt_toolbar_primary_button">Create</a>
-                            <!--end::Button-->
-                        </div>
-                        <!--end::Actions-->
+                        <!--end::Card title-->
                     </div>
-                    <!--end::Container-->
+                    <!--end::Card header-->
+                    <!--begin::Card body-->
+                    <div class="card-body text-center pt-0">
+                        <!--begin::Image input-->
+                        <!--begin::Image input placeholder-->
+                        <style>.image-input-placeholder {
+                                background-image: url('{{asset('themeOne/assets/media/svg/files/blank-image.svg')}}');
+                            }
+
+                            [data-bs-theme="dark"] .image-input-placeholder {
+                                background-image: url('{{asset('themeOne/assets/media/svg/files/blank-image-dark.svg')}}');
+                            }</style>
+                        <!--end::Image input placeholder-->
+                        <!--begin::Image input-->
+                        <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3"
+                             data-kt-image-input="true">
+                            <!--begin::Preview existing avatar-->
+                            <div class="image-input-wrapper w-150px h-150px"></div>
+                            <!--end::Preview existing avatar-->
+                            <!--begin::Label-->
+                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                   data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change image">
+                                <!--begin::Icon-->
+                                <i class="ki-duotone ki-pencil fs-7">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                                <!--end::Icon-->
+                                <!--begin::Inputs-->
+                                <input type="file" name="image" accept=".svg"/>
+                                <input type="hidden" name="image_remove"/>
+                                <!--end::Inputs-->
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Cancel-->
+                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                  data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel image">
+														<i class="ki-duotone ki-cross fs-2">
+															<span class="path1"></span>
+															<span class="path2"></span>
+														</i>
+													</span>
+                            <!--end::Cancel-->
+                            <!--begin::Remove-->
+                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                  data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove image">
+														<i class="ki-duotone ki-cross fs-2">
+															<span class="path1"></span>
+															<span class="path2"></span>
+														</i>
+													</span>
+                            <!--end::Remove-->
+                        </div>
+                        <!--end::Image input-->
+                        <!--begin::Description-->
+                        <div class="text-muted fs-7">
+                            Set the category icon image. Only *.svg image files are accepted
+                        </div>
+                        <!--end::Description-->
+                    </div>
+                    <!--end::Card body-->
                 </div>
-                <!--end::Toolbar-->
-                <!--begin::Post-->
-                <div class="post d-flex flex-column-fluid" id="kt_post">
-                    <!--begin::Container-->
-                    <div id="kt_content_container" class="container-xxl">
-                        <form id="kt_ecommerce_add_category_form" class="form d-flex flex-column flex-lg-row" data-kt-redirect="../../demo10/dist/apps/ecommerce/catalog/categories.html">
-                            <!--begin::Aside column-->
-                            <div class="d-flex flex-column gap-7 gap-lg-10 w-100 w-lg-300px mb-7 me-lg-10">
-                                <!--begin::Thumbnail settings-->
-                                <div class="card card-flush py-4">
-                                    <!--begin::Card header-->
-                                    <div class="card-header">
-                                        <!--begin::Card title-->
-                                        <div class="card-title">
-                                            <h2>Thumbnail</h2>
-                                        </div>
-                                        <!--end::Card title-->
-                                    </div>
-                                    <!--end::Card header-->
-                                    <!--begin::Card body-->
-                                    <div class="card-body text-center pt-0">
-                                        <!--begin::Image input-->
-                                        <!--begin::Image input placeholder-->
-                                        <style>.image-input-placeholder { background-image: url('assets/media/svg/files/blank-image.svg'); } [data-bs-theme="dark"] .image-input-placeholder { background-image: url('assets/media/svg/files/blank-image-dark.svg'); }</style>
-                                        <!--end::Image input placeholder-->
-                                        <!--begin::Image input-->
-                                        <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3" data-kt-image-input="true">
-                                            <!--begin::Preview existing avatar-->
-                                            <div class="image-input-wrapper w-150px h-150px"></div>
-                                            <!--end::Preview existing avatar-->
-                                            <!--begin::Label-->
-                                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
-                                                <!--begin::Icon-->
-                                                <i class="ki-duotone ki-pencil fs-7">
-                                                    <span class="path1"></span>
-                                                    <span class="path2"></span>
-                                                </i>
-                                                <!--end::Icon-->
-                                                <!--begin::Inputs-->
-                                                <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
-                                                <input type="hidden" name="avatar_remove" />
-                                                <!--end::Inputs-->
-                                            </label>
-                                            <!--end::Label-->
-                                            <!--begin::Cancel-->
-                                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
-														<i class="ki-duotone ki-cross fs-2">
-															<span class="path1"></span>
-															<span class="path2"></span>
-														</i>
-													</span>
-                                            <!--end::Cancel-->
-                                            <!--begin::Remove-->
-                                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
-														<i class="ki-duotone ki-cross fs-2">
-															<span class="path1"></span>
-															<span class="path2"></span>
-														</i>
-													</span>
-                                            <!--end::Remove-->
-                                        </div>
-                                        <!--end::Image input-->
-                                        <!--begin::Description-->
-                                        <div class="text-muted fs-7">Set the category thumbnail image. Only *.png, *.jpg and *.jpeg image files are accepted</div>
-                                        <!--end::Description-->
-                                    </div>
-                                    <!--end::Card body-->
-                                </div>
-                                <!--end::Thumbnail settings-->
-                                <!--begin::Status-->
-                                <div class="card card-flush py-4">
-                                    <!--begin::Card header-->
-                                    <div class="card-header">
-                                        <!--begin::Card title-->
-                                        <div class="card-title">
-                                            <h2>Status</h2>
-                                        </div>
-                                        <!--end::Card title-->
-                                        <!--begin::Card toolbar-->
-                                        <div class="card-toolbar">
-                                            <div class="rounded-circle bg-success w-15px h-15px" id="kt_ecommerce_add_category_status"></div>
-                                        </div>
-                                        <!--begin::Card toolbar-->
-                                    </div>
-                                    <!--end::Card header-->
-                                    <!--begin::Card body-->
-                                    <div class="card-body pt-0">
-                                        <!--begin::Select2-->
-                                        <select class="form-select mb-2" data-control="select2" data-hide-search="true" data-placeholder="Select an option" id="kt_ecommerce_add_category_status_select">
-                                            <option></option>
-                                            <option value="published" selected="selected">Published</option>
-                                            <option value="scheduled">Scheduled</option>
-                                            <option value="unpublished">Unpublished</option>
-                                        </select>
-                                        <!--end::Select2-->
-                                        <!--begin::Description-->
-                                        <div class="text-muted fs-7">Set the category status.</div>
-                                        <!--end::Description-->
-                                        <!--begin::Datepicker-->
-                                        <div class="d-none mt-10">
-                                            <label for="kt_ecommerce_add_category_status_datepicker" class="form-label">Select publishing date and time</label>
-                                            <input class="form-control" id="kt_ecommerce_add_category_status_datepicker" placeholder="Pick date & time" />
-                                        </div>
-                                        <!--end::Datepicker-->
-                                    </div>
-                                    <!--end::Card body-->
-                                </div>
-                                <!--end::Status-->
-                                <!--begin::Template settings-->
-                                <div class="card card-flush py-4">
-                                    <!--begin::Card header-->
-                                    <div class="card-header">
-                                        <!--begin::Card title-->
-                                        <div class="card-title">
-                                            <h2>Store Template</h2>
-                                        </div>
-                                        <!--end::Card title-->
-                                    </div>
-                                    <!--end::Card header-->
-                                    <!--begin::Card body-->
-                                    <div class="card-body pt-0">
-                                        <!--begin::Select store template-->
-                                        <label for="kt_ecommerce_add_category_store_template" class="form-label">Select a store template</label>
-                                        <!--end::Select store template-->
-                                        <!--begin::Select2-->
-                                        <select class="form-select mb-2" data-control="select2" data-hide-search="true" data-placeholder="Select an option" id="kt_ecommerce_add_category_store_template">
-                                            <option></option>
-                                            <option value="default" selected="selected">Default template</option>
-                                            <option value="electronics">Electronics</option>
-                                            <option value="office">Office stationary</option>
-                                            <option value="fashion">Fashion</option>
-                                        </select>
-                                        <!--end::Select2-->
-                                        <!--begin::Description-->
-                                        <div class="text-muted fs-7">Assign a template from your current theme to define how the category products are displayed.</div>
-                                        <!--end::Description-->
-                                    </div>
-                                    <!--end::Card body-->
-                                </div>
-                                <!--end::Template settings-->
-                            </div>
-                            <!--end::Aside column-->
-                            <!--begin::Main column-->
-                            <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
-                                <!--begin::General options-->
-                                <div class="card card-flush py-4">
-                                    <!--begin::Card header-->
-                                    <div class="card-header">
-                                        <div class="card-title">
-                                            <h2>General</h2>
-                                        </div>
-                                    </div>
-                                    <!--end::Card header-->
-                                    <!--begin::Card body-->
-                                    <div class="card-body pt-0">
-                                        <!--begin::Input group-->
-                                        <div class="mb-10 fv-row">
-                                            <!--begin::Label-->
-                                            <label class="required form-label">Category Name</label>
-                                            <!--end::Label-->
-                                            <!--begin::Input-->
-                                            <input type="text" name="category_name" class="form-control mb-2" placeholder="Product name" value="" />
-                                            <!--end::Input-->
-                                            <!--begin::Description-->
-                                            <div class="text-muted fs-7">A category name is required and recommended to be unique.</div>
-                                            <!--end::Description-->
-                                        </div>
-                                        <!--end::Input group-->
-                                        <!--begin::Input group-->
-                                        <div>
-                                            <!--begin::Label-->
-                                            <label class="form-label">Description</label>
-                                            <!--end::Label-->
-                                            <!--begin::Editor-->
-                                            <div id="kt_ecommerce_add_category_description" name="kt_ecommerce_add_category_description" class="min-h-200px mb-2"></div>
-                                            <!--end::Editor-->
-                                            <!--begin::Description-->
-                                            <div class="text-muted fs-7">Set a description to the category for better visibility.</div>
-                                            <!--end::Description-->
-                                        </div>
-                                        <!--end::Input group-->
-                                    </div>
-                                    <!--end::Card header-->
-                                </div>
-                                <!--end::General options-->
-                                <!--begin::Meta options-->
-                                <div class="card card-flush py-4">
-                                    <!--begin::Card header-->
-                                    <div class="card-header">
-                                        <div class="card-title">
-                                            <h2>Meta Options</h2>
-                                        </div>
-                                    </div>
-                                    <!--end::Card header-->
-                                    <!--begin::Card body-->
-                                    <div class="card-body pt-0">
-                                        <!--begin::Input group-->
-                                        <div class="mb-10">
-                                            <!--begin::Label-->
-                                            <label class="form-label">Meta Tag Title</label>
-                                            <!--end::Label-->
-                                            <!--begin::Input-->
-                                            <input type="text" class="form-control mb-2" name="meta_title" placeholder="Meta tag name" />
-                                            <!--end::Input-->
-                                            <!--begin::Description-->
-                                            <div class="text-muted fs-7">Set a meta tag title. Recommended to be simple and precise keywords.</div>
-                                            <!--end::Description-->
-                                        </div>
-                                        <!--end::Input group-->
-                                        <!--begin::Input group-->
-                                        <div class="mb-10">
-                                            <!--begin::Label-->
-                                            <label class="form-label">Meta Tag Description</label>
-                                            <!--end::Label-->
-                                            <!--begin::Editor-->
-                                            <div id="kt_ecommerce_add_category_meta_description" name="kt_ecommerce_add_category_meta_description" class="min-h-100px mb-2"></div>
-                                            <!--end::Editor-->
-                                            <!--begin::Description-->
-                                            <div class="text-muted fs-7">Set a meta tag description to the category for increased SEO ranking.</div>
-                                            <!--end::Description-->
-                                        </div>
-                                        <!--end::Input group-->
-                                        <!--begin::Input group-->
-                                        <div>
-                                            <!--begin::Label-->
-                                            <label class="form-label">Meta Tag Keywords</label>
-                                            <!--end::Label-->
-                                            <!--begin::Editor-->
-                                            <input id="kt_ecommerce_add_category_meta_keywords" name="kt_ecommerce_add_category_meta_keywords" class="form-control mb-2" />
-                                            <!--end::Editor-->
-                                            <!--begin::Description-->
-                                            <div class="text-muted fs-7">Set a list of keywords that the category is related to. Separate the keywords by adding a comma
-                                                <code>,</code>between each keyword.</div>
-                                            <!--end::Description-->
-                                        </div>
-                                        <!--end::Input group-->
-                                    </div>
-                                    <!--end::Card header-->
-                                </div>
-                                <!--end::Meta options-->
-                                <!--begin::Automation-->
-                                <div class="card card-flush py-4">
-                                    <!--begin::Card header-->
-                                    <div class="card-header">
-                                        <div class="card-title">
-                                            <h2>Automation</h2>
-                                        </div>
-                                    </div>
-                                    <!--end::Card header-->
-                                    <!--begin::Card body-->
-                                    <div class="card-body pt-0">
-                                        <!--begin::Input group-->
-                                        <div>
-                                            <!--begin::Label-->
-                                            <label class="form-label mb-5">Product assignment method</label>
-                                            <!--end::Label-->
-                                            <!--begin::Methods-->
-                                            <!--begin::Input row-->
-                                            <div class="d-flex fv-row">
-                                                <!--begin::Radio-->
-                                                <div class="form-check form-check-custom form-check-solid">
-                                                    <!--begin::Input-->
-                                                    <input class="form-check-input me-3" name="method" type="radio" value="0" id="kt_ecommerce_add_category_automation_0" checked='checked' />
-                                                    <!--end::Input-->
-                                                    <!--begin::Label-->
-                                                    <label class="form-check-label" for="kt_ecommerce_add_category_automation_0">
-                                                        <div class="fw-bold text-gray-800">Manual</div>
-                                                        <div class="text-gray-600">Add products to this category one by one by manually selecting this category during product creation or update.</div>
-                                                    </label>
-                                                    <!--end::Label-->
-                                                </div>
-                                                <!--end::Radio-->
-                                            </div>
-                                            <!--end::Input row-->
-                                            <div class='separator separator-dashed my-5'></div>
-                                            <!--begin::Input row-->
-                                            <div class="d-flex fv-row">
-                                                <!--begin::Radio-->
-                                                <div class="form-check form-check-custom form-check-solid">
-                                                    <!--begin::Input-->
-                                                    <input class="form-check-input me-3" name="method" type="radio" value="1" id="kt_ecommerce_add_category_automation_1" />
-                                                    <!--end::Input-->
-                                                    <!--begin::Label-->
-                                                    <label class="form-check-label" for="kt_ecommerce_add_category_automation_1">
-                                                        <div class="fw-bold text-gray-800">Automatic</div>
-                                                        <div class="text-gray-600">Products matched with the following conditions will be automatically assigned to this category.</div>
-                                                    </label>
-                                                    <!--end::Label-->
-                                                </div>
-                                                <!--end::Radio-->
-                                            </div>
-                                            <!--end::Input row-->
-                                            <!--end::Methods-->
-                                        </div>
-                                        <!--end::Input group-->
-                                        <!--begin::Input group-->
-                                        <div class="d-none mt-10" data-kt-ecommerce-catalog-add-category="auto-options">
-                                            <!--begin::Label-->
-                                            <label class="form-label">Conditions</label>
-                                            <!--end::Label-->
-                                            <!--begin::Conditions-->
-                                            <div class="d-flex flex-wrap align-items-center text-gray-600 gap-5 mb-7">
-                                                <span>Products must match:</span>
-                                                <!--begin::Radio-->
-                                                <div class="form-check form-check-custom form-check-solid">
-                                                    <input class="form-check-input" type="radio" name="conditions" value="" id="all_conditions" checked="checked" />
-                                                    <label class="form-check-label" for="all_conditions">All conditions</label>
-                                                </div>
-                                                <!--end::Radio-->
-                                                <!--begin::Radio-->
-                                                <div class="form-check form-check-custom form-check-solid">
-                                                    <input class="form-check-input" type="radio" name="conditions" value="" id="any_conditions" />
-                                                    <label class="form-check-label" for="any_conditions">Any conditions</label>
-                                                </div>
-                                                <!--end::Radio-->
-                                            </div>
-                                            <!--end::Conditions-->
-                                            <!--begin::Repeater-->
-                                            <div id="kt_ecommerce_add_category_conditions">
-                                                <!--begin::Form group-->
-                                                <div class="form-group">
-                                                    <div data-repeater-list="kt_ecommerce_add_category_conditions" class="d-flex flex-column gap-3">
-                                                        <div data-repeater-item="" class="form-group d-flex flex-wrap align-items-center gap-5">
-                                                            <!--begin::Select2-->
-                                                            <div class="w-100 w-md-200px">
-                                                                <select class="form-select" name="condition_type" data-placeholder="Select an option" data-kt-ecommerce-catalog-add-category="condition_type">
-                                                                    <option></option>
-                                                                    <option value="title">Product Title</option>
-                                                                    <option value="tag" selected="selected">Product Tag</option>
-                                                                    <option value="price">Prodict Price</option>
-                                                                </select>
-                                                            </div>
-                                                            <!--end::Select2-->
-                                                            <!--begin::Select2-->
-                                                            <div class="w-100 w-md-200px">
-                                                                <select class="form-select" name="condition_equals" data-placeholder="Select an option" data-kt-ecommerce-catalog-add-category="condition_equals">
-                                                                    <option></option>
-                                                                    <option value="equal" selected="selected">is equal to</option>
-                                                                    <option value="notequal">is not equal to</option>
-                                                                    <option value="greater">is greater than</option>
-                                                                    <option value="less">is less than</option>
-                                                                    <option value="starts">starts with</option>
-                                                                    <option value="ends">ends with</option>
-                                                                </select>
-                                                            </div>
-                                                            <!--end::Select2-->
-                                                            <!--begin::Input-->
-                                                            <input type="text" class="form-control mw-100 w-200px" name="condition_label" placeholder="" />
-                                                            <!--end::Input-->
-                                                            <!--begin::Button-->
-                                                            <button type="button" data-repeater-delete="" class="btn btn-sm btn-icon btn-light-danger">
-                                                                <i class="ki-duotone ki-cross fs-2">
-                                                                    <span class="path1"></span>
-                                                                    <span class="path2"></span>
-                                                                </i>
-                                                            </button>
-                                                            <!--end::Button-->
+                <!--end::Thumbnail settings-->
+                <!--begin::Status-->
+                <div class="card card-flush py-4">
+                    <!--begin::Card header-->
+                    <div class="card-header">
+                        <!--begin::Card title-->
+                        <div class="card-title">
+                            <h2>Status</h2>
+                        </div>
+                        <!--end::Card title-->
+                        <!--begin::Card toolbar-->
+                        <div class="card-toolbar">
+                            <div class="rounded-circle bg-success w-15px h-15px"
+                                 id="kt_ecommerce_add_category_status"></div>
+                        </div>
+                        <!--begin::Card toolbar-->
+                    </div>
+                    <!--end::Card header-->
+                    <!--begin::Card body-->
+                    <div class="card-body pt-0">
+                        <!--begin::Select2-->
+                        <select class="form-select mb-2" data-control="select2" data-hide-search="true"
+                                data-placeholder="Select an option" id="kt_ecommerce_add_category_status_select">
+                            <option></option>
+                            <option value="1" selected="selected">Active</option>
+                            <option value="0">Inactive</option>
+                        </select>
+                        <!--end::Select2-->
+                        <!--begin::Description-->
+                        <div class="text-muted fs-7">Set the category status.</div>
+                        <!--end::Description-->
+                    </div>
+                    <!--end::Card body-->
+                </div>
+                <!--end::Status-->
+                <!--begin::Template settings-->
+                <div class="card card-flush py-4">
+                    <!--begin::Card header-->
+                    <div class="card-header">
+                        <!--begin::Card title-->
+                        <div class="card-title">
+                            <h2>Store Template</h2>
+                        </div>
+                        <!--end::Card title-->
+                    </div>
+                    <!--end::Card header-->
+                    <!--begin::Card body-->
+                    <div class="card-body pt-0">
+                        <!--begin::Select store template-->
+                        <label for="kt_ecommerce_add_category_store_template" class="form-label">Select a store
+                            template</label>
+                        <!--end::Select store template-->
+                        <!--begin::Select2-->
+                        <select class="form-select mb-2" data-control="select2" data-hide-search="true"
+                                data-placeholder="Select an option" id="kt_ecommerce_add_category_store_template">
+                            <option></option>
+                            <option value="default" selected="selected">Default template</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="office">Office stationary</option>
+                            <option value="fashion">Fashion</option>
+                        </select>
+                        <!--end::Select2-->
+                        <!--begin::Description-->
+                        <div class="text-muted fs-7">Assign a template from your current theme to define how the
+                            category products are displayed.
+                        </div>
+                        <!--end::Description-->
+                    </div>
+                    <!--end::Card body-->
+                </div>
+                <!--end::Template settings-->
+            </div>
+            <!--end::Aside column-->
+            <!--begin::Main column-->
+            <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10 min-w-md-700px">
+                <!--begin::General options-->
+                <div class="card card-flush py-4">
+                    <!--begin::Card header-->
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h2>General</h2>
+                        </div>
+                    </div>
+                    <!--end::Card header-->
+                    <!--begin::Card body-->
+                    <div class="card-body pt-0">
+                        <!--begin::Input group-->
+                        <div class="mb-10 fv-row">
+                            <!--begin::Label-->
+                            <label for="name" class="required form-label">Category Name</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input id="name" type="text" name="name" class="form-control mb-2"
+                                   placeholder="Category name"
+                                   value="{{old('name')}}"/>
+                            <!--end::Input-->
+                            <!--begin::Description-->
+                            <div class="text-muted fs-7">A category name is required and recommended to be unique.</div>
+                            <!--end::Description-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div>
+                            <!--begin::Label-->
+                            <label class="form-label">Description</label>
+                            <!--end::Label-->
+                            <!--begin::Editor-->
+                            <div id="kt_ecommerce_edit_category_description"
+                                 class="min-h-200px mb-2">{!! old('description') !!}</div>
+                            <input type="hidden" name="description"
+                                   value="{!! old('description') !!}"/>
+                            <!--begin::Description-->
+                            <div class="text-muted fs-7">Set a description to the category for better visibility.</div>
+                            <!--end::Description-->
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                    <!--end::Card header-->
+                </div>
+                <!--end::General options-->
+                <!--begin::Automation-->
+                <div class="card card-flush py-4">
+                    <!--begin::Card header-->
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h2>Variants</h2>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0">
+                        <label class="form-label">Category assignment variants</label>
+                        <div id="variants">
+                            <div class="form-group" data-repeater-list="variants">
+                                @if(count($variants)>0)
+                                    <div class="d-flex flex-column gap-3" data-repeated-init-empty='false'
+                                         id="repeated_variants_init_empty">
+                                        @foreach($variants as $variant)
+                                            <div class="mt-10" data-repeater-item>
+                                                <label class="form-label">Conditions</label>
+                                                <div
+                                                    class="d-flex flex-wrap align-items-center text-gray-600 gap-5 mb-7">
+                                                    <div class="d-flex flex-md-row flex-column gap-3">
+                                                        <div>Products price relation:</div>
+                                                        <div class="form-check form-check-custom form-check-solid">
+                                                            <input class="form-check-input" type="radio"
+                                                                   name="is_extra_price" value="0"
+                                                                   id="just_information" {{ (key_exists('is_extra_price',$variant) && $variant['is_extra_price'] == "0") ? 'checked' : '' }}>
+                                                            <label class="form-check-label" for="just_information">Just
+                                                                information.</label>
+                                                        </div>
+                                                        <div class="form-check form-check-custom form-check-solid">
+                                                            <input class="form-check-input" type="radio"
+                                                                   name="is_extra_price" value="1"
+                                                                   id="extra_price" {{ (key_exists('is_extra_price',$variant) && $variant['is_extra_price'] == "1") ? 'checked' : '' }}>
+                                                            <label class="form-check-label" for="extra_price">Requires
+                                                                extra price.</label>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!--end::Form group-->
-                                                <!--begin::Form group-->
-                                                <div class="form-group mt-5">
-                                                    <!--begin::Button-->
-                                                    <button type="button" data-repeater-create="" class="btn btn-sm btn-light-primary">
-                                                        <i class="ki-duotone ki-plus fs-2"></i>Add another condition</button>
-                                                    <!--end::Button-->
+                                                <div class="d-flex flex-wrap align-items-center gap-5">
+                                                    <label>
+                                                        <input type="text" name="name" placeholder="Name"
+                                                               class="form-control w-200 w-md-300px"
+                                                               value="{{$variant['name']}}">
+                                                    </label>
+                                                    <label>
+                                                        <div
+                                                            class="input-group extra-price w-100 w-md-200px @if(empty($variant['is_extra_price'])) d-none @endif">
+                                                            <input type="text" name="price" placeholder="Price: 0.00"
+                                                                   class="form-control" value="{{$variant['price']}}">
+                                                            <span class="input-group-text">AED</span>
+                                                        </div>
+                                                    </label>
+                                                    <div>
+                                                        <label class="form-label mt-2">Displayed Text:</label>
+                                                        <div class="min-h-100px mb-2 variant-description"
+                                                             data-placeholder="Variant display text.">{!! $variant['description'] !!}</div>
+                                                        <input type="hidden" name="description"
+                                                               value="{!! $variant['description'] !!}"/>
+                                                    </div>
                                                 </div>
-                                                <!--end::Form group-->
+                                                <button type="button" data-repeater-delete
+                                                        class="btn btn-sm btn-light-danger">
+                                                    <i class="ki-duotone ki-cross fs-2">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i> Delete
+                                                </button>
                                             </div>
-                                            <!--end::Repeater-->
-                                        </div>
-                                        <!--end::Input group-->
+                                        @endforeach
                                     </div>
-                                    <!--end::Card header-->
-                                </div>
-                                <!--end::Automation-->
-                                <div class="d-flex justify-content-end">
-                                    <!--begin::Button-->
-                                    <a href="../../demo10/dist/apps/ecommerce/catalog/products.html" id="kt_ecommerce_add_product_cancel" class="btn btn-light me-5">Cancel</a>
-                                    <!--end::Button-->
-                                    <!--begin::Button-->
-                                    <button type="submit" id="kt_ecommerce_add_category_submit" class="btn btn-primary">
-                                        <span class="indicator-label">Save Changes</span>
-                                        <span class="indicator-progress">Please wait...
-												<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                    </button>
-                                    <!--end::Button-->
+                                @else
+                                    <div class="d-flex flex-column gap-3" data-repeated-init-empty='true'
+                                         id="repeated_variants_init_empty">
+                                        <div class="mt-10" data-repeater-item>
+                                            <label class="form-label">Conditions</label>
+                                            <div class="d-flex flex-wrap align-items-center text-gray-600 gap-5 mb-7">
+                                                <div class="d-flex flex-md-row flex-column gap-3">
+                                                    <div>Products price relation:</div>
+                                                    <div class="form-check form-check-custom form-check-solid">
+                                                        <input class="form-check-input" type="radio"
+                                                               name="is_extra_price" value="0"
+                                                               id="just_information"/>
+                                                        <label class="form-check-label" for="just_information">Just
+                                                            information.</label>
+                                                    </div>
+                                                    <div class="form-check form-check-custom form-check-solid">
+                                                        <input class="form-check-input" type="radio"
+                                                               name="is_extra_price" value="1" id="extra_price"/>
+                                                        <label class="form-check-label" for="extra_price">Requires extra
+                                                            price.</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-wrap align-items-center gap-5">
+                                                <label>
+                                                    <input type="text" name="name" placeholder="Name"
+                                                           class="form-control w-200 w-md-300px">
+                                                </label>
+                                                <label>
+                                                    <div class="input-group extra-price w-100 w-md-200px d-none">
+                                                        <input type="text" name="price" placeholder="Price: 0.00"
+                                                               class="form-control">
+                                                        <span class="input-group-text">AED</span>
+                                                    </div>
+                                                </label>
+                                                <div>
+                                                    <label class="form-label mt-2">Displayed Text:</label>
+                                                    <div class="min-h-100px mb-2 variant-description"
+                                                         data-placeholder="Variant display text."></div>
+                                                    <input type="hidden" name="description"/>
+                                                </div>
+                                            </div>
+                                            <button type="button" data-repeater-delete
+                                                    class="btn btn-sm btn-light-danger">
+                                                <i class="ki-duotone ki-cross fs-2">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                </i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="separator separator-dashed my-5"></div>
+                            <div class="form-group mt-5">
+                                <button type="button" data-repeater-create class="btn btn-sm btn-light-primary">
+                                    <i class="ki-duotone ki-plus fs-2"></i>Add another variation
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-flush py-4">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h2>Predefined Variants</h2>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0">
+                        <label class="form-label">Category predefined variants for new products.</label>
+                        <div id="predefinedVariants">
+                            <div class="form-group" data-repeater-list="predefinedVariants">
+                                <div class="d-flex flex-column gap-3">
+                                    @if(count($predefinedVariants)> 0)
+                                        <div class="mt-10" id="repeated_init_empty" data-repeated-init-empty='false'>
+                                            @foreach($predefinedVariants as $predefinedVariant)
+                                                <div
+                                                    class="d-flex flex-wrap align-items-center text-gray-600 gap-5 mb-7"
+                                                    data-repeater-item>
+                                                    <label for="name" class="form-label">Predefined variant
+                                                        Value:</label>
+                                                    <div class="input-group w-200px w-md-300px">
+                                                        <input id="name" class="form-control" name="name"
+                                                               value="{{$predefinedVariant['name']}}">
+                                                        <button
+                                                            class="border border-secondary btn btn-icon btn-flex btn-light-danger"
+                                                            data-repeater-delete type="button">
+                                                            <i class="ki-duotone ki-trash fs-5"><span
+                                                                    class="path1"></span><span
+                                                                    class="path2"></span><span
+                                                                    class="path3"></span><span
+                                                                    class="path4"></span><span class="path5"></span></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    @else
+                                        <div class="mt-10" id="repeated_init_empty" data-repeated-init-empty='true'>
+                                            <div class="d-flex flex-wrap align-items-center text-gray-600 gap-5 mb-7"
+                                                 data-repeater-item>
+                                                <label for="name" class="form-label">Predefined variant
+                                                    Value:</label>
+                                                <div class="input-group w-200px w-md-300px">
+                                                    <input id="name" class="form-control" name="name">
+                                                    <button
+                                                        class="border border-secondary btn btn-icon btn-flex btn-light-danger"
+                                                        data-repeater-delete type="button">
+                                                        <i class="ki-duotone ki-trash fs-5"><span
+                                                                class="path1"></span><span
+                                                                class="path2"></span><span
+                                                                class="path3"></span><span
+                                                                class="path4"></span><span class="path5"></span></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
-                            <!--end::Main column-->
-                        </form>
+                            <div class="form-group">
+                                <!--begin::Button-->
+                                <button type="button" data-repeater-create class="btn btn-sm btn-primary">
+                                    <i class="ki-duotone ki-plus fs-2"></i>Add another variation
+                                </button>
+                                <!--end::Button-->
+
+                                <!--end::Form group-->
+                            </div>
+                        </div>
                     </div>
-                    <!--end::Container-->
                 </div>
-                <!--end::Post-->
+
+                <!--end::Automation-->
+                <div class="d-flex justify-content-end">
+                    <!--begin::Button-->
+                    <a href="{{redirect()->back()->getTargetUrl()}}"
+                       id="kt_ecommerce_add_product_cancel" class="btn btn-light me-5">Cancel</a>
+                    <!--end::Button-->
+                    <!--begin::Button-->
+                    <button type="submit" id="kt_ecommerce_edit_category_submit"
+                            class="btn btn-primary">
+                        <span class="indicator-label">Save Changes</span>
+                        <span class="indicator-progress">Please wait...
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                        </span>
+                    </button>
+                    <!--end::Button-->
+                </div>
             </div>
             <!--end::Main column-->
         </form>
-        <!--end::Form-->
     </div>
 
 @endsection
 @push('scripts')
+    @once
+        <script src="{{asset('themeOne/assets/plugins/custom/formrepeater/formrepeater.bundle.js')}}"></script>
+    @endonce
     <script type="text/javascript">
+        const quillInstances = new Map();
+
+        function initRadioButtons() {
+            $(document).find('[name*="is_extra_price"]').on('change', function (e) {
+                if ($(this).val() === "1") {
+                    $(this).closest('[data-repeater-item]').find('.extra-price').removeClass('d-none');
+                } else {
+                    $(this).closest('[data-repeater-item]').find('.extra-price').addClass('d-none');
+                }
+            })
+        };
+        initRadioButtons();
+
+        function QuillElementsInit(element) {
+            // Check if a Quill instance already exists for this element
+            if (quillInstances.has(element)) {
+                return quillInstances.get(element);
+            }
+
+            // Initialize Quill
+            var editor = new Quill(element, {
+                modules: {
+                    toolbar: [
+                        ['bold', 'italic', 'underline', 'strike'],
+                        ['blockquote'],
+                        [{list: 'ordered'}, {list: 'bullet'}],
+                        [{size: ['small', false, 'large', 'huge']}],
+                        [{header: [1, 2, 3, 4, 5, 6, false]}],
+                        [{color: []}, {background: []}],
+                        [{font: []}],
+                        ['clean']
+                    ]
+                },
+                placeholder: 'Enter description here...',
+                theme: 'snow'
+            });
+
+            editor.on('text-change', function () {
+                element.nextElementSibling.value = editor.root.innerHTML;
+            });
+
+            // Store the Quill instance associated with this element
+            quillInstances.set(element, editor);
+
+            return editor;
+        }
+
         KTUtil.onDOMContentLoaded(function () {
+            $('#variants').repeater({
+                initEmpty: $(this).find('#repeated_variants_init_empty').data('repeatedInitEmpty'),
+                show: function () {
+
+                    initRadioButtons();
+                    QuillElementsInit($(this).find('.variant-description')[0]);
+                    $(this).slideDown();
+                },
+                hide: function (deleteElement) {
+                    $(this).slideUp(deleteElement);
+                },
+            });
+
+            $('#predefinedVariants').repeater({
+                initEmpty: $(this).find('#repeated_init_empty').data('repeatedInitEmpty'),
+                show: function () {
+                    QuillElementsInit($(this).find('#kt_ecommerce_edit_category_description')[0]);
+                    $(this).slideDown();
+                },
+                hide: function (deleteElement) {
+                    $(this).slideUp(deleteElement);
+                }
+            });
+
+            // Initialize Quill for existing elements on DOMContentLoaded
+            $('.variant-description, #kt_ecommerce_edit_category_description').each(function () {
+                QuillElementsInit(this);
+            });
+
             const submitBtn = document.querySelector('#kt_ecommerce_edit_category_submit');
             submitBtn.addEventListener('click', function (e) {
                 submitBtn.setAttribute("data-kt-indicator", "on");
             });
-
-            var quill = new Quill('#kt_ecommerce_edit_category_description', {
-                modules: {
-                    toolbar: [
-                        [{
-                            header: [3, 4, 5, false]
-                        }],
-                        ['bold', 'italic', 'underline'],
-                    ]
-                },
-                placeholder: 'Type your text here...',
-                theme: 'snow' // or 'bubble'
-            })
-            quill.on('text-change', function () {
-
-                $('[name="description"]').val(quill.root.innerHTML);
-            });
-
-            $('#kt_ecommerce_edit_category_categories').select2().on('change', function (e) {
-                const initialCategories = {!! $category->categories->toJson() !!};
-                const oldCategoryPrices = @json(old('category_price', []));
-                const selectedCategories = $(this).select2('data');
-                const priceContainer = $('#kt_ecommerce_edit_category_price_container');
-                priceContainer.empty();
-                selectedCategories.forEach(category => {
-                    const id = category.id;
-                    const name = category.text;
-
-                    // First, look for old value
-                    let inputValue = oldCategoryPrices[id] ? oldCategoryPrices[id].price : '';
-
-                    // If no old value, then look for initial value
-                    if (!inputValue) {
-                        const initialCategory = initialCategories.find(c => c.id == id);
-                        if (initialCategory && initialCategory.pivot && initialCategory.pivot.price) {
-                            inputValue = initialCategory.pivot.price;
-                        }
-                    }
-                    priceContainer.append(`<div class="form-group mb-5">
-                <label class="form-label">Price for ${name}</label>
-                <input type="text" class="form-control" name="category_price[${id}][price]" value="${inputValue}">
-            </div>`);
-                });
-            }).trigger('change');
 
             $('#kt_ecommerce_edit_category_status_select').on('change', function (e) {
                 const status = $(this).val();
@@ -622,6 +533,5 @@
                 }
             }).trigger('change');
         });
-
     </script>
 @endpush

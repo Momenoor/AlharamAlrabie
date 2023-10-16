@@ -15,8 +15,8 @@ return new class extends Migration {
             $table->foreignIdFor(\App\Models\Category::class)->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->string('name');
             $table->text('description');
-            $table->decimal('price', 10, 2);
-            $table->boolean('is_extra_price')->default(true);
+            $table->decimal('price', 10, 2)->nullable();
+            $table->boolean('is_extra_price')->default(false);
             $table->timestamps();
         });
     }

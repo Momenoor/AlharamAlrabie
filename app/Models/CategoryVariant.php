@@ -13,6 +13,7 @@ class CategoryVariant extends Model
         'category_id',
         'name',
         'price',
+        'description',
         'is_extra_price',
     ];
 

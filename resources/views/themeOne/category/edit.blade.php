@@ -1,6 +1,6 @@
 @php
-    $variants = old('',$category->variants);
-    $predefinedVariants = $category->predefinedVariants->pluck('name');
+    $variants = old('variants',$category->variants->toArray());
+    $predefinedVariants = old('predefinedVariants',$category->predefinedVariants->toArray());
 @endphp
 @extends('themeOne::layouts.system.app')
 @section('content')
@@ -226,68 +226,126 @@
                         <label class="form-label">Category assignment variants</label>
                         <div id="variants">
                             <div class="form-group" data-repeater-list="variants">
-                                <div class="d-flex flex-column gap-3">
-                                    <div class="mt-10" data-repeater-item>
-                                        <label class="form-label">Conditions</label>
-                                        <div class="d-flex flex-wrap align-items-center text-gray-600 gap-5 mb-7">
-                                            <div class="d-flex flex-md-row flex-column gap-3">
-                                                <div>Products price relation:</div>
-                                                <!--begin::Radio-->
-
-                                                <div class="form-check form-check-custom form-check-solid">
-                                                    <input class="form-check-input" type="radio"
-                                                           name="requires_extra_price" value="0" id="just_information"/>
-                                                    <label class="form-check-label" for="just_information">Just
-                                                        information.</label>
+                                @if(count($variants)>0)
+                                    <div class="d-flex flex-column gap-3" data-repeated-init-empty='false'
+                                         id="repeated_variants_init_empty">
+                                        @foreach($variants as $key => $variant)
+                                            <div class="mt-10" data-repeater-item>
+                                                @if(key_exists('id',$variant))
+                                                    <input type="hidden" name="variants[{{$key}}][id]"
+                                                           value="{{$variant['id']}}">
+                                                @endif
+                                                <label class="form-label">Conditions</label>
+                                                <div
+                                                    class="d-flex flex-wrap align-items-center text-gray-600 gap-5 mb-7">
+                                                    <div class="d-flex flex-md-row flex-column gap-3">
+                                                        <div>Products price relation:</div>
+                                                        <div class="form-check form-check-custom form-check-solid">
+                                                            <input class="form-check-input" type="radio"
+                                                                   name="is_extra_price" value="0"
+                                                                   id="just_information" {{ (key_exists('is_extra_price',$variant) && $variant['is_extra_price'] == "0") ? 'checked' : '' }}>
+                                                            <label class="form-check-label" for="just_information">Just
+                                                                information.</label>
+                                                        </div>
+                                                        <div class="form-check form-check-custom form-check-solid">
+                                                            <input class="form-check-input" type="radio"
+                                                                   name="is_extra_price" value="1"
+                                                                   id="extra_price" {{ (key_exists('is_extra_price',$variant) && $variant['is_extra_price'] == "1") ? 'checked' : '' }}>
+                                                            <label class="form-check-label" for="extra_price">Requires
+                                                                extra price.</label>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="form-check form-check-custom form-check-solid">
-                                                    <input class="form-check-input" type="radio"
-                                                           name="requires_extra_price" value="1" id="extra_price"/>
-                                                    <label class="form-check-label" for="extra_price">Requires extra
-                                                        price.</label>
+                                                <div class="d-flex flex-wrap align-items-center gap-5">
+                                                    <label>
+                                                        <input type="text" name="name" placeholder="Name"
+                                                               class="form-control w-200 w-md-300px"
+                                                               value="{{$variant['name']}}">
+                                                    </label>
+                                                    <label>
+                                                        <div
+                                                            class="input-group extra-price w-100 w-md-200px @if(empty($variant['is_extra_price'])) d-none @endif">
+                                                            <input type="text" name="price" placeholder="Price: 0.00"
+                                                                   class="form-control" value="{{$variant['price']}}">
+                                                            <span class="input-group-text">AED</span>
+                                                        </div>
+                                                    </label>
+                                                    <div>
+                                                        <label class="form-label mt-2">Displayed Text:</label>
+                                                        <div class="min-h-100px mb-2 variant-description"
+                                                             data-placeholder="Variant display text.">{!! $variant['description'] !!}</div>
+                                                        <input type="hidden" name="description"
+                                                               value="{!! $variant['description'] !!}"/>
+                                                    </div>
                                                 </div>
+                                                <button type="button" data-repeater-delete
+                                                        class="btn btn-sm btn-light-danger">
+                                                    <i class="ki-duotone ki-cross fs-2">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i> Delete
+                                                </button>
                                             </div>
-                                            <!--end::Radio-->
-
-                                        </div>
-                                        <div class="d-flex flex-wrap align-items-center gap-5">
-                                            <label>
-                                                <input type="text" name="name" placeholder="Name"
-                                                       class="form-control w-200 w-md-300px">
-                                            </label>
-                                            <label>
-                                                <div class="input-group extra-price w-100 w-md-200px d-none">
-                                                    <input type="text" name="price" placeholder="Price: 0.00"
-                                                           class="form-control">
-                                                    <span class="input-group-text">AED</span>
-                                                </div>
-                                            </label>
-                                            <div>
-                                                <label class="form-label mt-2">Displayed Text:</label>
-                                                <div class="min-h-100px mb-2 variant-description"
-                                                     data-placeholder="Variant display text."></div>
-                                                <input type="hidden" name="description"/>
-                                            </div>
-                                        </div>
-                                        <button type="button" data-repeater-delete
-                                                class="btn btn-sm btn-light-danger">
-                                            <i class="ki-duotone ki-cross fs-2">
-                                                <span class="path1"></span>
-                                                <span class="path2"></span>
-                                            </i> Delete
-                                        </button>
+                                        @endforeach
                                     </div>
-                                </div>
+                                @else
+                                    <div class="d-flex flex-column gap-3" data-repeated-init-empty='true'
+                                         id="repeated_variants_init_empty">
+                                        <div class="mt-10" data-repeater-item>
+                                            <label class="form-label">Conditions</label>
+                                            <div class="d-flex flex-wrap align-items-center text-gray-600 gap-5 mb-7">
+                                                <div class="d-flex flex-md-row flex-column gap-3">
+                                                    <div>Products price relation:</div>
+                                                    <div class="form-check form-check-custom form-check-solid">
+                                                        <input class="form-check-input" type="radio"
+                                                               name="is_extra_price" value="0"
+                                                               id="just_information"/>
+                                                        <label class="form-check-label" for="just_information">Just
+                                                            information.</label>
+                                                    </div>
+                                                    <div class="form-check form-check-custom form-check-solid">
+                                                        <input class="form-check-input" type="radio"
+                                                               name="is_extra_price" value="1" id="extra_price"/>
+                                                        <label class="form-check-label" for="extra_price">Requires extra
+                                                            price.</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-wrap align-items-center gap-5">
+                                                <label>
+                                                    <input type="text" name="name" placeholder="Name"
+                                                           class="form-control w-200 w-md-300px">
+                                                </label>
+                                                <label>
+                                                    <div class="input-group extra-price w-100 w-md-200px d-none">
+                                                        <input type="text" name="price" placeholder="Price: 0.00"
+                                                               class="form-control">
+                                                        <span class="input-group-text">AED</span>
+                                                    </div>
+                                                </label>
+                                                <div>
+                                                    <label class="form-label mt-2">Displayed Text:</label>
+                                                    <div class="min-h-100px mb-2 variant-description"
+                                                         data-placeholder="Variant display text."></div>
+                                                    <input type="hidden" name="description"/>
+                                                </div>
+                                            </div>
+                                            <button type="button" data-repeater-delete
+                                                    class="btn btn-sm btn-light-danger">
+                                                <i class="ki-duotone ki-cross fs-2">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                </i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                @endif
                             </div>
                             <div class="separator separator-dashed my-5"></div>
                             <div class="form-group mt-5">
-                                <!--begin::Button-->
                                 <button type="button" data-repeater-create class="btn btn-sm btn-light-primary">
                                     <i class="ki-duotone ki-plus fs-2"></i>Add another variation
                                 </button>
-                                <!--end::Button-->
-
-                                <!--end::Form group-->
                             </div>
                         </div>
                     </div>
@@ -303,17 +361,21 @@
                         <div id="predefinedVariants">
                             <div class="form-group" data-repeater-list="predefinedVariants">
                                 <div class="d-flex flex-column gap-3">
-                                    @if($predefinedVariants->count() > 0)
+                                    @if(count($predefinedVariants)> 0)
                                         <div class="mt-10" id="repeated_init_empty" data-repeated-init-empty='false'>
-                                            @foreach($predefinedVariants as $predefinedVariant)
+                                            @foreach($predefinedVariants as $key=>$predefinedVariant)
                                                 <div
                                                     class="d-flex flex-wrap align-items-center text-gray-600 gap-5 mb-7"
                                                     data-repeater-item>
+                                                    @if(key_exists('id',$predefinedVariant))
+                                                        <input type="hidden" name="predefinedVariants[{{$key}}][id]"
+                                                               value="{{$predefinedVariant['id']}}">
+                                                    @endif
                                                     <label for="name" class="form-label">Predefined variant
                                                         Value:</label>
                                                     <div class="input-group w-200px w-md-300px">
                                                         <input id="name" class="form-control" name="name"
-                                                               value="{{$predefinedVariant}}">
+                                                               value="{{$predefinedVariant['name']}}">
                                                         <button
                                                             class="border border-secondary btn btn-icon btn-flex btn-light-danger"
                                                             data-repeater-delete type="button">
@@ -390,38 +452,87 @@
         <script src="{{asset('themeOne/assets/plugins/custom/formrepeater/formrepeater.bundle.js')}}"></script>
     @endonce
     <script type="text/javascript">
+        const quillInstances = new Map();
+
+        function initRadioButtons() {
+            $(document).find('[name*="is_extra_price"]').on('change', function (e) {
+                if ($(this).val() === "1") {
+                    $(this).closest('[data-repeater-item]').find('.extra-price').removeClass('d-none');
+                } else {
+                    $(this).closest('[data-repeater-item]').find('.extra-price').addClass('d-none');
+                }
+            })
+        };
+        initRadioButtons();
+
+        function QuillElementsInit(element) {
+            // Check if a Quill instance already exists for this element
+            if (quillInstances.has(element)) {
+                return quillInstances.get(element);
+            }
+
+            // Initialize Quill
+            var editor = new Quill(element, {
+                modules: {
+                    toolbar: [
+                        ['bold', 'italic', 'underline', 'strike'],
+                        ['blockquote'],
+                        [{list: 'ordered'}, {list: 'bullet'}],
+                        [{size: ['small', false, 'large', 'huge']}],
+                        [{header: [1, 2, 3, 4, 5, 6, false]}],
+                        [{color: []}, {background: []}],
+                        [{font: []}],
+                        ['clean']
+                    ]
+                },
+                placeholder: 'Enter description here...',
+                theme: 'snow'
+            });
+            editor.root.innerHTML = element.nextElementSibling.value;
+            editor.on('text-change', function () {
+                element.nextElementSibling.value = editor.root.innerHTML;
+            });
+
+            // Store the Quill instance associated with this element
+            quillInstances.set(element, editor);
+
+            return editor;
+        }
+
         KTUtil.onDOMContentLoaded(function () {
+            $('#variants').repeater({
+                initEmpty: $(this).find('#repeated_variants_init_empty').data('repeatedInitEmpty'),
+                show: function () {
+                    $(this).find('input[name*="[id]"]:empty').remove();
+                    initRadioButtons();
+                    QuillElementsInit($(this).find('.variant-description')[0]);
+                    $(this).slideDown();
+                },
+                hide: function (deleteElement) {
+                    $(this).slideUp(deleteElement);
+                },
+            });
+
+            $('#predefinedVariants').repeater({
+                initEmpty: $(this).find('#repeated_init_empty').data('repeatedInitEmpty'),
+                show: function () {
+                    $(this).find('input[name*="[id]"]:empty').remove();
+                    $(this).slideDown();
+                },
+                hide: function (deleteElement) {
+                    $(this).slideUp(deleteElement);
+                }
+            });
+
+            // Initialize Quill for existing elements on DOMContentLoaded
+            $('.variant-description, #kt_ecommerce_edit_category_description').each(function () {
+                QuillElementsInit(this);
+            });
+
             const submitBtn = document.querySelector('#kt_ecommerce_edit_category_submit');
             submitBtn.addEventListener('click', function (e) {
                 submitBtn.setAttribute("data-kt-indicator", "on");
             });
-
-            var QuillElementsInit = function () {
-                var QuillElements = document.querySelectorAll('.variant-description ,#kt_ecommerce_edit_category_description');
-
-                QuillElements.forEach(function (element) {
-                    var editor = new Quill(element, {
-                        modules: {
-                            toolbar: [
-                                ['bold', 'italic', 'underline', 'strike'],
-                                ['blockquote', 'code-block'],
-                                [{list: 'ordered'}, {list: 'bullet'}],
-                                [{size: ['small', false, 'large', 'huge']}],
-                                [{header: [1, 2, 3, 4, 5, 6, false]}],
-                                [{color: []}, {background: []}],
-                                [{font: []}],
-                                ['clean']
-                            ]
-                        },
-                        placeholder: 'Enter description here...',
-                        theme: 'snow'
-                    });
-                    editor.on('text-change', function () {
-                        element.nextElementSibling.value = editor.root.innerHTML;
-                    });
-                });
-            }
-
 
             $('#kt_ecommerce_edit_category_status_select').on('change', function (e) {
                 const status = $(this).val();
@@ -431,35 +542,6 @@
                     $('#kt_ecommerce_edit_category_status').removeClass('bg-success').addClass('bg-danger');
                 }
             }).trigger('change');
-
-            $('#variants').repeater({
-                initEmpty: true,
-                show: function () {
-                    $(this).find('[name*="requires_extra_price"]').on('change', function (e) {
-                        if ($(this).val() === "1") {
-                            $(this).closest('[data-repeater-item]').find('.extra-price').removeClass('d-none');
-                        } else {
-                            $(this).closest('[data-repeater-item]').find('.extra-price').addClass('d-none');
-                        }
-                    })
-                    QuillElementsInit();
-                    $(this).slideDown();
-                },
-                hide: function (deleteElement) {
-                    $(this).slideUp(deleteElement);
-                }
-            });
-            var $predefinedVariants = $('#predefinedVariants').repeater({
-                initEmpty: $(this).find('#repeated_init_empty').data('repeatedInitEmpty'),
-                show: function () {
-
-                    $(this).slideDown();
-                },
-                hide: function (deleteElement) {
-                    $(this).slideUp(deleteElement);
-                }
-            });
         });
-
     </script>
 @endpush

@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
+use App\Observers\CategoryObserver;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\FileViewFinder;
 use Illuminate\Support\Facades\View;
@@ -28,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Category::observe(CategoryObserver::class);
         $this->loadViewsFrom(__DIR__. '/../../resources/views/themeOne', 'themeOne');
     }
 }

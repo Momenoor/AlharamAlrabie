@@ -24,10 +24,9 @@
                         <select class="form-select form-select-solid" data-control="select2" data-hide-search="true"
                                 data-placeholder="Status" data-product-filter="status">
                             <option></option>
-                            <option value="all">All</option>
-                            <option value="published">Published</option>
-                            <option value="scheduled">Scheduled</option>
-                            <option value="inactive">Inactive</option>
+                            <option value="">All</option>
+                            <option value="published">Active</option>
+                            <option value="scheduled">Inactive</option>
                         </select>
                     </label>
                     <!--end::Select2-->
@@ -71,7 +70,7 @@
                 <!--begin::Table body-->
                 <tbody class="fw-semibold text-gray-600">
                 <!--begin::Table row-->
-                @foreach ($products as $product)
+                @forelse($products as $product)
                     <tr>
                         <!--begin::Category=-->
                         <td>
@@ -111,7 +110,7 @@
                         <!--end::Price=-->
                         <!--begin::Rating-->
                         <td class="text-end pe-0">
-                            {{$product->category->name}}
+                            {{optional($product->category)->name}}
                         </td>
                         <!--end::Rating-->
                         <!--begin::Status=-->
@@ -164,7 +163,11 @@
                         </td>
                         <!--end::Action=-->
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="10" class="text-center text-muted">No data available</td>
+                    </tr>
+                @endforelse
                 <!--end::Table row-->
                 </tbody>
                 <!--end::Table body-->

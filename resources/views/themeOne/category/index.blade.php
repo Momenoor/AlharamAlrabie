@@ -24,9 +24,8 @@
                         <select class="form-select form-select-solid" data-control="select2" data-hide-search="true"
                                 data-placeholder="Status" data-category-filter="status">
                             <option></option>
-                            <option value="all">All</option>
-                            <option value="published">Published</option>
-                            <option value="scheduled">Scheduled</option>
+                            <option value="">All</option>
+                            <option value="active">Active</option>
                             <option value="inactive">Inactive</option>
                         </select>
                     </label>
@@ -43,20 +42,12 @@
         <!--begin::Card body-->
         <div class="card-body pt-0">
             <!--begin::Table-->
-            <table class="table align-middle table-row-dashed fs-6 gy-5" id="categories_table">
+            <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_categories_table">
                 <!--begin::Table head-->
                 <thead>
                 <!--begin::Table row-->
                 <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                    <th class="w-10px pe-2">
-                        <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                            <label>
-                                <input class="form-check-input" type="checkbox" data-kt-check="true"
-                                       data-kt-check-target="#kt_ecommerce_categories_table .form-check-input"
-                                       value="1"/>
-                            </label>
-                        </div>
-                    </th>
+                    <th class="w-10px pe-2">#</th>
                     <th class="min-w-200px">Category</th>
                     <th class="min-w-100px">Description</th>
                     <th class="min-w-70px">Slug</th>
@@ -71,7 +62,7 @@
                 <!--begin::Table body-->
                 <tbody class="fw-semibold text-gray-600">
                 <!--begin::Table row-->
-                @foreach ($categories as $category)
+                @forelse($categories as $category)
                     <tr>
                         <!--begin::Category=-->
                         <td>
@@ -87,13 +78,11 @@
                             </div>
                         </td>
                         <td>
-                            <div>
-                                <!--begin::Title-->
-                                <a href="{{route('category.edit',$category)}}"
-                                   class="text-gray-800 text-hover-primary fs-5 fw-bold"
-                                   data-kt-ecommerce-category-filter="category_name">{{$category->name}}</a>
-                                <!--end::Title-->
-                            </div>
+                            <!--begin::Title-->
+                            <a href="{{route('category.edit',$category)}}"
+                               class="text-gray-800 text-hover-primary fs-5 fw-bold"
+                               data-kt-ecommerce-category-filter="category_name">{{$category->name}}</a>
+                            <!--end::Title-->
                         </td>
                         <!--end::Category=-->
                         <!--begin::SKU=-->
@@ -107,7 +96,9 @@
                         </td>
                         <!--end::slug=-->
                         <!--begin::Price=-->
-                        <td class=" pe-0">{!! $category->variants->pluck('name')->toJson(JSON_UNESCAPED_UNICODE)!!}</td>
+                        <td class=" pe-0">
+                            {!! $category->variants->pluck('name')->toJson(JSON_UNESCAPED_UNICODE)!!}
+                        </td>
                         <!--end::Price=-->
                         <!--begin::Rating-->
                         <td class=" pe-0">
@@ -115,7 +106,7 @@
                         </td>
                         <!--end::Rating-->
                         <!--begin::Status=-->
-                        <td class=" pe-0" data-order="status">
+                        <td class="pe-0" data-order="status">
                             <!--begin::Badges-->
                             <div class="badge badge-light-success">{{$category->status}}</div>
                             <!--end::Badges-->
@@ -151,9 +142,14 @@
                         </td>
                         <!--end::Action=-->
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="10" class="text-center text-muted fw-bold">No Categories Found</td>
+                    </tr>
+                @endforelse
                 <!--end::Table row-->
                 </tbody>
+
                 <!--end::Table body-->
             </table>
             <!--end::Table-->
@@ -164,47 +160,67 @@
 @endsection
 @push('scripts')
     <script>
-        KTUtil.onDOMContentLoaded(function () {
-            document.querySelectorAll('[data-kt-ecommerce-category-filter="delete_row"]').forEach(function (element) {
-                element.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    Swal.fire({
-                        title: 'Are you sure?',
-                        text: "You won't be able to revert this!",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Yes, delete it!'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            var id = element.getAttribute('data-kt-ecommerce-category-id');
-                            axios.delete('/category/' + id).then(function (response) {
-                                if (response.data.success) {
-                                    Swal.fire({
-                                        icon: 'success',
-                                        title: 'Deleted!',
-                                        text: 'Record has been deleted.',
-                                        toast: true, // This makes it a toast notification
-                                        position: 'top-end', // You can adjust the position
-                                        showConfirmButton: false, // Hide the confirmation button
-                                        timer: 3000 // Auto-close after 3 seconds
-                                    });
-                                    element.closest('tr').remove();
-                                } else {
-                                    Swal.fire(
-                                        'Error!',
-                                        response.data.message,
-                                        'error'
-                                    );
-                                }
-                            }).catch(function (error) {
-                                console.error(error);
-                            })
-                        }
+        var CategoriesDataTable = function () {
+            var table, dataTable, handleDelete = () => {
+                var deletedItem = table.querySelectorAll('[data-kt-ecommerce-category-filter="delete_row"]').forEach(function (element) {
+                    element.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        Swal.fire({
+                            title: 'Are you sure?',
+                            text: "You won't be able to revert this!",
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Yes, delete it!'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                var id = element.getAttribute('data-kt-ecommerce-category-id');
+                                axios.delete('/category/' + id).then(function (response) {
+                                    if (response.data.success) {
+                                        Swal.fire({
+                                            icon: 'success',
+                                            title: 'Deleted!',
+                                            text: 'Record has been deleted.',
+                                            toast: true, // This makes it a toast notification
+                                            position: 'top-end', // You can adjust the position
+                                            showConfirmButton: false, // Hide the confirmation button
+                                            timer: 3000 // Auto-close after 3 seconds
+                                        });
+                                        dataTable.row($(element.closest('tr'))).remove().draw();
+                                    } else {
+                                        Swal.fire(
+                                            'Error!',
+                                            response.data.message,
+                                            'error'
+                                        );
+                                    }
+                                }).catch(function (error) {
+                                    console.error(error);
+                                })
+                            }
+                        })
                     })
                 })
-            })
+            }
+
+            return {
+                init: function () {
+                    table = document.querySelector('#kt_ecommerce_categories_table');
+
+                    dataTable = $(table).DataTable({
+                        select: false,
+                    }).on("draw", (function () {
+                        handleDelete()
+                    }));
+                    console.log(dataTable);
+                    handleDelete();
+                }
+            }
+        }();
+
+        KTUtil.onDOMContentLoaded(function () {
+            CategoriesDataTable.init();
         });
     </script>
 @endpush
