@@ -1,9 +1,6 @@
 @extends('themeOne::layouts.system.app')
 @section('content')
-    @php
-        $predefinedVariants = old('predefinedVariants',optional($product->category)->predefinedVariants??[]);
-        $variants = old('variants',$product->variants);
-    @endphp
+
     <div class="mt-lg-20">
         @if($errors->any())
             <div class="alert alert-danger" role="alert">
@@ -100,11 +97,8 @@
                         <label for="kt_ecommerce_edit_product_category" class="form-label">Category</label>
                         <!--end::Label-->
                         <!--begin::Select2-->
-                        <select name="categories_id" id="kt_ecommerce_edit_product_category"
-                                class="form-select mb-2"
-                                data-control="select2"
-                                data-placeholder="Select a category"
-                                data-allow-clear="true">
+                        <select name="categories_id" id="kt_ecommerce_edit_product_category" class="form-select mb-2"
+                                data-control="select2" data-placeholder="Select a category" data-allow-clear="true">
                             <option></option>
                             @foreach($categories as $category)
                                 <option data-predefined-variants="{{$category->predefinedVariants}}"
@@ -236,183 +230,81 @@
                             <!--begin::Card body-->
                             <div class="card-body pt-0">
                                 <!--begin::Input group-->
-                                <div class="mb-10 fv-row">
-                                    <!--begin::Label-->
-                                    <label class="form-label">Category predefined variants for new products.</label>
-                                    <div id="predefinedVariants">
-                                        <div class="form-group" data-repeater-list="predefinedVariants">
-                                            <div class="d-flex flex-column gap-3">
-                                                <div class="mt-10" id="repeated_init_empty"
-                                                     data-repeated-init-empty='false'>
-                                                    @forelse($predefinedVariants as $key=>$predefinedVariant)
-                                                        <div
-                                                            class="d-flex flex-wrap align-items-center text-gray-600 gap-5 mb-7"
-                                                            data-repeater-item>
-                                                            <label>
-                                                                <input type="text" name="name" placeholder="Name"
-                                                                       class="form-control w-200 w-md-300px"
-                                                                       value="{{$variant['name']}}">
-                                                            </label>
-                                                            <label>
-                                                                <div
-                                                                    class="input-group extra-price w-100 w-md-200px">
-                                                                    <input type="text" name="price"
-                                                                           placeholder="Price: 0.00"
-                                                                           class="form-control"
-                                                                           value="{{$variant['price']}}">
-                                                                    <span class="input-group-text">AED</span>
-                                                                </div>
-                                                            </label>
-                                                            <button
-                                                                class="border border-secondary btn btn-icon btn-flex btn-light-danger"
-                                                                data-repeater-delete type="button">
-                                                                <i class="ki-duotone ki-trash fs-5"><span
-                                                                        class="path1"></span><span
-                                                                        class="path2"></span><span
-                                                                        class="path3"></span><span
-                                                                        class="path4"></span><span class="path5"></span></i>
-                                                            </button>
-                                                        </div>
-                                                </div>
-                                                @empty
-                                                    <div class="mt-10" id="repeated_init_empty"
-                                                         data-repeated-init-empty='true'>
-                                                        <div
-                                                            class="d-flex flex-wrap align-items-center text-gray-600 gap-5 mb-7"
-                                                            data-repeater-item>
-                                                            @forelse($variants as $variant)
-                                                                <label>
-                                                                    <input type="text" name="name" placeholder="Name"
-                                                                           class="form-control w-200 w-md-300px"
-                                                                           value="{{$variant['name']}}">
-                                                                </label>
-                                                                <label>
-                                                                    <div
-                                                                        class="input-group extra-price w-100 w-md-200px">
-                                                                        <input type="text" name="price"
-                                                                               placeholder="Price: 0.00"
-                                                                               class="form-control"
-                                                                               value="{{$variant['price']}}">
-                                                                        <span class="input-group-text">AED</span>
-                                                                    </div>
-                                                                </label>
-                                                            @empty
-                                                                <label>
-                                                                    <input type="text" name="name" placeholder="Name"
-                                                                           class="form-control w-200 w-md-300px"
-                                                                           value="">
-                                                                </label>
-                                                                <label>
-                                                                    <div
-                                                                        class="input-group extra-price w-100 w-md-200px">
-                                                                        <input type="text" name="price"
-                                                                               placeholder="Price: 0.00"
-                                                                               class="form-control" value="">
-                                                                        <span class="input-group-text">AED</span>
-                                                                    </div>
-                                                                </label>
-                                                            @endforelse
-                                                            <button
-                                                                class="border border-secondary btn btn-icon btn-flex btn-light-danger"
-                                                                data-repeater-delete type="button">
-                                                                <i class="ki-duotone ki-trash fs-5"><span
-                                                                        class="path1"></span><span
-                                                                        class="path2"></span><span
-                                                                        class="path3"></span><span
-                                                                        class="path4"></span><span class="path5"></span></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-
-                                            </div>
-                                            @endforelse
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <!--begin::Button-->
-                                    <button type="button" data-repeater-create class="btn btn-sm btn-primary">
-                                        <i class="ki-duotone ki-plus fs-2"></i>Add another variation
-                                    </button>
-                                    <!--end::Button-->
-
-                                    <!--end::Form group-->
-                                </div>
-                            </div>
-                            <div id="kt_ecommerce_edit_product_price_container">
-                                <label for="price" class="required form-label">Base Price</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
-                                <input type="text" id="price" name="price" class="form-control mb-2"
-                                       placeholder="Product price" value=""/>
-                            </div>
-                            <!--end::Input-->
-                            <!--begin::Description-->
-                            <div class="text-muted fs-7">Set the product price.</div>
-                            <!--end::Description-->
-
-                            <!--end::Input group-->
-                            <!--begin::Tax-->
-                            <div class="d-flex flex-wrap gap-5">
-                                <!--begin::Input group-->
-                                <div class="fv-row w-100 flex-md-root">
-                                    <!--begin::Label-->
-                                    <label class="required form-label">Tax Class</label>
-                                    <!--end::Label-->
-                                    <!--begin::Select2-->
-                                    <select class="form-select mb-2" name="tax" data-control="select2"
-                                            data-hide-search="true" data-placeholder="Select an option">
-                                        <option></option>
-                                        <option value="0">Tax Free</option>
-                                        <option value="1">Taxable Goods</option>
-                                        <option value="2">Downloadable Product</option>
-                                    </select>
-                                    <!--end::Select2-->
-                                    <!--begin::Description-->
-                                    <div class="text-muted fs-7">Set the product tax class.</div>
-                                    <!--end::Description-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="fv-row w-100 flex-md-root">
-                                    <!--begin::Label-->
-                                    <label class="form-label">VAT Amount (%)</label>
+                                @include('themeOne::product.productVariants',['product'=>$product])
+                                <div id="kt_ecommerce_edit_product_price_container">
+                                    <label for="price" class="required form-label">Base Price</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control mb-2" value=""/>
-                                    <!--end::Input-->
-                                    <!--begin::Description-->
-                                    <div class="text-muted fs-7">Set the product VAT about.</div>
-                                    <!--end::Description-->
+                                    <input type="text" id="price" name="price" class="form-control mb-2"
+                                           placeholder="Product price" value=""/>
                                 </div>
-                                <!--end::Input group-->
-                            </div>
-                            <!--end:Tax-->
-                        </div>
-                    </div>
+                                <!--end::Input-->
+                                <!--begin::Description-->
+                                <div class="text-muted fs-7">Set the product price.</div>
+                                <!--end::Description-->
 
-                    <!--end::Card header-->
+                                <!--end::Input group-->
+                                <!--begin::Tax-->
+                                <div class="d-flex flex-wrap gap-5">
+                                    <!--begin::Input group-->
+                                    <div class="fv-row w-100 flex-md-root">
+                                        <!--begin::Label-->
+                                        <label class="required form-label">Tax Class</label>
+                                        <!--end::Label-->
+                                        <!--begin::Select2-->
+                                        <select class="form-select mb-2" name="tax" data-control="select2"
+                                                data-hide-search="true" data-placeholder="Select an option">
+                                            <option></option>
+                                            <option value="0">Tax Free</option>
+                                            <option value="1">Taxable Goods</option>
+                                            <option value="2">Downloadable Product</option>
+                                        </select>
+                                        <!--end::Select2-->
+                                        <!--begin::Description-->
+                                        <div class="text-muted fs-7">Set the product tax class.</div>
+                                        <!--end::Description-->
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="fv-row w-100 flex-md-root">
+                                        <!--begin::Label-->
+                                        <label class="form-label">VAT Amount (%)</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input type="text" class="form-control mb-2" value=""/>
+                                        <!--end::Input-->
+                                        <!--begin::Description-->
+                                        <div class="text-muted fs-7">Set the product VAT about.</div>
+                                        <!--end::Description-->
+                                    </div>
+                                    <!--end::Input group-->
+                                </div>
+                                <!--end:Tax-->
+                            </div>
+                        </div>
+                        <!--end::Card header-->
+                    </div>
+                    <!--end::Pricing-->
                 </div>
-                <!--end::Pricing-->
-            </div>
-            <!--end::Tab content-->
-            <div class="d-flex justify-content-end">
-                <!--begin::Button-->
-                <a href="{{route('product.index')}}" id="kt_ecommerce_edit_product_cancel"
-                   class="btn btn-light me-5">Cancel</a>
-                <!--end::Button-->
-                <!--begin::Button-->
-                <button type="submit" id="kt_ecommerce_edit_product_submit" class="btn btn-primary">
-                    <span class="indicator-label">Save Changes</span>
-                    <span class="indicator-progress">Please wait...
+
+                <!--end::Tab content-->
+                <div class="d-flex justify-content-end">
+                    <!--begin::Button-->
+                    <a href="{{route('product.index')}}" id="kt_ecommerce_edit_product_cancel"
+                       class="btn btn-light me-5">Cancel</a>
+                    <!--end::Button-->
+                    <!--begin::Button-->
+                    <button type="submit" id="kt_ecommerce_edit_product_submit" class="btn btn-primary">
+                        <span class="indicator-label">Save Changes</span>
+                        <span class="indicator-progress">Please wait...
 												<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                </button>
-                <!--end::Button-->
+                    </button>
+                    <!--end::Button-->
+                </div>
             </div>
-    </div>
-    <!--end::Main column-->
-    </form>
-    <!--end::Form-->
+            <!--end::Main column-->
+        </form>
+        <!--end::Form-->
     </div>
 
 @endsection
@@ -442,7 +334,12 @@
             });
 
             $('#kt_ecommerce_edit_product_category').select2().on('change', function (e) {
-
+                var predefinedVariants = $(this).find('option:selected').data('predefined-variants');
+                if (predefinedVariants !== undefined) {
+                    console.log('Predefined Variants: ', predefinedVariants);
+                } else {
+                    console.log('No predefined variants found for this option.');
+                }
 
             }).trigger('change');
 
