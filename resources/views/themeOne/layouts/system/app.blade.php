@@ -81,6 +81,26 @@
 <script src="{{asset('themeOne/assets/js/widgets.bundle.js')}}"></script>
 <script src="{{asset('themeOne/assets/js/custom/widgets.js')}}"></script>
 <script src="{{asset('themeOne/assets/js/system.js')}}"></script>
+<script>
+    var $element = document.querySelectorAll('[data-control="inputMask"]');
+    $element.forEach(function (element) {
+        var options = {
+            alias: 'currency',
+            //autoGroup: false,
+            groupSeparator: ',',
+            groupSize: 3,
+            digits: 2,
+            autoUnmask: true,
+            //rightAlign: true,
+            allowMinus: false,
+            placeholder: '0.00',
+            prefix: '',
+            suffix: '',
+
+        };
+        new Inputmask(options).mask(element);
+    })
+</script>
 @yield('scripts')
 @stack('scripts')
 <!--end::Custom Javascript-->

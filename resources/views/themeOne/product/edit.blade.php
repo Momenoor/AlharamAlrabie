@@ -1,6 +1,5 @@
 @extends('themeOne::layouts.system.app')
 @section('content')
-
     <div class="mt-lg-20">
         @if($errors->any())
             <div class="alert alert-danger" role="alert">
@@ -336,12 +335,13 @@
             $('#kt_ecommerce_edit_product_category').select2().on('change', function (e) {
                 var predefinedVariants = $(this).find('option:selected').data('predefined-variants');
                 if (predefinedVariants !== undefined) {
-                    console.log('Predefined Variants: ', predefinedVariants);
+
                 } else {
-                    console.log('No predefined variants found for this option.');
+
                 }
 
             }).trigger('change');
+
 
             $('#kt_ecommerce_edit_product_status_select').on('change', function (e) {
                 const status = $(this).val();

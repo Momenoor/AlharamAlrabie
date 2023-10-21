@@ -29,7 +29,25 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::all();
-        return view('themeOne::product.edit', compact('product', 'categories'));
+        $product->load('variants');
+
+        $variants = $product->variants;
+
+        $predefinedVariants = [];
+        if ($product?->category?->predefinedVariants) {
+            $predefinedVariants = $product->category->predefinedVariants->map(function ($variant) use ($variants) {
+
+                $matched = $variants->where('name', $variant->name)->first();
+
+                if ($matched) {
+
+                    $variant->price = $matched->price;
+                }
+
+                return $variant;
+            });
+        }
+        return view('themeOne::product.edit', compact('product', 'categories', 'predefinedVariants'));
     }
 
     public function update(Request $request, Product $product)
