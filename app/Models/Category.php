@@ -28,6 +28,6 @@ class Category extends Model
 
     public function predefinedVariants(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(PredefinedProductVariant::class);
+        return $this->hasMany(PredefinedVariant::class);
     }
 }

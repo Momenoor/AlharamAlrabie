@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('predefined_product_variants', function (Blueprint $table) {
+        Schema::create('predefined_variants', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(\App\Models\Category::class)->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->string('name');
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('predefined_product_variants');
+        Schema::dropIfExists('predefined_variants');
     }
 };

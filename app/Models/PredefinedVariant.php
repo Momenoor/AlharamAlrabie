@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PredefinedProductVariant extends Model
+class PredefinedVariant extends Model
 {
     protected $fillable = [
         'name',
@@ -15,5 +15,10 @@ class PredefinedProductVariant extends Model
     public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function products(): \Illuminate\Database\Eloquent\Relations\belongsToMany
+    {
+        return $this->belongsToMany(Product::class)->withPivot('price');
     }
 }

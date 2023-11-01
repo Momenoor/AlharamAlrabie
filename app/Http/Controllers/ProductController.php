@@ -32,7 +32,6 @@ class ProductController extends Controller
         $product->load('variants');
 
         $variants = $product->variants;
-
         $predefinedVariants = [];
         if ($product?->category?->predefinedVariants) {
             $predefinedVariants = $product->category->predefinedVariants->map(function ($variant) use ($variants) {

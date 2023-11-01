@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\CategoryVariant;
-use App\Models\PredefinedProductVariant;
+use App\Models\PredefinedVariant;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -103,7 +103,7 @@ class ProductSeeder extends Seeder
         foreach ($this->predefined_variant as $category => $variant) {
             if (is_array($variant)) {
                 foreach ($variant as $value) {
-                    PredefinedProductVariant::query()->create([
+                    PredefinedVariant::query()->create([
                         'name' => $value,
                         'category_id' => Category::query()->where('name', $category)->first()->id,
                     ]);
@@ -127,11 +127,10 @@ class ProductSeeder extends Seeder
                     'price' => $product['price'],
                 ]);
             if (!empty($product['variant'])) {
-                $p->productVariants()->create([
-                    'name' => $product['variant'],
-                    'price' => $product['price'],
-                    'is_extra_price' => 0,
-                ]);
+                $predfinedVariant = PredefinedVariant::query()->where('name', $product['variant'])->first();
+                $p->predefinedVariants()->attach(
+                    $predfinedVariant->id, ['price' => $product['price']],
+                );
             }
         }
         User::create([
